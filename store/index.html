@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>门店视觉规范 · 熊大爷现包饺子 Design System</title>
+<meta name="description" content="熊大爷门店视觉规范：门头横招/竖招、灯箱菜单牌、档口现包展示区、外摆；材质用色规范与 AI 生图对齐说明。">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:#4A423B;font-family:var(--font-sans);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+header.site{display:flex;justify-content:space-between;align-items:center;padding:26px 48px;border-bottom:var(--hairline);max-width:1200px;margin:0 auto}
+header.site img{height:32px}
+header.site .crumb{font:500 12px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:#6B6259}
+h1,h2,h3{color:var(--ink);font-family:var(--font-serif)}
+h1{font-weight:600;font-size:clamp(36px,4.4vw,56px);line-height:1.25}
+h3{font-weight:600;font-size:20px;line-height:1.45}
+.eyebrow{font:600 13px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:'';width:40px;height:1.5px;background:var(--gold-ink)}
+.lead{margin-top:22px;max-width:680px;color:#4A423B}
+.caption{font-size:13px;color:#6B6259}
+section{padding:88px 0}
+.hero-sec{padding:96px 0 32px}
+
+.mats{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.mat{border-radius:var(--radius);overflow:hidden;border:var(--hairline);background:#fff}
+.mat .chip{height:110px}
+.mat .tx{padding:16px 18px}
+.mat .tx b{font-family:var(--font-serif);font-weight:600;color:var(--ink);display:block;font-size:16px}
+.mat .tx p{font-size:12.5px;color:#6B6259;margin-top:4px;line-height:1.6}
+
+.touch{margin-top:36px;display:grid;gap:32px}
+.tp{display:grid;grid-template-columns:1.15fr 1fr;background:#fff;border:var(--hairline);border-radius:var(--radius);overflow:hidden}
+.tp.rev{grid-template-columns:1fr 1.15fr}
+.tp .im{position:relative;min-height:320px}
+.tp .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tp .info{padding:30px 34px}
+.tp .no{font:600 12px/1 var(--font-en);letter-spacing:.16em;color:var(--gold-ink);text-transform:uppercase}
+.tp h3{margin-top:12px}
+.tp ul{margin-top:14px;list-style:none;display:grid;gap:9px;font-size:14px}
+.tp li{padding-left:20px;position:relative}
+.tp li::before{content:'';position:absolute;left:0;top:.62em;width:10px;height:5px;border:1.5px solid var(--gold-ink);border-top:none;border-radius:0 0 10px 10px}
+
+.ai{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ai .col{background:var(--paper-2);border-radius:var(--radius);padding:28px 30px}
+.ai .col.bad{background:#fff;border:1.5px solid rgba(159,59,59,.35)}
+.ai h3{font-size:17px}
+.ai ul{margin-top:14px;list-style:none;display:grid;gap:9px;font-size:14px}
+.ai li{padding-left:22px;position:relative}
+.ai .col.good li::before{content:'✓';position:absolute;left:0;color:var(--gold-ink);font-weight:700}
+.ai .col.bad li::before{content:'✕';position:absolute;left:0;color:var(--seal);font-weight:700}
+.prompt-box{margin-top:24px;grid-column:1/-1;background:var(--ink);border-radius:var(--radius);padding:28px 32px;color:var(--paper)}
+.prompt-box h3{color:var(--paper);font-size:16px;font-family:var(--font-sans);font-weight:700}
+.prompt-box code{display:block;margin-top:14px;font:400 13px/1.8 var(--font-en);color:rgba(252,251,248,.85);white-space:pre-wrap}
+.prompt-box code b{color:var(--gold)}
+
+footer{border-top:var(--hairline);padding:40px 48px 56px;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;font:500 12px/1.6 var(--font-en);letter-spacing:.14em;text-transform:uppercase;color:#6B6259}
+@media (max-width:900px){
+  .wrap{padding:0 24px}
+  header.site{padding:20px 24px}
+  section{padding:60px 0}
+  .mats{grid-template-columns:1fr 1fr}
+  .tp,.tp.rev{grid-template-columns:1fr}
+  .tp .im{min-height:230px}
+  .ai{grid-template-columns:1fr}
+}
+@media (max-width:640px){header.site .crumb,header .crumb{display:none}footer{flex-direction:column;gap:8px;align-items:flex-start}}
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/">总览</a><div class="grp" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp oncur" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/" class="cur">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/" class="cur">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></nav>
+
+
+
+
+<header class="site">
+  <a href="../"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a>
+  <span class="crumb">Design System · F. Store Visual</span>
+</header>
+
+<section class="hero-sec">
+  <div class="wrap">
+    <p class="eyebrow">Store Visual · 门店视觉规范</p>
+    <h1 style="margin-top:24px">三米之外认出你<br>三步之内暖到你</h1>
+    <p class="lead">门店是体系里最大的一块「印刷品」：原木格栅做骨、面粉白做纸、绛红做印、暖光金字做识别。本页规范五个触点——门头横招、竖招、灯箱菜单牌、档口现包展示区、外摆——并附 AI 生图对齐说明，保证每一张效果图和每一家真实门店都长在同一套语言上。</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">01 · Materials 材质与用色</p>
+    <div class="mats">
+      <div class="mat"><div class="chip" style="background:linear-gradient(180deg,#E7D8C2,#B08A5E)"></div><div class="tx"><b>原木格栅</b><p>竖向格栅 40×60mm、间距 40mm；哑光清漆，禁高光漆与深色染色。</p></div></div>
+      <div class="mat"><div class="chip" style="background:#FCFBF8;border-bottom:var(--hairline)"></div><div class="tx"><b>面粉白墙面</b><p>对齐 #FCFBF8；哑光乳胶漆或微水泥，禁瓷砖亮面反光。</p></div></div>
+      <div class="mat"><div class="chip" style="background:#9F3B3B"></div><div class="tx"><b>绛红印</b><p>每个立面只出现一处绛红实体（灯箱条/圆印/招贴），面积 ≤5%。</p></div></div>
+      <div class="mat"><div class="chip" style="background:#241E1B;display:flex;align-items:center;justify-content:center"><span style="font:600 22px/1 'Noto Serif SC',serif;color:#C4993F">金字</span></div><div class="tx"><b>暖光金字</b><p>发光字 3000K 暖白；金色仅做字与细线，禁金色铺面。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">02 · Touchpoints 五个触点</p>
+    <div class="touch">
+      <div class="tp">
+        <div class="im"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/store-front.jpg" alt="门头横招效果图"></div>
+        <div class="info">
+          <span class="no">F-01 · 门头横招</span>
+          <h3>格栅底 + 发光 LOGO + 大字招牌</h3>
+          <ul>
+            <li>LOGO 红底白熊猫居左，「熊大爷 现包饺子」发光字居中右，字高 ≥ 招牌高度 55%</li>
+            <li>底板原木格栅横铺；灯带藏格栅后洗墙，3000K</li>
+            <li>400 热线小字条置于招牌右下，白字</li>
+            <li>三米外识别测试：眯眼看只剩「红圆 + 大字」即合格</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tp rev">
+        <div class="info">
+          <span class="no">F-02 · 竖招</span>
+          <h3>转角灯箱 · 上标下字</h3>
+          <ul>
+            <li>比例 1:3～1:4；panda 标在上，「熊大爷」竖排三字在下</li>
+            <li>暖白内透光，亮度低于横招半档，夜间不刺眼</li>
+            <li>装在街角柱面或侧墙，服务侧向来客动线</li>
+          </ul>
+        </div>
+        <div class="im"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/store/assets/store-sign-v.jpg" alt="竖招效果图"></div>
+      </div>
+      <div class="tp">
+        <div class="im"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/store/assets/store-menuboard.jpg" alt="灯箱菜单牌效果图"></div>
+        <div class="info">
+          <span class="no">F-03 · 灯箱菜单牌</span>
+          <h3>面粉白灯箱 · 一板一事</h3>
+          <ul>
+            <li>面粉白底灯箱嵌原木框，一板一个品类（饺 / 云吞 / 面）</li>
+            <li>产品摄影用 DS 摄影规范（暖光 45°），禁素材库图</li>
+            <li>绛红只做「人气/招牌」小角标；价格黑体、品名宋体</li>
+            <li>灯箱亮度均匀无灯影，色温与门店一致 3000K</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tp rev">
+        <div class="info">
+          <span class="no">F-04 · 档口现包展示区</span>
+          <h3>明厨亮灶 · 把「现包」演出来</h3>
+          <ul>
+            <li>玻璃通透无贴膜遮挡，案板与师傅双手是主角</li>
+            <li>生包托盘倾斜 15° 朝外陈列，托盘原木色</li>
+            <li>档口顶部重点照明打在案板上，照度高于环境 1 档</li>
+            <li>「生馅外带」圆印标识贴玻璃左下，直径 ≤200mm</li>
+          </ul>
+        </div>
+        <div class="im"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/store-counter.jpg" alt="档口现包展示区效果图"></div>
+      </div>
+      <div class="tp">
+        <div class="im"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/store/assets/store-outdoor.jpg" alt="外摆效果图"></div>
+        <div class="info">
+          <span class="no">F-05 · 外摆</span>
+          <h3>浅木桌凳 + 绿植矮界 + 一枚立牌</h3>
+          <ul>
+            <li>浅色原木桌凳，面粉白坐垫；禁塑料椅与广告伞</li>
+            <li>木质矮花箱做边界，绿植真实种植</li>
+            <li>立牌面粉白底 + 绛红圆印一枚，当日推荐手写感排版</li>
+            <li>外摆整体不遮挡门头与档口视线</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">03 · AI Render Guide 生图对齐说明</p>
+    <div class="ai">
+      <div class="col good">
+        <h3>必须在场（构图/光线/材质）</h3>
+        <ul>
+          <li>参考图喂真实门头照（招牌字以参考为准，逐字检查无错字）</li>
+          <li>暖光 3000K；黄昏/夜景优先，暖光从店内溢出</li>
+          <li>原木格栅 + 面粉白墙 + 绛红一处，比例目测 60/20/5</li>
+          <li>现包元素在场：案板、月牙饺、面粉、师傅的手</li>
+          <li>机位 45° 或平视人视角；浅景深，主体清晰</li>
+        </ul>
+      </div>
+      <div class="col bad">
+        <h3>禁忌（出现即回炉）</h3>
+        <ul>
+          <li>包子褶/小笼包顶髻——饺子必须是月牙形带褶边</li>
+          <li>招牌错字、编造菜名价格、密集小字</li>
+          <li>冷白光、蓝调、荧光色；大面积亮红铺墙</li>
+          <li>照片上叠画蒸汽/光效贴纸；热气只能来自食物</li>
+          <li>塑料椅、广告伞、素材库脸、廉价 3D 感</li>
+        </ul>
+      </div>
+      <div class="prompt-box">
+        <h3>Prompt 模板（gpt-image-2 · 已验证）</h3>
+        <code>--reference_images <b>真实门头照 URL（招牌一致性锚点）</b>
+"... matching the reference brand storefront: <b>wood-slat facade, warm 3000K glow, panda logo and Chinese characters identical to reference, do not invent or alter text</b>. [场景描述]. Crescent Chinese jiaozi dumplings with pleats, <b>STRICTLY NOT baozi, no round topknot</b>. Steam only from real hot food. Premium brand documentary style, warm color grade, shallow depth of field. No invented text."</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Xiongdaye Design System · F. Store Visual</span>
+  <span><a href="../">← Back to Brand Platform</a></span>
+</footer>
+
+</body>
+</html>

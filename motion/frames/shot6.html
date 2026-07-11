@@ -1,0 +1,26 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&family=Outfit:wght@500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1920px;height:1080px;background:#FCFBF8;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:56px}
+.logo{width:560px;opacity:0}
+.play .logo{animation:fadein .8s cubic-bezier(.4,0,.2,1) .2s forwards}
+.stamp{width:200px;height:200px;border-radius:50%;background:#9F3B3B;color:#fff;display:flex;align-items:center;justify-content:center;font:700 60px/1 'Noto Serif SC',serif;letter-spacing:.08em;opacity:0;transform:rotate(6deg) scale(1.15)}
+.play .stamp{animation:stamp .5s cubic-bezier(.4,0,.2,1) 1.5s forwards}
+@keyframes stamp{from{opacity:0;transform:rotate(6deg) scale(1.15)}60%{opacity:1}to{opacity:1;transform:rotate(6deg) scale(1)}}
+.tel{font:500 34px/1 Outfit,sans-serif;letter-spacing:.14em;color:#6B6259;opacity:0}
+.play .tel{animation:fadein .8s cubic-bezier(.4,0,.2,1) 2.5s forwards}
+@keyframes fadein{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.fade{position:fixed;inset:0;background:#000;opacity:0;pointer-events:none}
+.play .fade{animation:toblack .4s cubic-bezier(.4,0,.2,1) 5.6s forwards}
+@keyframes toblack{to{opacity:1}}
+</style><link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head><body>
+<img class="logo" src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png">
+<div class="stamp">现包</div>
+<p class="tel">400-058-9198 · WWW.XIONGDAYE.COM</p>
+<div class="fade"></div>
+</body></html>

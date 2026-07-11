@@ -1,0 +1,138 @@
+/* 熊大爷 DS 页面共享样式（引用根 tokens 的镜像 + 页面脚手架）
+   v3.1 修补：褶纹分隔线改古铜金（浅底可见）；绛红舞台 eyebrow 改纯白（禁金字）；eyebrow 字距收紧 */
+@import url('../styles.css');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--gold-ink); transition: color var(--dur-hover) var(--ease), border-color var(--dur-hover) var(--ease); }
+a:hover { color: var(--seal); border-bottom-color: var(--seal); }
+img { max-width: 100%; display: block; }
+
+.page { max-width: 1240px; margin: 0 auto; padding: 0 64px; }
+
+/* ------- 页眉 / 页脚 ------- */
+.ds-top {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 28px 0; border-bottom: var(--hairline);
+}
+.ds-top img { height: 34px; width: auto; }
+.ds-top .crumb { font: 500 12px/1 var(--font-en); letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
+.ds-top .crumb b { color: var(--gold-ink); font-weight: 600; }
+
+.ds-hero { padding: 120px 0 88px; }
+.eyebrow {
+  font: 600 13px/1 var(--font-en);
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-ink); margin-bottom: 26px;
+}
+.display {
+  font-family: var(--font-serif); font-weight: 700;
+  font-size: clamp(42px, 4.6vw, 64px); line-height: 1.28;
+  letter-spacing: 0.02em; text-wrap: pretty;
+}
+.lead {
+  margin-top: 30px; max-width: 660px;
+  font-size: 17px; line-height: 1.8; color: var(--ink-soft); text-wrap: pretty;
+}
+
+/* ------- 章节 ------- */
+section { padding: 88px 0; }
+.sec-head { margin-bottom: 52px; }
+.sec-no { font: 600 13px/1 var(--font-en); letter-spacing: 0.2em; color: var(--gold-ink); display: block; margin-bottom: 16px; }
+.sec-title { font-family: var(--font-serif); font-weight: 700; font-size: 34px; line-height: 1.4; }
+.sec-sub { margin-top: 14px; color: var(--ink-soft); max-width: 620px; text-wrap: pretty; }
+
+/* 饺子褶纹弧分隔线（古铜金，浅底可见） */
+.pleat-hr {
+  height: 12px; border: none; margin: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='12'%3E%3Cpath d='M0 10.5 Q14 1.5 28 10.5 Q42 1.5 56 10.5' fill='none' stroke='%237D5F17' stroke-width='1.3' opacity='0.6'/%3E%3C/svg%3E") repeat-x center / 56px 12px;
+}
+
+/* ------- 布局 ------- */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+.card {
+  background: var(--paper-2); border-radius: var(--radius);
+  padding: 32px;
+}
+.card.on-paper { background: #FFFFFF; border: var(--hairline); }
+
+/* ------- 深浅基底舞台 ------- */
+.stage { border-radius: var(--radius); padding: 56px; }
+.stage-ink { background: var(--ink); color: var(--paper); }
+.stage-seal { background: var(--seal); color: #FFFFFF; }
+.stage-ink .eyebrow { color: var(--gold); }
+.stage-seal .eyebrow { color: rgba(255,255,255,0.92); }
+
+/* ------- Do / Don't ------- */
+.verdict { display: inline-flex; align-items: center; gap: 8px; font: 600 12px/1 var(--font-en); letter-spacing: 0.18em; text-transform: uppercase; }
+.verdict::before { content: ''; width: 8px; height: 8px; border-radius: 50%; }
+.verdict.do { color: var(--bamboo); }
+.verdict.do::before { background: var(--bamboo); }
+.verdict.dont { color: var(--seal); }
+.verdict.dont::before { background: var(--seal); }
+.dd-card { border-radius: var(--radius); overflow: hidden; border: var(--hairline); background: #FFFFFF; }
+.dd-demo { height: 190px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.dd-note { padding: 18px 22px 22px; font-size: 14px; line-height: 1.8; color: var(--ink-soft); border-top: var(--hairline); }
+.dd-note .verdict { margin-bottom: 8px; }
+.dd-note p { margin-top: 6px; }
+
+/* ------- 规格表 ------- */
+.spec-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.spec-table th {
+  text-align: left; font: 600 12px/1.4 var(--font-en);
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+  padding: 14px 18px; border-bottom: 2px solid var(--ink);
+}
+.spec-table td { padding: 16px 18px; border-bottom: var(--hairline); vertical-align: top; }
+.spec-table .mono { font-family: var(--font-en); font-weight: 500; }
+
+.mono { font-family: var(--font-en); }
+.num { font-family: var(--font-en); font-weight: 600; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+
+.chip {
+  display: inline-block; padding: 5px 14px; border-radius: 999px;
+  font: 500 12.5px/1.6 var(--font-sans); border: 1px solid var(--wood-light); color: var(--ink-soft);
+}
+
+/* ------- 页脚导航 ------- */
+.ds-foot {
+  margin-top: 40px; padding: 44px 0 72px; border-top: var(--hairline);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
+}
+.ds-foot a { border-bottom: none; font-family: var(--font-serif); font-weight: 600; font-size: 17px; }
+.ds-foot .dir { display: block; font: 600 11px/1 var(--font-en); letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 10px; }
+.ds-foot .next { text-align: right; }
+
+/* ------- 响应式（≤900 / ≤480）：桌面渲染不变 ------- */
+@media (max-width: 900px) {
+  .page { padding: 0 32px; }
+  .ds-hero { padding: 80px 0 64px; }
+  section { padding: 64px 0; }
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .stage { padding: 40px 32px; }
+}
+@media (max-width: 480px) {
+  .page { padding: 0 20px; }
+  .ds-hero { padding: 56px 0 48px; }
+  section { padding: 56px 0; }
+  .display { font-size: clamp(34px, 10vw, 42px); }
+  .sec-head { margin-bottom: 36px; }
+  .sec-title { font-size: 28px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 20px; }
+  .stage { padding: 32px 22px; }
+  img, svg { max-width: 100%; height: auto; }
+  .spec-table { display: block; overflow-x: auto; }
+  .ds-top { flex-wrap: wrap; gap: 10px; }
+}

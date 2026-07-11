@@ -1,0 +1,311 @@
+<!-- @dsCard group="设计体系" viewport="1440x900" name="06 · 组件" subtitle="按钮 / 卡片 / 导航 / 标签 / 数据舞台 / 表单" -->
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 组件库 · 熊大爷设计体系</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds.css">
+<style>
+  /* ---- 组件定义（即规范本体） ---- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 34px; border-radius: 999px; border: none; cursor: pointer;
+    font: 500 15px/1.5 var(--font-sans); letter-spacing: 0.04em;
+    transition: transform var(--dur-hover) var(--ease), box-shadow var(--dur-hover) var(--ease), background var(--dur-hover) var(--ease), color var(--dur-hover) var(--ease);
+  }
+  .btn-primary { background: var(--seal); color: #fff; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(159,59,59,.28); }
+  .btn-secondary { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+  .btn-text { background: none; padding: 14px 4px; color: var(--ink); border-bottom: 1.5px solid var(--gold); border-radius: 0; }
+  .btn-text:hover { color: var(--seal); border-bottom-color: var(--seal); }
+  .btn-sm { padding: 9px 22px; font-size: 13.5px; }
+  .btn[disabled] { background: var(--wood-light); color: var(--ink-soft); cursor: not-allowed; box-shadow: none; }
+
+  .tag { display: inline-flex; align-items: center; gap: 7px; padding: 6px 16px; border-radius: 999px; font: 500 13px/1.6 var(--font-sans); }
+  .tag-outline { border: 1px solid var(--wood-light); color: var(--ink-soft); }
+  .tag-gold { border: 1px solid var(--gold); color: var(--ink); }
+  .tag-gold::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+  .tag-bamboo { background: color-mix(in oklch, var(--bamboo) 12%, white); color: var(--bamboo); }
+  .tag-seal { background: var(--seal); color: #fff; }
+
+  .prod-card { width: 300px; background: #fff; border: var(--hairline); border-radius: var(--radius); overflow: hidden; transition: transform var(--dur-hover) var(--ease), box-shadow var(--dur-hover) var(--ease); }
+  .prod-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(36,30,27,.10); }
+  .prod-card .ph { height: 190px; background: var(--paper-2); display: flex; align-items: center; justify-content: center; color: var(--wood); font: 500 12px/1.6 var(--font-en); letter-spacing: .18em; border-bottom: var(--hairline); }
+  .prod-card .body { padding: 22px 24px 24px; position: relative; }
+  .prod-card .body::before {
+    content: ''; position: absolute; left: 0; right: 0; top: -11px; height: 12px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12'%3E%3Cpath d='M0 12 Q10 2 20 12 Q30 2 40 12' fill='white'/%3E%3C/svg%3E") repeat-x bottom / 40px 12px;
+  }
+  .prod-card h4 { font: 700 19px/1.5 var(--font-serif); }
+  .prod-card .en { font: 500 11.5px/1.6 var(--font-en); letter-spacing: .14em; text-transform: uppercase; color: var(--wood); }
+  .prod-card .price { font: 600 20px/1 var(--font-en); color: var(--ink); margin-top: 14px; display: flex; align-items: baseline; justify-content: space-between; }
+  .prod-card .price small { font: 500 12px/1.6 var(--font-sans); color: var(--ink-soft); }
+
+  .navbar { display: flex; align-items: center; justify-content: space-between; background: rgba(250,247,241,.92); backdrop-filter: blur(10px); border: var(--hairline); border-radius: 999px; padding: 12px 14px 12px 26px; }
+  .navbar img { height: 30px; }
+  .navbar nav { display: flex; gap: 34px; font: 500 14.5px/1 var(--font-sans); }
+  .navbar nav a { border-bottom: none; padding: 8px 0; }
+  .navbar nav a.active { color: var(--seal); box-shadow: inset 0 -2px 0 var(--gold); }
+
+  .field { display: flex; flex-direction: column; gap: 9px; }
+  .field label { font: 500 13.5px/1 var(--font-sans); color: var(--ink); }
+  .field input, .field select {
+    font: 400 15px/1.5 var(--font-sans); color: var(--ink);
+    background: #fff; border: 1px solid var(--wood-light); border-radius: var(--radius-sm);
+    padding: 13px 16px; outline: none; transition: border-color var(--dur-hover) var(--ease), box-shadow var(--dur-hover) var(--ease);
+  }
+  .field input:focus, .field select:focus { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in oklch, var(--gold) 22%, transparent); }
+  .field .hint { font-size: 12.5px; color: var(--ink-soft); }
+
+  .demo-block { background: var(--paper-2); border-radius: var(--radius); padding: 44px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+  .code {
+    background: var(--ink); color: #E8DFD3; border-radius: var(--radius);
+    font: 400 13px/1.9 ui-monospace, 'SF Mono', Menlo, monospace;
+    padding: 28px 32px; overflow-x: auto; white-space: pre;
+  }
+  .code b { color: var(--gold); font-weight: 400; }
+
+  @media (max-width: 900px) {
+    #data-stage .stage > div[style] { grid-template-columns: repeat(2, 1fr) !important; gap: 28px !important; }
+    .navbar { flex-wrap: wrap; gap: 14px; justify-content: center; border-radius: 28px; padding: 14px 18px; }
+    .navbar nav { gap: 20px; flex-wrap: wrap; justify-content: center; }
+  }
+  @media (max-width: 480px) {
+    .demo-block { padding: 24px 20px; }
+    .code { padding: 20px 18px; }
+    .prod-card { max-width: 100%; }
+    #nav > div[style] { padding: 20px 14px !important; }
+    #form > div[style] { padding: 26px 20px !important; }
+    #data-stage .stage .num { font-size: 40px !important; }
+  }
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/">总览</a><div class="grp oncur" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html" class="cur">组件</a><a href="/ds/09-photography.html">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html" class="cur">组件</a><a href="/ds/09-photography.html">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></nav>
+
+
+
+<div class="page">
+  <header class="ds-top">
+    <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" alt="熊大爷 现包饺子">
+    <span class="crumb">Design System · <b>06 Components</b></span>
+  </header>
+
+  <div class="ds-hero">
+    <p class="eyebrow">Components · 组件库</p>
+    <h1 class="display">同一双手包出来的</h1>
+    <p class="lead">所有组件共享同一套 tokens、同一个缓动、同一种圆角语言。绛红只出现在主按钮与徽章上——组件层面继续执行「一屏一印」。</p>
+  </div>
+  <hr class="pleat-hr">
+
+  <section id="tokens-code">
+    <div class="sec-head">
+      <span class="sec-no">06 · 01</span>
+      <h2 class="sec-title">CSS 变量</h2>
+    </div>
+    <div class="code"><b>:root</b> {
+  --paper: #FAF7F1;   --paper-2: #F3ECE2;
+  --wood-light: #E7D8C2;  --wood: #B08A5E;
+  --ink: #241E1B;     --ink-soft: #57504A;
+  --gold: #C9A24B;    --gold-light: #D7CA9E;
+  --seal: #9F3B3B;    --bamboo: #5E8B4C;
+  --logo-red: #D70D18;          <b>/* 仅 LOGO 内部 */</b>
+
+  --font-serif: 'Noto Serif SC', serif;
+  --font-sans: 'Noto Sans SC', sans-serif;
+  --font-en: 'Outfit', sans-serif;
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);   <b>/* 全局唯一 */</b>
+  --dur-hover: 240ms;  --dur-enter: 800ms;  --dur-page: 600ms;
+  --radius: 14px;  --radius-sm: 8px;
+  --hairline: 1px solid var(--wood-light);
+}</div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="buttons">
+    <div class="sec-head">
+      <span class="sec-no">06 · 02</span>
+      <h2 class="sec-title">按钮</h2>
+      <p class="sec-sub">主按钮是当屏的「印」，一屏只出现一次；其余动作交给墨描边与金下划线。</p>
+    </div>
+    <div class="demo-block">
+      <button class="btn btn-primary">立即加盟</button>
+      <button class="btn btn-secondary">了解品牌</button>
+      <button class="btn btn-text">查看全部产品</button>
+      <button class="btn btn-primary btn-sm">小尺寸</button>
+      <button class="btn" disabled>不可用</button>
+    </div>
+    <div class="demo-block" style="background:var(--ink); margin-top:18px">
+      <button class="btn btn-primary">深底上的印</button>
+      <button class="btn" style="background:transparent; color:var(--paper); box-shadow:inset 0 0 0 1.5px var(--gold)">金描边次按钮</button>
+      <button class="btn btn-text" style="color:var(--gold); border-bottom-color:var(--gold)">文字链接</button>
+    </div>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-soft)">悬停：上浮 2px + 阴影，240ms · 热气缓动。禁变色闪烁、禁弹跳。最小触控高度 44px。</p>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="tags">
+    <div class="sec-head">
+      <span class="sec-no">06 · 03</span>
+      <h2 class="sec-title">标签与徽章</h2>
+    </div>
+    <div class="demo-block">
+      <span class="tag tag-outline">早餐</span>
+      <span class="tag tag-outline">宵夜</span>
+      <span class="tag tag-gold">招牌</span>
+      <span class="tag tag-bamboo">当日鲜蔬</span>
+      <span class="tag tag-seal">吉尼斯纪录</span>
+    </div>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-soft)">绛红实底标签属于红实体——与主按钮不同屏共存。</p>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="nav">
+    <div class="sec-head">
+      <span class="sec-no">06 · 04</span>
+      <h2 class="sec-title">导航</h2>
+      <p class="sec-sub">胶囊式浮动导航，毛玻璃面粉白底。当前项：绛红文字 + 金短线（文字属性不计入红实体）。</p>
+    </div>
+    <div style="background:var(--paper-2); border-radius:var(--radius); padding:44px">
+      <div class="navbar">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" alt="熊大爷">
+        <nav>
+          <a class="active" href="#nav">首页</a>
+          <a href="#nav">品牌</a>
+          <a href="#nav">产品</a>
+          <a href="#nav">加盟</a>
+          <a href="#nav">门店</a>
+        </nav>
+        <button class="btn btn-primary btn-sm">加盟咨询</button>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="cards">
+    <div class="sec-head">
+      <span class="sec-no">06 · 05</span>
+      <h2 class="sec-title">产品卡</h2>
+      <p class="sec-sub">照片区 + 褶弧啮合边 + 信息区。摄影按 09 光语言执行，此处为占位。</p>
+    </div>
+    <div style="display:flex; gap:24px; flex-wrap:wrap">
+      <div class="prod-card">
+        <div class="ph">PHOTO · 45° WARM</div>
+        <div class="body">
+          <span class="en">Imperial Shrimp</span>
+          <h4>虾皇饺</h4>
+          <div class="price"><span class="num">¥26</span><small>12 只 / 现包</small></div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="ph">PHOTO · 45° WARM</div>
+        <div class="body">
+          <span class="en">Garlic Chives Pork</span>
+          <h4>韭菜鲜肉饺</h4>
+          <div class="price"><span class="num">¥18</span><small>12 只 / 现包</small></div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="ph">PHOTO · TOP-DOWN</div>
+        <div class="body">
+          <span class="en">Scallion Oil Noodles</span>
+          <h4>葱油拌面</h4>
+          <div class="price"><span class="num">¥15</span><small>手工面</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="data-stage">
+    <div class="sec-head">
+      <span class="sec-no">06 · 06</span>
+      <h2 class="sec-title">数据舞台</h2>
+      <p class="sec-sub">暖墨底 + 雅金数字，规格见 03 · 03。用于荣誉、里程碑与供应链数据。</p>
+    </div>
+    <div class="stage stage-ink">
+      <p class="eyebrow">Supply Chain · 智慧供应链</p>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:40px; margin-top:32px">
+        <div><span class="num" style="font-size:48px; color:var(--gold)">18</span><p style="font-size:13px; opacity:.75; margin-top:6px">中心仓</p></div>
+        <div><span class="num" style="font-size:48px; color:var(--gold)">15</span><p style="font-size:13px; opacity:.75; margin-top:6px">事业部</p></div>
+        <div><span class="num" style="font-size:48px; color:var(--gold)">T+1</span><p style="font-size:13px; opacity:.75; margin-top:6px">核心城市配送</p></div>
+        <div><span class="num" style="font-size:48px; color:var(--gold)">4<span style="font-size:24px">h</span></span><p style="font-size:13px; opacity:.75; margin-top:6px">售后冷链响应</p></div>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="form">
+    <div class="sec-head">
+      <span class="sec-no">06 · 07</span>
+      <h2 class="sec-title">表单</h2>
+      <p class="sec-sub">焦点态用金圈，不用红——红只属于提交那一刻。</p>
+    </div>
+    <div style="background:#fff; border:var(--hairline); border-radius:var(--radius); padding:44px; max-width:560px">
+      <h3 style="font:700 22px/1.6 var(--font-serif)">加盟意向登记</h3>
+      <p style="font-size:13.5px; color:var(--ink-soft); margin:6px 0 26px">留下联系方式，招商顾问将在 1 个工作日内与您联系。</p>
+      <div style="display:grid; gap:20px">
+        <div class="field">
+          <label for="f-name">姓名</label>
+          <input id="f-name" type="text" placeholder="请输入姓名">
+        </div>
+        <div class="field">
+          <label for="f-city">意向城市</label>
+          <input id="f-city" type="text" placeholder="如：成都">
+          <span class="hint">已覆盖 31 个省级行政区，1000+ 门店</span>
+        </div>
+        <button class="btn btn-primary" style="justify-content:center">提交意向</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ds-foot">
+    <a href="04-logo.html"><span class="dir">Prev · 04</span>标志运用</a>
+    <a class="next" href="09-photography.html"><span class="dir">Next · 09</span>摄影与 IP</a>
+  </footer>
+</div>
+</body>
+</html>

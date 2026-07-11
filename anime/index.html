@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IP 动漫化探索 · 熊大爷现包饺子 Design System</title>
+<meta name="description" content="PANDA YEAH 2.0 动漫化风格探索：手绘卡通、吉卜力水彩、迪士尼 3D、国风水墨；短片《清晨的一屉》storyboard 与视频样片。">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:#4A423B;font-family:var(--font-sans);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+header.site{display:flex;justify-content:space-between;align-items:center;padding:26px 48px;border-bottom:var(--hairline);max-width:1200px;margin:0 auto}
+header.site img{height:32px}
+header.site .crumb{font:500 12px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:#6B6259}
+h1,h2,h3{color:var(--ink);font-family:var(--font-serif)}
+h1{font-weight:600;font-size:clamp(36px,4.4vw,56px);line-height:1.25}
+h3{font-weight:600;font-size:19px;line-height:1.45}
+.eyebrow{font:600 13px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:'';width:40px;height:1.5px;background:var(--gold-ink)}
+.lead{margin-top:22px;max-width:680px;color:#4A423B}
+.caption{font-size:13px;color:#6B6259}
+section{padding:88px 0}
+.hero-sec{padding:96px 0 32px}
+.styles{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.st{background:#fff;border:var(--hairline);border-radius:var(--radius);overflow:hidden}
+.st img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.st .tx{padding:20px 24px}
+.st .tx .no{font:600 12px/1 var(--font-en);letter-spacing:.16em;color:var(--gold-ink);text-transform:uppercase}
+.st h3{margin-top:8px}
+.st p{margin-top:8px;font-size:14px;color:#4A423B}
+.sheet{margin-top:36px;background:#fff;border:var(--hairline);border-radius:var(--radius);overflow:hidden}
+.sheet img{width:100%}
+.sheet-cap{padding:18px 24px;border-top:var(--hairline);display:flex;justify-content:space-between;gap:24px;align-items:baseline}
+.sheet-cap b{font-family:var(--font-serif);font-weight:600;font-size:17px;color:var(--ink);flex:none}
+.films{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.film{background:#fff;border:var(--hairline);border-radius:var(--radius);overflow:hidden}
+.film video{width:100%;aspect-ratio:16/9;background:#000}
+.film .tx{padding:18px 24px}
+.film .tx b{font-family:var(--font-serif);font-weight:600;color:var(--ink)}
+.film .tx p{font-size:13px;color:#6B6259;margin-top:4px}
+.use{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.use .item{background:var(--paper-2);border-radius:var(--radius);padding:22px 24px}
+.use .item b{font-family:var(--font-serif);font-weight:600;color:var(--ink);display:block;font-size:16px}
+.use .item p{font-size:13px;color:#4A423B;margin-top:6px}
+footer{border-top:var(--hairline);padding:40px 48px 56px;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;font:500 12px/1.6 var(--font-en);letter-spacing:.14em;text-transform:uppercase;color:#6B6259}
+@media (max-width:900px){
+  .wrap{padding:0 24px}
+  header.site{padding:20px 24px}
+  section{padding:60px 0}
+  .styles,.films{grid-template-columns:1fr}
+  .use{grid-template-columns:1fr 1fr}
+  .sheet-cap{flex-direction:column;gap:6px}
+}
+@media (max-width:640px){header.site .crumb,header .crumb{display:none}footer{flex-direction:column;gap:8px;align-items:flex-start}}
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/">总览</a><div class="grp" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp oncur" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/" class="cur">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/" class="cur">动漫探索</a></div></nav>
+
+
+
+
+<header class="site">
+  <a href="../"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a>
+  <span class="crumb">Design System · IP Animation Lab</span>
+</header>
+
+<section class="hero-sec">
+  <div class="wrap">
+    <p class="eyebrow">Animation Lab · IP 动漫化探索</p>
+    <h1 style="margin-top:24px">同一只熊猫<br>走进四个片场</h1>
+    <p class="lead">把 PANDA YEAH 2.0 放进四种动画语言里做定妆测试——统一场景（清晨饺子铺·捏褶·蒸笼热气）便于横向对比；识别资产在任何风格里不动：饺子褶耳朵、黑白配色、红 T 恤。定妆之后，用表现最好的风格出分镜与视频样片。</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">00 · Character Bible 角色圣经</p>
+    <div class="sheet">
+      <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/assets/ip2-bible.jpg" alt="PANDA YEAH 角色圣经设定稿">
+      <div class="sheet-cap"><b>PANDA YEAH · Dumpling Master</b><span class="caption">AAA 制作级角色手册：主插画 + 三视图 + 同伴角色「饺子精皮皮」三视图 + 细节/配件（蒸笼·擀面杖·围裙·红绳铃）/ 色板。动漫化的一切风格演绎以此为准。</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">01 · Style Frames 四风格定妆</p>
+    <div class="styles">
+      <div class="st"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/assets/anime-cartoon-v2.jpg" alt="手绘卡通风格定妆"><div class="tx"><span class="no">Style A · 基准</span><h3>手绘暖卡通（现行 2.0）</h3><p>暖墨勾线 + 平涂 + 纸纹。品牌一致性最强，周边与平面天然通用。</p></div></div>
+      <div class="st"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/assets/anime-ghibli.jpg" alt="吉卜力水彩日漫风格定妆"><div class="tx"><span class="no">Style B · 日漫</span><h3>吉卜力水彩</h3><p>水彩背景 + 赛璐璐角色 + 光尘。烟火气与「现包的手作感」最契合，适合品牌短片。</p></div></div>
+      <div class="st"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/assets/anime-disney.jpg" alt="迪士尼3D风格定妆"><div class="tx"><span class="no">Style C · 3D</span><h3>迪士尼 / 皮克斯 3D</h3><p>大眼神 + 绒毛质感 + 电影级光。表情张力最大，适合节日 campaign 与广告位。</p></div></div>
+      <div class="st"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/assets/anime-ink.jpg" alt="国风水墨风格定妆"><div class="tx"><span class="no">Style D · 国风</span><h3>水墨动画</h3><p>宣纸留白 + 墨韵热气 + 一枚红印。接「包好中国饺子·传承千年文化」叙事，适合文化向内容。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">02 · Storyboard 短片《清晨的一屉》四格</p>
+    <p class="lead" style="margin-top:16px;font-size:15px">故事：天没亮的饺子铺，熊猫师傅拌好当日的馅（起）→ 案板前捏出月牙褶（承）→ 蒸笼揭盖、热气涌起（转）→ 把第一屉端给等在门口的小客人，比耶（合）。</p>
+    <div class="sheet">
+      <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/assets/story-ghibli.jpg" alt="吉卜力风格四格分镜">
+      <div class="sheet-cap"><b>Storyboard · 吉卜力水彩版</b><span class="caption">四格一张出（storyboard 多格能力），角色与场景全程一致；每格即视频样片的首帧。</span></div>
+    </div>
+    <div class="sheet">
+      <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/assets/story-disney.jpg" alt="迪士尼3D风格四格分镜">
+      <div class="sheet-cap"><b>Storyboard · 迪士尼 3D 版</b><span class="caption">同一故事换 3D 语言，对比叙事表现力。</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">03 · Video Samples 视频样片</p>
+    <div class="film" style="margin-top:36px">
+      <video controls preload="metadata" src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/panda-yeah-15s-v2.mp4"></video>
+      <div class="tx"><b>主样片 · 15s 一镜到底《第一屉》</b><p>seedance2 单次生成 · 无剪切连续运镜：拌馅（0-3s）→ 捏褶（3-6s）→ 揭盖热气（6-10s）→ 门口递屉比耶（10-15s）· 以 Style A 定妆帧锁角色 · 1080p</p></div>
+    </div>
+    <div class="films" style="margin-top:28px">
+      <div class="film"><video controls preload="metadata" src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/anime-ghibli-sample.mp4"></video><div class="tx"><b>吉卜力版样片 · 捏褶与热气</b><p>seedance2 图生视频 · 以 Style B 定妆帧为首帧 · 1080p/5s</p></div></div>
+      <div class="film"><video controls preload="metadata" src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/anime/anime-disney-sample.mp4"></video><div class="tx"><b>迪士尼 3D 版样片 · 揭盖时刻</b><p>seedance2 图生视频 · 以 Style C 定妆帧为首帧 · 1080p/5s</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">04 · Usage 风格分工建议</p>
+    <div class="use">
+      <div class="item"><b>手绘卡通</b><p>周边、包装、门店贴纸、社媒日常——品牌默认。</p></div>
+      <div class="item"><b>吉卜力水彩</b><p>品牌短片、节气/上新短内容——讲手作与烟火气。</p></div>
+      <div class="item"><b>迪士尼 3D</b><p>春节等大 campaign、商场大屏、期间限定 TVC。</p></div>
+      <div class="item"><b>水墨</b><p>文化副线「包好中国饺子」专用，博物馆/外交场合物料。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Xiongdaye Design System · Animation Lab</span>
+  <span><a href="../">← Back to Brand Platform</a></span>
+</footer>
+
+</body>
+</html>

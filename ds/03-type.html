@@ -1,0 +1,235 @@
+<!-- @dsCard group="设计体系" viewport="1440x900" name="03 · 字体" subtitle="宋体讲故事 · 黑体做界面 · 数字是一等公民" -->
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 字体 · 熊大爷设计体系</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds.css">
+<style>
+  .family-card { background: #fff; border: var(--hairline); border-radius: var(--radius); padding: 40px; }
+  .family-card .role { font: 600 11px/1 var(--font-en); letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+  .family-card .specimen { margin: 22px 0 18px; line-height: 1.5; }
+  .family-card .meta { font-size: 13.5px; color: var(--ink-soft); line-height: 1.9; border-top: var(--hairline); padding-top: 16px; }
+  .family-card .meta b { color: var(--ink); font-weight: 600; }
+
+  .ramp-row { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: baseline; padding: 22px 0; border-bottom: var(--hairline); }
+  .ramp-row:last-child { border-bottom: none; }
+  .ramp-row .spec { font: 500 12.5px/1.9 var(--font-en); color: var(--ink-soft); letter-spacing: 0.04em; }
+  .ramp-row .spec b { display: block; font-weight: 600; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; }
+
+  .num-stage { border-radius: var(--radius); background: var(--ink); color: var(--paper); padding: 56px; }
+
+  @media (max-width: 900px) {
+    .num-stage > div[style] { grid-template-columns: repeat(2, 1fr) !important; gap: 28px !important; }
+  }
+  @media (max-width: 480px) {
+    .family-card { padding: 26px 22px; }
+    .family-card .specimen[style*="44px"] { font-size: 34px !important; }
+    .family-card .specimen[style*="40px"] { font-size: 30px !important; }
+    .ramp-row { grid-template-columns: 1fr; gap: 10px; }
+    .ramp-row > div[style*="62px"] { font-size: 42px !important; }
+    .num-stage { padding: 32px 22px; }
+    .num-stage .num { font-size: 42px !important; }
+  }
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/">总览</a><div class="grp oncur" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html" class="cur">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html" class="cur">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></nav>
+
+
+
+<div class="page">
+  <header class="ds-top">
+    <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" alt="熊大爷 现包饺子">
+    <span class="crumb">Design System · <b>03 Typography</b></span>
+  </header>
+
+  <div class="ds-hero">
+    <p class="eyebrow">Typography · 字体系统</p>
+    <h1 class="display">文字即设计</h1>
+    <p class="lead">大字号、强层级、极致留白——每屏只讲一件事。宋体负责讲故事，黑体负责把事办利索，英文与数字用几何无衬线拉开字距，书法体只在 slogan 落款处出现一次。</p>
+  </div>
+  <hr class="pleat-hr">
+
+  <section id="families">
+    <div class="sec-head">
+      <span class="sec-no">03 · 01</span>
+      <h2 class="sec-title">四个声部</h2>
+    </div>
+    <div class="grid-2">
+      <div class="family-card">
+        <span class="role">Display · 讲故事</span>
+        <p class="specimen" style="font:600 44px/1.5 var(--font-serif)">一饺包四季<br>现包吃不腻</p>
+        <p class="meta"><b>思源宋体 SemiBold / Bold</b>（Noto Serif SC 600/700）。标题、口号、章节名。字距 +0.02em，行高 1.3–1.5。只用于 ≥24px。</p>
+      </div>
+      <div class="family-card">
+        <span class="role">Text / UI · 办事</span>
+        <p class="specimen" style="font:400 17px/2 var(--font-sans)">饺子皮选用中国绿色认证的新疆天山麦粉，年均 2800 小时日照；当日鲜蔬、当日做馅、当日现包、当日售卖。</p>
+        <p class="meta"><b>思源黑体</b>（Noto Sans SC 400/500/700）。正文、界面、说明文字。正文 15–17px，行高 1.8–2.0。</p>
+      </div>
+      <div class="family-card">
+        <span class="role">Latin &amp; Numerals · 一等公民</span>
+        <p class="specimen" style="font:600 40px/1.3 var(--font-en); letter-spacing:.06em">1000+ STORES<br><span style="font-weight:400; font-size:22px; letter-spacing:.24em; color:var(--ink-soft)">FRESHLY HANDMADE</span></p>
+        <p class="meta"><b>Outfit</b>（几何无衬线）。英文与所有数字，字距略拉宽（+0.04–0.24em），数字用等宽数字（tabular-nums）。</p>
+      </div>
+      <div class="family-card" style="background:var(--paper-2)">
+        <span class="role">Calligraphy · 仅落款</span>
+        <p class="specimen" style="font:900 40px/1.5 var(--font-serif); letter-spacing:.06em">包好中国饺子<br>传承千年文化</p>
+        <p class="meta"><b>书法体</b>仅用于文化副线 slogan lockup（品牌表达场景），由题字原件以图片/矢量置入，不做系统字体。数字环境暂以思源宋 Black 代排。</p>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="ramp">
+    <div class="sec-head">
+      <span class="sec-no">03 · 02</span>
+      <h2 class="sec-title">字阶 · Type Ramp</h2>
+      <p class="sec-sub">以 1920 宽版面为基准；网页端按 clamp() 流式缩放，1080P 大屏下限 24px，印刷下限 12pt。</p>
+    </div>
+    <div>
+      <div class="ramp-row">
+        <div class="spec"><b>Display</b>Serif 700 · 64–96px · lh 1.2</div>
+        <div style="font:700 62px/1.25 var(--font-serif)">现包，是新鲜的手艺</div>
+      </div>
+      <div class="ramp-row">
+        <div class="spec"><b>H1</b>Serif 700 · 44px · lh 1.35</div>
+        <div style="font:700 44px/1.35 var(--font-serif)">从熊猫故乡出发</div>
+      </div>
+      <div class="ramp-row">
+        <div class="spec"><b>H2</b>Serif 600 · 32px · lh 1.5</div>
+        <div style="font:600 32px/1.5 var(--font-serif)">好面 · 好肉 · 好现包</div>
+      </div>
+      <div class="ramp-row">
+        <div class="spec"><b>H3</b>Sans 700 · 21px · lh 1.6</div>
+        <div style="font:700 21px/1.6 var(--font-sans)">智慧供应链：18 个中心仓，T+1 配送</div>
+      </div>
+      <div class="ramp-row">
+        <div class="spec"><b>Body</b>Sans 400 · 16px · lh 1.9</div>
+        <div style="font:400 16px/1.9 var(--font-sans); max-width:640px">馅料与头部供应商合作，「明厨亮灶」可视化操作；面粉选用新疆天山绿色面粉。</div>
+      </div>
+      <div class="ramp-row">
+        <div class="spec"><b>Caption</b>Sans 400 · 13px · lh 1.7</div>
+        <div style="font:400 13px/1.7 var(--font-sans); color:var(--ink-soft)">注：产品英文名以品牌手册 3.0 为准，误译处已标注待确认。</div>
+      </div>
+      <div class="ramp-row">
+        <div class="spec"><b>Eyebrow</b>Outfit 600 · 13px · ls 0.34em</div>
+        <div style="font:600 13px/1 var(--font-en); letter-spacing:.34em; text-transform:uppercase; color:var(--gold)">Freshly Handmade Dumplings</div>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="numbers">
+    <div class="sec-head">
+      <span class="sec-no">03 · 03</span>
+      <h2 class="sec-title">数字是一等公民</h2>
+      <p class="sec-sub">品牌的证据都在数字里。数字永远用 Outfit，深底舞台上配雅金，单位与说明退后一档。</p>
+    </div>
+    <div class="num-stage">
+      <p class="eyebrow">Data Stage 数据舞台 · 排版规格</p>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:40px; margin-top:36px">
+        <div>
+          <span class="num" style="font-size:56px; color:var(--gold)">1000<span style="font-size:30px">+</span></span>
+          <p style="font-size:13.5px; opacity:.75; margin-top:8px">全国在营门店</p>
+        </div>
+        <div>
+          <span class="num" style="font-size:56px; color:var(--gold)">31</span>
+          <p style="font-size:13.5px; opacity:.75; margin-top:8px">覆盖省级行政区</p>
+        </div>
+        <div>
+          <span class="num" style="font-size:56px; color:var(--gold)">341</span>
+          <p style="font-size:13.5px; opacity:.75; margin-top:8px">种饺子 · 吉尼斯世界纪录</p>
+        </div>
+        <div>
+          <span class="num" style="font-size:56px; color:var(--gold)">T+1</span>
+          <p style="font-size:13.5px; opacity:.75; margin-top:8px">18 个中心仓高效配送</p>
+        </div>
+      </div>
+      <p style="margin-top:36px; font-size:13px; opacity:.6">数字 Outfit 600 · 48–72px · tabular-nums ｜ 单位缩至 0.5 倍字号 ｜ 说明 13.5px · 75% 透明度 ｜ 一屏数字 ≤4 组</p>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="rules">
+    <div class="sec-head">
+      <span class="sec-no">03 · 04</span>
+      <h2 class="sec-title">排版纪律</h2>
+    </div>
+    <div class="grid-2">
+      <div class="dd-card">
+        <div class="dd-demo" style="flex-direction:column; align-items:flex-start; padding:0 52px; gap:14px; background:var(--paper)">
+          <span style="font:600 11px/1 var(--font-en); letter-spacing:.3em; color:var(--gold)">OUR CRAFT</span>
+          <span style="font:700 30px/1.4 var(--font-serif)">当日现包，当日售卖</span>
+          <span style="font-size:13.5px; color:var(--ink-soft)">每一只饺子都来自当天的面皮与鲜馅。</span>
+        </div>
+        <div class="dd-note"><span class="verdict do">Do</span><p>一屏一件事：eyebrow → 标题 → 一句说明，三层封顶。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="flex-direction:column; align-items:flex-start; padding:0 52px; gap:6px; background:var(--paper)">
+          <span style="font:700 20px/1.4 var(--font-serif); color:var(--seal)">当日现包！当日售卖！</span>
+          <span style="font:700 15px/1.5 var(--font-sans); text-decoration:underline">每一只饺子都来自当天的面皮与鲜馅！</span>
+          <span style="font:700 13px/1.6 var(--font-sans); color:var(--wood)">好肉好面好现包，三好原则值得信赖！！</span>
+          <span style="font:400 12px/1.6 var(--font-sans); letter-spacing:-.02em">更多惊喜等你发现，快来加盟吧~</span>
+        </div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>层级挤压、彩色标题、下划线强调、感叹号堆叠——热闹但廉价。</p></div>
+      </div>
+    </div>
+    <div style="margin-top:28px; display:flex; gap:12px; flex-wrap:wrap">
+      <span class="chip">中文标题字距 +0.02em</span>
+      <span class="chip">英文 eyebrow 字距 0.24–0.34em</span>
+      <span class="chip">正文行长 ≤ 38 字</span>
+      <span class="chip">标点悬挂，避头尾</span>
+      <span class="chip">中西文之间留 1/4 空格</span>
+      <span class="chip">禁斜体中文 · 禁双重强调</span>
+    </div>
+  </section>
+
+  <footer class="ds-foot">
+    <a href="02-colors.html"><span class="dir">Prev · 02</span>色彩系统</a>
+    <a class="next" href="04-logo.html"><span class="dir">Next · 04</span>标志运用</a>
+  </footer>
+</div>
+</body>
+</html>

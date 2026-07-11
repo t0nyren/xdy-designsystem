@@ -1,0 +1,316 @@
+<!-- @dsCard group="设计体系" viewport="1440x900" name="02 · 色彩" subtitle="面粉为纸 · 暖墨为字 · 雅金为笔 · 绛红为印" -->
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 色彩 · 熊大爷设计体系</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds.css">
+<style>
+  /* 占比总图 */
+  .ratio-bar { display: flex; height: 128px; border-radius: var(--radius); overflow: hidden; }
+  .ratio-bar > div { display: flex; flex-direction: column; justify-content: flex-end; padding: 18px 20px; }
+  .ratio-bar b { font: 600 22px/1 var(--font-en); letter-spacing: 0.02em; }
+  .ratio-bar span { font-size: 12.5px; opacity: 0.75; margin-top: 6px; }
+  .ratio-legend { display: flex; gap: 28px; margin-top: 20px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-soft); }
+  .ratio-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; vertical-align: baseline; }
+
+  /* 色卡 */
+  .swatch { border-radius: var(--radius); overflow: hidden; border: var(--hairline); background: #fff; }
+  .swatch .fill { height: 130px; position: relative; }
+  .swatch .fill .hex { position: absolute; right: 16px; bottom: 12px; font: 500 12.5px/1 var(--font-en); letter-spacing: 0.08em; }
+  .swatch .meta { padding: 18px 20px 20px; }
+  .swatch .meta h3 { font: 700 17px/1.5 var(--font-serif); }
+  .swatch .meta .token { font: 500 12px/1 var(--font-en); letter-spacing: 0.12em; color: var(--gold-ink); display: block; margin: 6px 0 10px; }
+  .swatch .meta p { font-size: 13.5px; line-height: 1.75; color: var(--ink-soft); }
+
+  /* 双红对照 */
+  .red-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .red-card { border-radius: var(--radius); padding: 44px 40px; color: #fff; }
+  .red-card .tag { font: 600 11px/1 var(--font-en); letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.85; }
+  .red-card h3 { font: 700 30px/1.4 var(--font-serif); margin: 16px 0 6px; }
+  .red-card .hex { font: 500 14px/1 var(--font-en); letter-spacing: 0.1em; opacity: 0.9; }
+  .red-card p { margin-top: 18px; font-size: 14.5px; line-height: 1.9; opacity: 0.94; }
+
+  .mini-ui { width: 78%; background: var(--paper); border-radius: 10px; padding: 22px; box-shadow: 0 8px 28px rgba(36,30,27,0.12); }
+  .mini-ui h4 { font: 700 16px/1.5 var(--font-serif); }
+  .mini-ui p { font-size: 11.5px; color: var(--ink-soft); margin: 6px 0 14px; }
+  .mini-btn { display: inline-block; padding: 8px 22px; border-radius: 999px; font: 500 12px/1.6 var(--font-sans); }
+  .mini-btn.seal { background: var(--seal); color: #fff; }
+  .mini-btn.ghost { border: 1px solid var(--ink); color: var(--ink); margin-left: 8px; }
+
+  .contrast-dot { display: inline-block; width: 30px; height: 30px; border-radius: 8px; vertical-align: middle; line-height: 30px; text-align: center; font: 700 13px/30px var(--font-serif); margin-right: 12px; }
+
+  @media (max-width: 900px) {
+    .red-pair { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .ratio-bar { height: auto; flex-direction: column; }
+    .ratio-bar > div { flex-direction: row; align-items: baseline; gap: 10px; padding: 14px 16px; }
+    .red-card { padding: 32px 24px; }
+    #stages .stage-seal { flex-wrap: wrap; }
+    #stages .stage-seal img { width: 130px !important; }
+    #stages .stage-ink > div[style] { gap: 32px !important; }
+    #stages .stage-ink .num { font-size: 40px !important; }
+  }
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/">总览</a><div class="grp oncur" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html" class="cur">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html" class="cur">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></nav>
+
+
+
+<div class="page">
+  <header class="ds-top">
+    <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" alt="熊大爷 现包饺子">
+    <span class="crumb">Design System · <b>02 Color</b></span>
+  </header>
+
+  <div class="ds-hero">
+    <p class="eyebrow">Color System · 色彩系统</p>
+    <h1 class="display">面粉为纸 · 暖墨为字<br>雅金为笔 · 绛红为印</h1>
+    <p class="lead">整套色彩取自门店现场：面粉的白、原木的浅、暖光下的墨、印章的绛红。金是签名，红是落印——一屏只落一个印。全系无冷灰，我们是有热气的暖。</p>
+  </div>
+  <hr class="pleat-hr">
+
+  <section id="ratio">
+    <div class="sec-head">
+      <span class="sec-no">02 · 01</span>
+      <h2 class="sec-title">用量总纲 60 / 20 / 13 / 5</h2>
+      <p class="sec-sub">目测比例，逐屏自检。面粉白与暖纸米构成大面积留白；暖墨承载文字与深底舞台；雅金只做线、字、图标与数字；绛红是最后落下的那一个印。</p>
+    </div>
+    <div class="ratio-bar">
+      <div style="flex:60; background:var(--paper); border:1px solid var(--wood-light); border-right:none; color:var(--ink)"><b>60</b><span>纸 · 面粉白/暖纸米</span></div>
+      <div style="flex:20; background:var(--ink); color:var(--paper)"><b>20</b><span>墨 · 文字与舞台</span></div>
+      <div style="flex:13; background:var(--gold); color:var(--ink)"><b>13</b><span>金 · 签名</span></div>
+      <div style="flex:5; background:var(--seal); color:#fff"><b>5</b><span>印</span></div>
+      <div style="flex:2; background:var(--bamboo); color:#fff"><b>2</b><span>青</span></div>
+    </div>
+    <div class="ratio-legend">
+      <span><i style="background:var(--paper); outline:1px solid var(--wood-light)"></i>纸为底</span>
+      <span><i style="background:var(--ink)"></i>墨为字</span>
+      <span><i style="background:var(--gold)"></i>金为笔 · 禁大面积铺底</span>
+      <span><i style="background:var(--seal)"></i>印 ≤5% · 每屏 1 个红实体</span>
+      <span><i style="background:var(--bamboo)"></i>竹青 · 极少量食材点缀</span>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="tokens">
+    <div class="sec-head">
+      <span class="sec-no">02 · 02</span>
+      <h2 class="sec-title">色彩 Tokens</h2>
+    </div>
+    <div class="grid-3">
+      <div class="swatch">
+        <div class="fill" style="background:var(--paper); border-bottom:var(--hairline)"><span class="hex" style="color:var(--ink-soft)">#FAF7F1</span></div>
+        <div class="meta"><h3>面粉白 · 纸</h3><span class="token">--paper</span><p>全局底色，约 60%。大面积留白是体系的第一句话。</p></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--paper-2)"><span class="hex" style="color:var(--ink-soft)">#F3ECE2</span></div>
+        <div class="meta"><h3>暖纸米</h3><span class="token">--paper-2</span><p>分区与卡片底，与面粉白交替分节，形成呼吸。</p></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--wood-light)"><span class="hex" style="color:var(--ink-soft)">#E7D8C2</span></div>
+        <div class="meta"><h3>原木浅</h3><span class="token">--wood-light</span><p>材质与边框细线，呼应门店原木格栅。</p></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--wood)"><span class="hex" style="color:#fff">#B08A5E</span></div>
+        <div class="meta"><h3>原木中</h3><span class="token">--wood</span><p>材质深阶，少量使用。</p></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--ink)"><span class="hex" style="color:var(--gold-light)">#241E1B</span></div>
+        <div class="meta"><h3>暖墨</h3><span class="token">--ink</span><p>标题正文与深底舞台，约 20%。带暖调的墨，禁任何冷灰。</p></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--gold)"><span class="hex" style="color:var(--ink)">#C4993F</span></div>
+        <div class="meta"><h3>雅金 · 签名色</h3><span class="token">--gold</span><p>只做线、图标、大号数字与深底舞台上的字，约 13%。禁大面积铺底。</p></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--gold-ink)"><span class="hex" style="color:#fff">#8A6A1E</span></div>
+        <div class="meta"><h3>深金 · 浅底文字</h3><span class="token">--gold-ink</span><p>面粉白底上的金色标签、eyebrow、小字，对比度 ≥ AA。雅金过浅时改用它。</p></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--gold-light)"><span class="hex" style="color:var(--ink-soft)">#D7CA9E</span></div>
+        <div class="meta"><h3>淡金</h3><span class="token">--gold-light</span><p>竹影纹样与金的浅阶，只做低对比肌理。</p></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--seal)"><span class="hex" style="color:#fff">#9F3B3B</span></div>
+        <div class="meta"><h3>绛红 · 印章红</h3><span class="token">--seal</span><p>主 CTA 与徽章。≤5%，每屏只允许 1 个红实体。</p></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--bamboo)"><span class="hex" style="color:#fff">#5E8B4C</span></div>
+        <div class="meta"><h3>竹青</h3><span class="token">--bamboo</span><p>食材新鲜的点缀色，极少量。</p></div>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="two-reds">
+    <div class="sec-head">
+      <span class="sec-no">02 · 03</span>
+      <h2 class="sec-title">双红规则</h2>
+      <p class="sec-sub">体系里有两个红：LOGO 亮红与印章绛红。它们永不相邻——亮红只活在 LOGO 内部，绛红只做界面的印。</p>
+    </div>
+    <div class="red-pair">
+      <div class="red-card" style="background:var(--logo-red)">
+        <span class="tag">Logo Red · 只活在 LOGO 内</span>
+        <h3>LOGO 亮红</h3>
+        <span class="hex">#D70D18</span>
+        <p>来自新 LOGO 的红帽与红底版式。它不外溢为任何界面色——不做按钮、不做标题、不做底色。界面上出现亮红的唯一方式，是彩色版 LOGO 本身。</p>
+      </div>
+      <div class="red-card" style="background:var(--seal)">
+        <span class="tag">Seal Red · 界面唯一的红</span>
+        <h3>绛红 · 印章红</h3>
+        <span class="hex">#9F3B3B</span>
+        <p>界面与版面中所有的红实体——主 CTA、徽章、印章、强调——一律使用绛红。绛红底上必须使用白版 LOGO，绝不放彩色版。</p>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:28px">
+      <div class="dd-card">
+        <div class="dd-demo" style="background:var(--seal)">
+          <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/white-horizontal.png" alt="绛红底白版 LOGO" style="width:66%">
+        </div>
+        <div class="dd-note"><span class="verdict do">Do</span><p>绛红底一律使用白版 LOGO。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:var(--seal)">
+          <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="错误：绛红底彩色 LOGO" style="width:66%">
+        </div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>亮红与绛红相邻——彩色版 LOGO 禁止落在绛红底上。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:var(--paper)">
+          <span class="mini-btn" style="background:var(--logo-red); color:#fff">立即加盟</span>
+        </div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>亮红不做界面色——按钮、标题、底色一律禁用。</p></div>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="one-seal">
+    <div class="sec-head">
+      <span class="sec-no">02 · 04</span>
+      <h2 class="sec-title">一屏一印</h2>
+      <p class="sec-sub">红是印章：一屏之内只落一次。红实体 ≤1，红面积 ≤5%。</p>
+    </div>
+    <div class="grid-2">
+      <div class="dd-card">
+        <div class="dd-demo" style="background:var(--paper-2)">
+          <div class="mini-ui">
+            <h4>一饺包四季，现包吃不腻</h4>
+            <p>好面 · 好肉 · 好现包，来自新疆天山麦粉。</p>
+            <span class="mini-btn seal">立即加盟</span><span class="mini-btn ghost">了解品牌</span>
+          </div>
+        </div>
+        <div class="dd-note"><span class="verdict do">Do</span><p>一屏一个绛红 CTA，其余层级用墨与金承担。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:var(--paper-2)">
+          <div class="mini-ui">
+            <h4 style="color:var(--seal)">一饺包四季，现包吃不腻</h4>
+            <p style="color:var(--seal)">好面 · 好肉 · 好现包，来自新疆天山麦粉。</p>
+            <span class="mini-btn seal">立即加盟</span><span class="mini-btn seal" style="margin-left:8px">门店查询</span>
+          </div>
+        </div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>红标题 + 红正文 + 两个红按钮——印落了四次，就不再是印。</p></div>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="stages">
+    <div class="sec-head">
+      <span class="sec-no">02 · 05</span>
+      <h2 class="sec-title">深浅双基底</h2>
+      <p class="sec-sub">浅基底：面粉白为纸。深基底：暖墨或绛红为舞台，配金字或白字——用于荣誉、数据与品牌仪式感场景。</p>
+    </div>
+    <div class="stage stage-ink">
+      <p class="eyebrow">Dark Stage · 暖墨舞台</p>
+      <h3 style="font:700 34px/1.5 var(--font-serif); margin-top:8px">从国人一餐，到吉尼斯世界纪录</h3>
+      <div style="display:flex; gap:64px; margin-top:40px; flex-wrap:wrap">
+        <div><span class="num" style="font-size:46px; color:var(--gold)">1000+</span><p style="font-size:13.5px; opacity:.75; margin-top:6px">全国在营门店</p></div>
+        <div><span class="num" style="font-size:46px; color:var(--gold)">31</span><p style="font-size:13.5px; opacity:.75; margin-top:6px">覆盖省级行政区</p></div>
+        <div><span class="num" style="font-size:46px; color:var(--gold)">341</span><p style="font-size:13.5px; opacity:.75; margin-top:6px">种饺子 · 吉尼斯纪录</p></div>
+        <div><span class="num" style="font-size:46px; color:var(--gold)">2800<span style="font-size:22px">h</span></span><p style="font-size:13.5px; opacity:.75; margin-top:6px">天山麦粉年均日照</p></div>
+      </div>
+    </div>
+    <div class="stage stage-seal" style="margin-top:28px; display:flex; align-items:center; justify-content:space-between; gap:40px">
+      <div>
+        <p class="eyebrow">Seal Stage · 绛红舞台</p>
+        <h3 style="font:700 30px/1.5 var(--font-serif); margin-top:8px">包好中国饺子 · 传承千年文化</h3>
+        <p style="opacity:.9; font-size:14.5px; margin-top:10px">绛红整底仅用于品牌仪式感页面（封面、封底、文化页），一册之内不超过两处。</p>
+      </div>
+      <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/white-stacked.png" alt="白版 LOGO" style="width:170px; flex:none">
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="contrast">
+    <div class="sec-head">
+      <span class="sec-no">02 · 06</span>
+      <h2 class="sec-title">可用性 · 文本对比度</h2>
+      <p class="sec-sub">正文对比度 ≥ WCAG AA（4.5:1）。金在浅底上只做装饰线与大号数字，不做小字。</p>
+    </div>
+    <table class="spec-table">
+      <thead><tr><th>组合</th><th>对比度（约）</th><th>结论</th></tr></thead>
+      <tbody>
+        <tr><td><span class="contrast-dot" style="background:var(--paper); color:var(--ink); border:1px solid var(--wood-light)">字</span>暖墨 / 面粉白</td><td class="mono">15.1 : 1</td><td>✓ 正文首选</td></tr>
+        <tr><td><span class="contrast-dot" style="background:var(--ink); color:var(--paper)">字</span>面粉白 / 暖墨</td><td class="mono">15.1 : 1</td><td>✓ 深底正文</td></tr>
+        <tr><td><span class="contrast-dot" style="background:var(--ink); color:var(--gold)">字</span>雅金 / 暖墨</td><td class="mono">6.3 : 1</td><td>✓ 深底标题、数字</td></tr>
+        <tr><td><span class="contrast-dot" style="background:var(--seal); color:#fff">字</span>白 / 绛红</td><td class="mono">7.2 : 1</td><td>✓ CTA 文字</td></tr>
+        <tr><td><span class="contrast-dot" style="background:var(--paper); color:var(--seal); border:1px solid var(--wood-light)">字</span>绛红 / 面粉白</td><td class="mono">7.0 : 1</td><td>✓ 强调短句</td></tr>
+        <tr><td><span class="contrast-dot" style="background:var(--paper); color:var(--gold-ink); border:1px solid var(--wood-light)">字</span>深金 / 面粉白</td><td class="mono">4.8 : 1</td><td>✓ 浅底金色标签、小字</td></tr>
+        <tr><td><span class="contrast-dot" style="background:var(--paper); color:var(--gold); border:1px solid var(--wood-light)">字</span>雅金 / 面粉白</td><td class="mono">2.9 : 1</td><td>✗ 仅限装饰线、≥40px 大数字</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="ds-foot">
+    <a href="01-overview.html"><span class="dir">Prev · 01</span>体系总览</a>
+    <a class="next" href="05-motif.html"><span class="dir">Next · 05</span>母题与动效</a>
+  </footer>
+</div>
+</body>
+</html>

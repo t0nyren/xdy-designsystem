@@ -1,0 +1,199 @@
+<!-- @dsCard group="设计体系" viewport="1440x900" name="04 · 标志" subtitle="3 版式 × 3 用色 · 安全区 · 错误用法" -->
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 标志运用 · 熊大爷设计体系</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds.css">
+<style>
+  .matrix { display: grid; grid-template-columns: 110px repeat(3, 1fr); gap: 14px; align-items: stretch; }
+  .matrix .axis { display: flex; align-items: center; font: 600 11px/1.7 var(--font-en); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); }
+  .matrix .axis-top { align-items: flex-end; justify-content: center; text-align: center; padding-bottom: 4px; }
+  .cell { border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; padding: 26px 22px; min-height: 118px; border: var(--hairline); }
+  .cell img { width: 100%; max-width: 240px; }
+  .cell.tall img { max-width: 128px; }
+
+  .clear-fig { background: #fff; border: var(--hairline); border-radius: var(--radius); padding: 48px; display: flex; align-items: center; justify-content: center; }
+  .misuse .dd-demo { height: 150px; }
+  .misuse .dd-demo img { width: 62%; }
+  .minsize { display: flex; align-items: flex-end; gap: 56px; flex-wrap: wrap; }
+  .minsize .item { text-align: center; }
+  .minsize .item p { font: 500 12px/1.8 var(--font-en); color: var(--ink-soft); margin-top: 10px; }
+
+  @media (max-width: 480px) {
+    .matrix { grid-template-columns: 64px repeat(3, 1fr); gap: 8px; }
+    .matrix .axis { font-size: 10px; letter-spacing: 0.08em; }
+    .cell { padding: 12px 8px; min-height: 72px; }
+    .clear-fig { padding: 20px; }
+    .minsize { gap: 28px; justify-content: center; }
+  }
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/">总览</a><div class="grp oncur" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html" class="cur">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html" class="cur">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></nav>
+
+
+
+<div class="page">
+  <header class="ds-top">
+    <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" alt="熊大爷 现包饺子">
+    <span class="crumb">Design System · <b>04 Logo</b></span>
+  </header>
+
+  <div class="ds-hero">
+    <p class="eyebrow">Logo Usage · 标志运用</p>
+    <h1 class="display">红帽熊猫，只此一红</h1>
+    <p class="lead">新 LOGO：红帽熊猫 + 「熊大爷 现包饺子」，三个版式、三种用色。LOGO 亮红 #D70D18 只活在 LOGO 内部——它是身份，不是界面色。</p>
+  </div>
+  <hr class="pleat-hr">
+
+  <section id="matrix">
+    <div class="sec-head">
+      <span class="sec-no">04 · 01</span>
+      <h2 class="sec-title">版式 × 用色矩阵</h2>
+      <p class="sec-sub">紧凑横排用于导航与小场景；全横排用于门头与横幅；竖排用于印章式落款与窄幅场景。</p>
+    </div>
+    <div class="matrix">
+      <div></div>
+      <div class="axis axis-top">红底白版<br>Red / White</div>
+      <div class="axis axis-top">白底彩版<br>Full Color</div>
+      <div class="axis axis-top">单色描边<br>Mono</div>
+
+      <div class="axis">紧凑横排<br>Compact</div>
+      <div class="cell" style="background:var(--logo-red); border:none"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/white-compact.png" alt="红底白版 紧凑横排"></div>
+      <div class="cell" style="background:#fff"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" alt="白底彩版 紧凑横排"></div>
+      <div class="cell" style="background:var(--paper-2)"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/mono-compact.png" alt="单色描边 紧凑横排"></div>
+
+      <div class="axis">全横排<br>Horizontal</div>
+      <div class="cell" style="background:var(--logo-red); border:none"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/white-horizontal.png" alt="红底白版 全横排" style="max-width:300px"></div>
+      <div class="cell" style="background:#fff"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="白底彩版 全横排" style="max-width:300px"></div>
+      <div class="cell" style="background:var(--paper-2)"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/mono-horizontal.png" alt="单色描边 全横排" style="max-width:300px"></div>
+
+      <div class="axis">竖排<br>Stacked</div>
+      <div class="cell tall" style="background:var(--logo-red); border:none"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/white-stacked.png" alt="红底白版 竖排"></div>
+      <div class="cell tall" style="background:#fff"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-stacked.png" alt="白底彩版 竖排"></div>
+      <div class="cell tall" style="background:var(--paper-2)"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/mono-stacked.png" alt="单色描边 竖排"></div>
+    </div>
+    <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap">
+      <span class="chip">彩版：只放在面粉白 / 暖纸米 / 白</span>
+      <span class="chip">白版：绛红底、暖墨底、摄影深部</span>
+      <span class="chip">单色：单色印刷、压凹、雕刻</span>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="clearspace">
+    <div class="sec-head">
+      <span class="sec-no">04 · 02</span>
+      <h2 class="sec-title">安全区与最小尺寸</h2>
+      <p class="sec-sub">安全区以熊猫头高 X 为模数：四周净空 ≥ 0.5X。任何文字、图形、版面边缘不得进入。</p>
+    </div>
+    <div class="grid-2">
+      <div class="clear-fig">
+        <svg viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" aria-label="安全区示意">
+          <rect x="60" y="45" width="340" height="150" fill="none" stroke="#C9A24B" stroke-width="1.2" stroke-dasharray="6 5"></rect>
+          <image href="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" x="105" y="83" width="250"></image>
+          <rect x="105" y="83" width="56" height="74" fill="none" stroke="#B08A5E" stroke-width="1"></rect>
+          <text x="118" y="174" style="font:500 13px Outfit" fill="#B08A5E">X</text>
+          <g style="font:500 12px Outfit" fill="#C9A24B">
+            <text x="222" y="72">0.5X</text><text x="222" y="212">0.5X</text>
+            <text x="70" y="125">0.5X</text><text x="370" y="125">0.5X</text>
+          </g>
+        </svg>
+      </div>
+      <div class="clear-fig">
+        <div class="minsize">
+          <div class="item"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" style="width:120px" alt=""><p>屏显 ≥ 120px<br>SCREEN MIN</p></div>
+          <div class="item"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" style="width:80px" alt=""><p>印刷 ≥ 22mm<br>PRINT MIN</p></div>
+          <div class="item"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-stacked.png" style="width:56px" alt=""><p>竖排 ≥ 14mm<br>STACKED MIN</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="misuse">
+    <div class="sec-head">
+      <span class="sec-no">04 · 03</span>
+      <h2 class="sec-title">错误用法</h2>
+      <p class="sec-sub">以下每一种都会立刻拉低品牌档次。发现即改。</p>
+    </div>
+    <div class="grid-3 misuse">
+      <div class="dd-card">
+        <div class="dd-demo" style="background:#fff"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" style="transform:scaleX(1.45); width:56%" alt="拉伸变形"></div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>拉伸、压扁、旋转任何比例变形。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:#fff"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" style="filter:hue-rotate(160deg)" alt="改色"></div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>改色、换色相——亮红是身份。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:#fff"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" style="filter:drop-shadow(4px 6px 4px rgba(0,0,0,.45))" alt="投影发光"></div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>投影、描边、发光、浮雕等任何特效。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:var(--seal)"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="绛红底彩版"></div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>彩版落在绛红底——双红相邻。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:linear-gradient(35deg,#8a6a3f,#3d2c20 45%,#7d5b36 70%,#2e2119)"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/white-horizontal.png" alt="花底压字"></div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>压在花哨或对比不足的照片区域上。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:#fff; gap:4px; flex-direction:column">
+          <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" style="width:40%" alt="">
+          <span style="font:700 15px/1.5 var(--font-serif); color:var(--seal)">老字号·大师现包·锅气十足</span>
+        </div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>在安全区内加副标题、口号或任何文案。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ds-foot">
+    <a href="03-type.html"><span class="dir">Prev · 03</span>字体系统</a>
+    <a class="next" href="06-components.html"><span class="dir">Next · 06</span>组件库</a>
+  </footer>
+</div>
+</body>
+</html>

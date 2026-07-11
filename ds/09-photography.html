@@ -1,0 +1,184 @@
+<!-- @dsCard group="设计体系" viewport="1440x900" name="09 · 摄影与 IP" subtitle="一套光语言 · PANDA YEAH 规范" -->
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>09 摄影与 IP · 熊大爷设计体系</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds.css">
+<script src="image-slot.js"></script>
+<style>
+  .shot { border-radius: var(--radius); overflow: hidden; border: var(--hairline); background: #fff; }
+  .shot .frame { height: 240px; background: var(--paper-2); }
+  .shot .frame image-slot { width: 100%; height: 100%; }
+  .shot .note { padding: 18px 22px 22px; font-size: 13.5px; line-height: 1.8; color: var(--ink-soft); border-top: var(--hairline); }
+  .shot .note b { display: block; font: 700 16px/1.6 var(--font-serif); color: var(--ink); }
+  .shot .note .spec { font: 500 11px/1.8 var(--font-en); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); display: block; margin: 2px 0 6px; }
+
+  .light-rules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 56px; }
+  .light-rules li { list-style: none; display: flex; gap: 16px; padding: 20px 0; border-bottom: var(--hairline); font-size: 14.5px; line-height: 1.85; }
+  .light-rules li .no { flex: none; font: 600 12px/2.4 var(--font-en); color: var(--gold); letter-spacing: .1em; }
+  .light-rules li b { font-weight: 700; }
+
+  .ip-stage { border-radius: var(--radius); background: var(--paper-2); padding: 56px; display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: center; }
+  .ip-feature { display: flex; gap: 14px; padding: 14px 0; border-bottom: var(--hairline); font-size: 14.5px; align-items: baseline; }
+  .ip-feature .en { font: 500 11px/1.6 var(--font-en); letter-spacing: .12em; text-transform: uppercase; color: var(--wood); margin-left: auto; text-align: right; }
+
+  @media (max-width: 900px) {
+    .light-rules { grid-template-columns: 1fr; gap: 0; }
+    .ip-stage { grid-template-columns: 1fr; padding: 40px 32px; gap: 40px; }
+    .ip-stage > div { min-width: 0; }
+    .ip-stage image-slot { max-width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .ip-stage { padding: 32px 20px; }
+    .ip-feature { flex-wrap: wrap; gap: 6px 14px; }
+    .ip-feature .en { margin-left: 0; text-align: left; }
+  }
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/">总览</a><div class="grp oncur" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html" class="cur">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html" class="cur">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></nav>
+
+
+
+<div class="page">
+  <header class="ds-top">
+    <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" alt="熊大爷 现包饺子">
+    <span class="crumb">Design System · <b>09 Photography &amp; IP</b></span>
+  </header>
+
+  <div class="ds-hero">
+    <p class="eyebrow">Photography &amp; IP · 摄影与 IP</p>
+    <h1 class="display">一套光语言</h1>
+    <p class="lead">所有摄影出自同一个「下午的门店」：暖光、面粉白与原木、现包的手、面粉的尘、刚出锅的热气。真实的人不摆拍。以下为拍摄规范与占位框——请以实拍素材替换。</p>
+  </div>
+  <hr class="pleat-hr">
+
+  <section id="light">
+    <div class="sec-head">
+      <span class="sec-no">09 · 01</span>
+      <h2 class="sec-title">光语言 · 八条</h2>
+    </div>
+    <ul class="light-rules">
+      <li><span class="no">01</span><span><b>暖光。</b>色温 3200–4000K，像门店的灯。禁冷光、禁蓝调。</span></li>
+      <li><span class="no">02</span><span><b>两机位。</b>45° 平视（食欲）与俯拍（秩序），全线统一。</span></li>
+      <li><span class="no">03</span><span><b>背景三选一。</b>面粉白 / 原木 / 纸质，不出现第四种。</span></li>
+      <li><span class="no">04</span><span><b>现包必须在场。</b>手、面粉、褶——至少其一入镜。</span></li>
+      <li><span class="no">05</span><span><b>热气必须在场。</b>出品图无热气即废片。</span></li>
+      <li><span class="no">06</span><span><b>人是真的。</b>包饺子的师傅、社区食客，抓拍不摆拍，禁素材库脸。</span></li>
+      <li><span class="no">07</span><span><b>浅景深。</b>主体锐利，背景温柔虚化；禁堆盘、禁道具堆砌。</span></li>
+      <li><span class="no">08</span><span><b>后期克制。</b>只校色温与曝光，禁 HDR、禁滤镜风格化。</span></li>
+    </ul>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="shots">
+    <div class="sec-head">
+      <span class="sec-no">09 · 02</span>
+      <h2 class="sec-title">四类标准镜头</h2>
+      <p class="sec-sub">四类镜头 · 光语言与机位规范样张。</p>
+    </div>
+    <div class="grid-2">
+      <div class="shot">
+        <div class="frame"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/web-fresh.jpg" alt="现包双手捏褶特写" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div class="note"><b>手艺 · Craft</b><span class="spec">45° · f/2.8 · 3500K</span>捏褶瞬间的双手，指尖面粉可见，背景是原木案台。</div>
+      </div>
+      <div class="shot">
+        <div class="frame"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/web-craft.jpg" alt="刚出锅的饺子与热气" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div class="note"><b>食欲 · Appetite</b><span class="spec">45° · f/4 · 3800K</span>刚出锅的饺子，皮的透与馅的实，三缕热气上升。</div>
+      </div>
+      <div class="shot">
+        <div class="frame"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/good-flour.jpg" alt="面皮与食材俯拍" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div class="note"><b>食材 · Ingredients</b><span class="spec">Top-down · f/5.6 · 4000K</span>面皮叠、鲜蔬、生肉的秩序感俯拍，呼应「三好」。</div>
+      </div>
+      <div class="shot">
+        <div class="frame"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/store-dinein.jpg" alt="门店暖光下的食客" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div class="note"><b>社区 · Community</b><span class="spec">35mm · 自然暖光</span>原木格栅下的食客与师傅，真实交谈，不看镜头。</div>
+      </div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="ip">
+    <div class="sec-head">
+      <span class="sec-no">09 · 03</span>
+      <h2 class="sec-title">熊猫 IP · PANDA YEAH</h2>
+      <p class="sec-sub">「Hi，我是熊大爷」——来自熊猫故乡的饺子品牌。憨而不土，是年轻人的「爷」味。</p>
+    </div>
+    <div class="ip-stage">
+      <div style="text-align:center">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/ip2-turnaround.jpg" alt="PANDA YEAH 2.0 官方三视图" style="width:100%;height:320px;object-fit:contain;background:var(--paper-2);border-radius:14px;display:block">
+        <p style="font:500 11px/1.8 var(--font-en); letter-spacing:.2em; color:var(--wood); margin-top:12px">OFFICIAL FIGURE ONLY · 禁自绘</p>
+      </div>
+      <div>
+        <div class="ip-feature"><b>饺子形状的耳朵</b><span class="en">Ears Shaped Like Dumplings</span></div>
+        <div class="ip-feature"><b>「比耶」的手势</b><span class="en">V-Sign</span></div>
+        <div class="ip-feature"><b>红色 PANDA YEAH T恤</b><span class="en">Red Tee · Logo Red Lives Here</span></div>
+        <div class="ip-feature" style="border-bottom:none"><b>憨憨的烟火气</b><span class="en">Warm &amp; Earnest</span></div>
+        <p style="margin-top:22px; font-size:14.5px; color:var(--ink-soft); line-height:1.9">YEAH 是对生活比个耶：健康好吃、随性快乐。IP 只使用官方形象文件，出现频率克制——一屏至多一次，做陪伴不做主角；产品与手艺永远排在 IP 前面。</p>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:28px">
+      <div class="dd-card">
+        <div class="dd-demo" style="background:var(--paper)"><span style="font:500 13.5px/1.8 var(--font-sans); color:var(--ink-soft); padding:0 36px; text-align:center">角标点缀：页脚、包装侧面、会员卡一角</span></div>
+        <div class="dd-note"><span class="verdict do">Do</span><p>小尺寸、低频率、有呼吸地出现。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:var(--paper)"><span style="font:700 15px/1.8 var(--font-serif); color:var(--seal); padding:0 36px; text-align:center">3D 渲染 + 描边发光 + 满屏漂浮</span></div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>禁廉价 3D 发光、禁描边特效、禁满屏铺 IP。</p></div>
+      </div>
+      <div class="dd-card">
+        <div class="dd-demo" style="background:var(--paper)"><span style="font:500 13.5px/1.8 var(--font-sans); color:var(--ink-soft); padding:0 36px; text-align:center">重绘五官 / 换装 / 改比例</span></div>
+        <div class="dd-note"><span class="verdict dont">Don't</span><p>IP 形象不可重绘、换装、改比例——红 T 恤是它的制服。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ds-foot">
+    <a href="06-components.html"><span class="dir">Prev · 06</span>组件库</a>
+    <a class="next" href="01-overview.html"><span class="dir">Next · 01</span>体系总览</a>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IP 2.0 与品牌周边 · 熊大爷现包饺子 Design System</title>
+<meta name="description" content="PANDA YEAH IP 2.0 重设计设定稿（三视图/表情/动作）与品牌周边六类设定：帆布袋、围裙、杯具、帽子、徽章冰箱贴、饭盒套装。">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:#4A423B;font-family:var(--font-sans);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+header.site{display:flex;justify-content:space-between;align-items:center;padding:26px 48px;border-bottom:var(--hairline);max-width:1200px;margin:0 auto}
+header.site img{height:32px}
+header.site .crumb{font:500 12px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:#6B6259}
+h1,h2,h3{color:var(--ink);font-family:var(--font-serif)}
+h1{font-weight:600;font-size:clamp(36px,4.4vw,56px);line-height:1.25}
+h2{font-weight:600;font-size:clamp(26px,3vw,36px);line-height:1.35}
+h3{font-weight:600;font-size:20px;line-height:1.45}
+.eyebrow{font:600 13px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:'';width:40px;height:1.5px;background:var(--gold-ink)}
+.lead{margin-top:22px;max-width:680px;color:#4A423B}
+.caption{font-size:13px;color:#6B6259}
+section{padding:88px 0}
+.hero-sec{padding:96px 0 32px}
+.sheet{margin-top:36px;background:#fff;border:var(--hairline);border-radius:var(--radius);overflow:hidden}
+.sheet img{width:100%}
+.sheet-cap{padding:18px 24px;border-top:var(--hairline);display:flex;justify-content:space-between;gap:24px;align-items:baseline}
+.sheet-cap b{font-family:var(--font-serif);font-weight:600;font-size:17px;color:var(--ink);flex:none}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px}
+.duo .sheet{margin-top:0}
+.rules{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rules .item{background:var(--paper-2);border-radius:var(--radius);padding:24px 26px}
+.rules .item .no{font:600 12px/1 var(--font-en);letter-spacing:.16em;color:var(--gold-ink);text-transform:uppercase;display:block;margin-bottom:10px}
+.rules .item p{font-size:14px}
+.why{margin-top:14px;font-size:14px;color:#6B6259;max-width:640px}
+footer{border-top:var(--hairline);padding:40px 48px 56px;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;font:500 12px/1.6 var(--font-en);letter-spacing:.14em;text-transform:uppercase;color:#6B6259}
+@media (max-width:900px){
+  .wrap{padding:0 24px}
+  header.site{padding:20px 24px}
+  section{padding:60px 0}
+  .duo{grid-template-columns:1fr}
+  .rules{grid-template-columns:1fr}
+  .sheet-cap{flex-direction:column;gap:6px}
+}
+@media (max-width:640px){header.site .crumb,header .crumb{display:none}footer{flex-direction:column;gap:8px;align-items:flex-start}}
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/">总览</a><div class="grp" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp oncur" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/" class="cur">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/" class="cur">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></nav>
+
+
+
+
+<header class="site">
+  <a href="../"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a>
+  <span class="crumb">Design System · IP 2.0 &amp; Merchandise</span>
+</header>
+
+<section class="hero-sec">
+  <div class="wrap">
+    <p class="eyebrow">PANDA YEAH 2.0 · 周边设定</p>
+    <h1 style="margin-top:24px">憨要憨得高级<br>周边要背得出门</h1>
+    <p class="lead">IP 重设计只换气质、不换识别：饺子褶耳朵、比耶手势、红 T 恤一个不动，把廉价 3D 公仔换成手绘暖线条的 2D 角色——能上周边、能做动效、能进插画。周边按「日常被看见的频率 × 与饺子场景的贴合度」选了六类。</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">01 · Character 角色设定</p>
+    <div class="sheet">
+      <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/ip2-turnaround.jpg" alt="PANDA YEAH 2.0 三视图设定稿">
+      <div class="sheet-cap"><b>三视图 Turnaround</b><span class="caption">2.5 头身；纯黑耳/眼斑/四肢，白头身，正红 T 恤；耳朵为月牙饺褶形。暖墨勾线 + 平涂 + 纸纹底。</span></div>
+    </div>
+    <div class="sheet">
+      <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/ip2-expressions.jpg" alt="PANDA YEAH 2.0 表情设定稿">
+      <div class="sheet-cap"><b>表情库 Expressions</b><span class="caption">八格常用表情：笑/大笑/惊讶/困/心动/大厨脸/comic 哭/眨眼，社媒与包装贴纸直接取用。</span></div>
+    </div>
+    <div class="sheet">
+      <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/ip2-poses.jpg" alt="PANDA YEAH 2.0 动作设定稿">
+      <div class="sheet-cap"><b>动作库 Poses</b><span class="caption">六个品牌动作：捏褶/举蒸笼/拎帆布袋/吃饺子/比耶/鞠躬迎客——覆盖门店、外卖、周边、动效四类场景。</span></div>
+    </div>
+    <div class="rules">
+      <div class="item"><span class="no">Keep 不许动</span><p>饺子褶耳朵、比耶手势、红 T 恤、黑白熊猫配色。这四样是识别资产，任何应用不得改。</p></div>
+      <div class="item"><span class="no">Style 画法</span><p>暖墨勾线 + 低饱和平涂 + 纸纹面粉白底；禁 3D 渲染、禁发光描边、禁塑料高光。</p></div>
+      <div class="item"><span class="no">Usage 用法</span><p>IP 与摄影不同屏混排；深底用白版剪影；最小可用尺寸 24px（只保留头部）。</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">02 · Merchandise 周边六类</p>
+    <p class="why">选类逻辑：帆布袋与围裙直接长在「生包外带」和「现包」两个品牌场景上；杯帽是日常曝光位；徽章冰箱贴用 8 款饺子拟人做低客单集邮款；饭盒把「吃饺子」带进办公室。所有周边共用一套语言：面粉白画布、暖墨线、绛红只做一枚印、金只做细节。</p>
+
+    <div class="duo">
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-tote.jpg" alt="帆布袋设定稿">
+        <div class="sheet-cap"><b>帆布袋</b><span class="caption">本色帆布；正面 IP 拎蒸笼，背面褶弧一排 + 绛红小印。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-apron.jpg" alt="围裙设定稿">
+        <div class="sheet-cap"><b>围裙</b><span class="caption">门店与周边同款；胸口绛红小印，下摆淡金褶弧，口袋 IP 绣标。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-cups.jpg" alt="马克杯与保温杯设定稿">
+        <div class="sheet-cap"><b>马克杯 + 保温杯</b><span class="caption">面粉白杯身 IP 小图 + 口沿金细线；保温杯绛红底白 IP。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-hats.jpg" alt="渔夫帽与棒球帽设定稿">
+        <div class="sheet-cap"><b>渔夫帽 + 棒球帽</b><span class="caption">面粉白渔夫帽绣 IP 头 + 侧面小饺子；绛红棒球帽白绣。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-pins.jpg" alt="徽章冰箱贴套装设定稿">
+        <div class="sheet-cap"><b>徽章 / 冰箱贴套装</b><span class="caption">8 款饺子拟人 + 1 枚 IP 头像，集邮款；对应 8 款常青饺子。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-lunchbox.jpg" alt="饭盒筷子套装设定稿">
+        <div class="sheet-cap"><b>保温饭盒 + 筷子套装</b><span class="caption">双层面粉白盒 + 原木色盖带；盖面 IP 举蒸笼 + 绛红小印。</span></div>
+      </div>
+    </div>
+
+    <p class="eyebrow" style="margin-top:88px">03 · Merchandise 周边第二批</p>
+    <p class="why">第二批补齐穿戴、收藏与日用三条线：T恤卫衣是行走的主视觉；毛绒公仔和饺子抱枕是情感款；钥匙扣、贴纸是低客单高频款（贴纸直接取自表情库）；长柄伞把绛红条纹带上街；文具套装进办公室。</p>
+    <div class="duo">
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-tees.jpg" alt="T恤与卫衣设定稿">
+        <div class="sheet-cap"><b>T恤 + 卫衣</b><span class="caption">面粉白 T 恤胸位比耶 IP；燕麦色卫衣左胸绣标、后领一排小饺子。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-plush.jpg" alt="毛绒公仔与饺子抱枕设定稿">
+        <div class="sheet-cap"><b>毛绒公仔 + 饺子抱枕</b><span class="caption">IP 本体坐姿公仔（刺绣脸）；月牙饺抱枕带睡颜与褶线车缝。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-keychain.jpg" alt="钥匙扣挂件设定稿">
+        <div class="sheet-cap"><b>钥匙扣挂件</b><span class="caption">软胶 IP 全身 + 迷你饺子挂坠 + 织带短挂绳（绛红小印皮标）。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-stickers.jpg" alt="贴纸套装设定稿">
+        <div class="sheet-cap"><b>贴纸表情包套装</b><span class="caption">八枚模切贴纸直接取自表情库 + 两枚小饺子；社媒与包装同源。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-umbrella.jpg" alt="长柄伞设定稿">
+        <div class="sheet-cap"><b>长柄伞</b><span class="caption">面粉白×绛红相间伞面，单幅 IP 小图 + 单幅饺子母题，原木弯把。</span></div>
+      </div>
+      <div class="sheet">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/merch/assets/merch-stationery.jpg" alt="笔记本文具套装设定稿">
+        <div class="sheet-cap"><b>笔记本文具套装</b><span class="caption">面粉白硬壳本（右下压凹 IP + 绛红束带）+ 饺子形便签 + 原木铅笔。</span></div>
+      </div>
+    </div>
+
+    <div class="rules">
+      <div class="item"><span class="no">Print 印法</span><p>帆布类丝印 2 色（暖墨 + 绛红）；刺绣类 IP 只用头部简化版；陶瓷用釉上彩 + 金线手工描边档位可选。</p></div>
+      <div class="item"><span class="no">Color 用色</span><p>周边底色只允许：本色帆布 / 面粉白 / 绛红 / 暖墨四选一。禁渐变、禁荧光、禁大面积亮红（亮红只活在 LOGO）。</p></div>
+      <div class="item"><span class="no">Next 落地</span><p>每类先打样 1 件验证工艺；徽章套装可与「341 种饺子」吉尼斯叙事绑定做首发礼盒。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Xiongdaye Design System · IP 2.0 &amp; Merch</span>
+  <span><a href="../">← Back to Brand Platform</a></span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!-- @dsCard group="设计体系" viewport="1440x900" name="01 · 总览" subtitle="体系地图 · 一线水位 · 交付物" -->
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 体系总览 · 熊大爷设计体系</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds.css">
+<style>
+  .hero-wrap { position: relative; overflow: hidden; }
+  .hero-wrap .bamboo { position: absolute; right: -20px; top: 40px; height: 480px; opacity: .45; pointer-events: none; }
+  .map-card { display: block; background: #fff; border: var(--hairline); border-radius: var(--radius); padding: 30px 32px; border-bottom: var(--hairline); transition: transform var(--dur-hover) var(--ease), box-shadow var(--dur-hover) var(--ease); }
+  .map-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(36,30,27,.10); color: var(--ink); }
+  .map-card .no { font: 600 12px/1 var(--font-en); letter-spacing: .22em; color: var(--gold); }
+  .map-card h3 { font: 700 21px/1.6 var(--font-serif); margin: 12px 0 6px; }
+  .map-card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.8; }
+  .bench { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .bench .b { padding: 26px 0 0; border-top: 2px solid var(--ink); }
+  .bench .b .who { font: 600 11px/1 var(--font-en); letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+  .bench .b h4 { font: 700 18px/1.7 var(--font-serif); margin: 12px 0 6px; }
+  .bench .b p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.85; }
+  .deliv { display: flex; gap: 12px; flex-wrap: wrap; }
+  .deliv .chip b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 900px) {
+    .bench { grid-template-columns: repeat(2, 1fr); }
+    #facts .stage > div[style] { grid-template-columns: repeat(2, 1fr) !important; gap: 28px !important; }
+  }
+  @media (max-width: 480px) {
+    .bench { grid-template-columns: 1fr; }
+    #facts .stage .num { font-size: 40px !important; }
+    .hero-wrap .bamboo { height: 320px; right: -60px; }
+  }
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/">总览</a><div class="grp oncur" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html" class="cur">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html" class="cur">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></nav>
+
+
+
+<div class="page">
+  <header class="ds-top">
+    <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-compact.png" alt="熊大爷 现包饺子">
+    <span class="crumb">Design System · <b>01 Overview</b></span>
+  </header>
+
+  <div class="ds-hero hero-wrap">
+    <svg class="bamboo" viewBox="0 0 420 620" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#D7CA9E" fill="none" stroke-linecap="round">
+        <path d="M300 640 C290 480 310 360 296 220 C288 140 302 80 296 -20" stroke-width="16" opacity=".5"></path>
+        <path d="M360 640 C352 500 370 380 358 240 C350 150 364 70 358 -20" stroke-width="10" opacity=".38"></path>
+        <path d="M296 300 C250 268 222 270 180 240" stroke-width="7" opacity=".45"></path>
+        <path d="M298 430 C256 410 240 416 200 396" stroke-width="6" opacity=".35"></path>
+      </g>
+    </svg>
+    <p class="eyebrow">Xiong Da Ye Design System · V3</p>
+    <h1 class="display">一饺包四季<br>现包吃不腻</h1>
+    <p class="lead">熊大爷现包饺子品牌设计体系：面粉为纸、暖墨为字、雅金为笔、绛红为印；一道褶弧讲手艺，三缕热气讲温度。1000+ 门店、31 个省级行政区、每一个触点，同一个品牌。</p>
+  </div>
+  <hr class="pleat-hr">
+
+  <section id="map">
+    <div class="sec-head">
+      <span class="sec-no">01 · 01</span>
+      <h2 class="sec-title">体系地图</h2>
+    </div>
+    <div class="grid-3">
+      <a class="map-card" href="02-colors.html">
+        <span class="no">02 · COLOR</span>
+        <h3>色彩系统</h3>
+        <p>9 个 tokens、60/20/13/5 用量总纲、双红规则与一屏一印。</p>
+      </a>
+      <a class="map-card" href="03-type.html">
+        <span class="no">03 · TYPOGRAPHY</span>
+        <h3>字体系统</h3>
+        <p>宋体讲故事、黑体做界面、Outfit 管数字，书法体只落款。</p>
+      </a>
+      <a class="map-card" href="04-logo.html">
+        <span class="no">04 · LOGO</span>
+        <h3>标志运用</h3>
+        <p>3 版式 × 3 用色矩阵、安全区模数与错误用法清单。</p>
+      </a>
+      <a class="map-card" href="05-motif.html">
+        <span class="no">05 · MOTIF &amp; MOTION</span>
+        <h3>母题与动效</h3>
+        <p>饺子褶纹弧构造、热气曲线动效规格、竹影肌理。</p>
+      </a>
+      <a class="map-card" href="06-components.html">
+        <span class="no">06 · COMPONENTS</span>
+        <h3>组件库</h3>
+        <p>按钮、卡片、导航、标签、数据舞台、表单，含 CSS 变量。</p>
+      </a>
+      <a class="map-card" href="09-photography.html">
+        <span class="no">09 · PHOTO &amp; IP</span>
+        <h3>摄影与 IP</h3>
+        <p>一套光语言八条军规，PANDA YEAH 使用规范。</p>
+      </a>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="bench">
+    <div class="sec-head">
+      <span class="sec-no">01 · 02</span>
+      <h2 class="sec-title">一线水位 · 四个对标</h2>
+      <p class="sec-sub">对标连锁同行只是下限。每一页交付前，与这四家并排看一眼。</p>
+    </div>
+    <div class="bench">
+      <div class="b"><span class="who">Apple</span><h4>排版纪律</h4><p>文字即设计：大字号、强层级、极致留白，每屏只讲一件事。</p></div>
+      <div class="b"><span class="who">Lululemon</span><h4>人本温度</h4><p>真实的人与手、生活方式摄影、克制色板中的呼吸感。</p></div>
+      <div class="b"><span class="who">Starbucks</span><h4>体系叙事</h4><p>一个签名色系统贯穿所有触点，手册即品牌圣经，craft 故事线是「现包」。</p></div>
+      <div class="b"><span class="who">KFC</span><h4>食欲与识别</h4><p>摄影的热气与锐度，红用得自信而克制，3 米内一眼认出。</p></div>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="facts">
+    <div class="sec-head">
+      <span class="sec-no">01 · 03</span>
+      <h2 class="sec-title">品牌事实</h2>
+    </div>
+    <div class="stage stage-ink">
+      <p class="eyebrow">United Tops · 四川联拓食品集团</p>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:40px; margin-top:32px">
+        <div><span class="num" style="font-size:52px; color:var(--gold)">1000<span style="font-size:28px">+</span></span><p style="font-size:13px; opacity:.75; margin-top:6px">全国在营门店</p></div>
+        <div><span class="num" style="font-size:52px; color:var(--gold)">31</span><p style="font-size:13px; opacity:.75; margin-top:6px">覆盖省级行政区</p></div>
+        <div><span class="num" style="font-size:52px; color:var(--gold)">341</span><p style="font-size:13px; opacity:.75; margin-top:6px">种饺子 · 吉尼斯世界纪录</p></div>
+        <div><span class="num" style="font-size:52px; color:var(--gold)">2800<span style="font-size:26px">h</span></span><p style="font-size:13px; opacity:.75; margin-top:6px">天山麦粉年均日照</p></div>
+      </div>
+      <p style="margin-top:36px; font-size:14px; opacity:.8; max-width:720px; line-height:2">2019 创立 → 2023 门店破 1000 → 2025「341 种饺子」吉尼斯纪录、「一带一路」大使联谊会指定 → 2026 元拓基地投产、海外首店吉隆坡。使命：让消费者吃得更幸福，让伙伴加速成长，让门店可持续赚钱。</p>
+    </div>
+  </section>
+  <hr class="pleat-hr">
+
+  <section id="deliverables">
+    <div class="sec-head">
+      <span class="sec-no">01 · 04</span>
+      <h2 class="sec-title">交付物 · 体系 + 五件套</h2>
+      <p class="sec-sub">以本体系为源头，逐项展开。斜体为规划中。</p>
+    </div>
+    <div class="deliv">
+      <span class="chip"><b>A</b> · 设计体系（本册）</span>
+      <span class="chip"><i>B · 品牌手册 manual/</i></span>
+      <span class="chip"><i>C · 官网 web/</i></span>
+      <span class="chip"><i>D · 名片 cards/</i></span>
+      <span class="chip"><i>E · 动效视频分镜 motion/</i></span>
+      <span class="chip"><i>F · 门店视觉规范 store/</i></span>
+    </div>
+  </section>
+
+  <footer class="ds-foot">
+    <span style="font:500 12px/1.8 var(--font-en); letter-spacing:.2em; color:var(--ink-soft)">XIONG DA YE · UNITED TOPS · 2026</span>
+    <a class="next" href="02-colors.html"><span class="dir">Start · 02</span>色彩系统</a>
+  </footer>
+</div>
+</body>
+</html>

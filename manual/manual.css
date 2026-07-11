@@ -1,0 +1,150 @@
+/* 熊大爷现包饺子 · 品牌手册 3.1 · 版式样式
+   16:9 (1920×1080) 网页版 / 可打印。引用全局 tokens。
+   体系：米白为纸 · 暖墨为字 · 古铜金为笔 · 绛红为印
+   3.1.1 修版：产品图比例 16/10、产品标题字号收紧（修复 13/14 页纵向溢出重叠） */
+@import url('../styles.css');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #2a2622; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+.cols > * { min-width: 0; }
+
+/* ---------- 幻灯片基座 ---------- */
+.slide {
+  width: 1920px; height: 1080px; position: relative; overflow: hidden;
+  background: var(--paper); color: var(--ink);
+  padding: 108px 150px 128px;
+  display: flex; flex-direction: column;
+}
+.slide.ink  { background: var(--ink);  color: var(--paper); }
+.slide.seal { background: var(--seal); color: #fff; }
+.slide.paper2 { background: var(--paper-2); }
+
+/* 页脚：LOGO + 页码 + 章节 */
+.m-foot {
+  position: absolute; left: 150px; right: 150px; bottom: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  font: 500 15px/1 var(--font-en); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.slide.ink .m-foot, .slide.seal .m-foot { color: rgba(255,255,255,0.62); }
+.m-foot img { height: 26px; }
+.m-foot .mid { letter-spacing: 0.28em; }
+.m-foot .pg { font-weight: 600; }
+.m-foot .pg b { color: var(--gold-ink); font-weight: 600; }
+.slide.ink .m-foot .pg b, .slide.seal .m-foot .pg b { color: var(--gold); }
+
+/* ---------- 文字系统（1920 尺度）---------- */
+.m-kicker {
+  font: 600 20px/1 var(--font-en); letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-ink); display: flex; align-items: center; gap: 16px;
+}
+.m-kicker::before { content: ''; width: 40px; height: 1.5px; background: var(--gold-ink); }
+.slide.ink .m-kicker, .slide.seal .m-kicker { color: var(--gold); }
+.slide.ink .m-kicker::before, .slide.seal .m-kicker::before { background: var(--gold); }
+.slide.seal .m-kicker { color: #fff; }
+.slide.seal .m-kicker::before { background: rgba(255,255,255,.8); }
+
+.m-title { font-family: var(--font-serif); font-weight: 700; font-size: 66px; line-height: 1.28; letter-spacing: 0; text-wrap: balance; }
+.m-title.big { font-size: 92px; line-height: 1.16; }
+.m-sub-en { font: 500 19px/1.5 var(--font-en); letter-spacing: 0.16em; text-transform: uppercase; color: var(--wood); }
+.slide.ink .m-sub-en, .slide.seal .m-sub-en { color: rgba(255,255,255,.55); }
+.m-lead { font-size: 27px; line-height: 1.75; color: var(--ink-soft); max-width: 1180px; text-wrap: pretty; }
+.slide.ink .m-lead, .slide.seal .m-lead { color: rgba(255,255,255,.82); }
+.m-body { font-size: 22px; line-height: 1.75; color: var(--ink-soft); text-wrap: pretty; }
+.slide.ink .m-body { color: rgba(255,255,255,.78); }
+
+.hang { margin-top: 34px; }
+
+/* 褶纹弧分隔线（放大版） */
+.m-pleat {
+  height: 16px; border: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='16'%3E%3Cpath d='M0 14 Q18 2 36 14 Q54 2 72 14' fill='none' stroke='%237D5F17' stroke-width='1.6' opacity='0.6'/%3E%3C/svg%3E") repeat-x left center / 72px 16px;
+}
+.slide.ink .m-pleat, .slide.seal .m-pleat {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='16'%3E%3Cpath d='M0 14 Q18 2 36 14 Q54 2 72 14' fill='none' stroke='%23C4993F' stroke-width='1.6' opacity='0.7'/%3E%3C/svg%3E");
+}
+
+/* ---------- 数字 / 数据 ---------- */
+.m-num { font-family: var(--font-en); font-weight: 600; letter-spacing: 0.01em; font-variant-numeric: tabular-nums; line-height: 1; }
+.stat-row { display: flex; gap: 96px; flex-wrap: wrap; }
+.stat .m-num { font-size: 96px; color: var(--gold-ink); }
+.slide.ink .stat .m-num, .slide.seal .stat .m-num { color: var(--gold); }
+.stat p { font-size: 20px; color: var(--ink-soft); margin-top: 14px; letter-spacing: 0.02em; }
+.slide.ink .stat p, .slide.seal .stat p { color: rgba(255,255,255,.7); }
+.stat .m-num sup, .stat .m-num small { font-size: 0.5em; font-weight: 600; }
+
+/* ---------- 竹影 ---------- */
+.bamboo {
+  position: absolute; pointer-events: none; opacity: .5;
+  right: -40px; top: -60px; height: 130%;
+}
+.bamboo.left { left: -60px; right: auto; top: auto; bottom: -80px; height: 90%; transform: scaleX(-1); }
+
+/* ---------- 图片占位 ---------- */
+image-slot { display: block; background: var(--paper-2); }
+.slide.ink image-slot { background: #322b26; }
+.ph-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font: 500 15px/1.5 var(--font-en); letter-spacing: 0.18em; text-transform: uppercase; color: var(--wood); text-align: center; }
+
+/* ---------- 通用网格 ---------- */
+.cols { display: grid; gap: 44px; }
+.c-2 { grid-template-columns: 1fr 1fr; }
+.c-3 { grid-template-columns: repeat(3, 1fr); }
+.c-4 { grid-template-columns: repeat(4, 1fr); }
+.fill { flex: 1; min-height: 0; }
+.center-y { justify-content: center; }
+
+/* 卡片 */
+.m-card { background: #fff; border: var(--hairline); border-radius: var(--radius); padding: 40px; }
+.slide.paper2 .m-card { background: var(--paper); }
+.m-card h4 { font: 700 30px/1.4 var(--font-serif); }
+.m-card .en { font: 500 15px/1.5 var(--font-en); letter-spacing: 0.12em; text-transform: uppercase; color: var(--wood); margin-top: 6px; display: block; }
+.m-card p { font-size: 20px; line-height: 1.7; color: var(--ink-soft); margin-top: 16px; }
+
+/* 标签 */
+.m-tag { display: inline-flex; align-items: center; gap: 9px; padding: 9px 22px; border-radius: 999px; font: 500 18px/1.4 var(--font-sans); border: 1px solid var(--wood-light); color: var(--ink-soft); }
+.m-tag.gold { border-color: var(--gold-ink); color: var(--gold-ink); }
+.slide.ink .m-tag { border-color: rgba(255,255,255,.28); color: rgba(255,255,255,.8); }
+.slide.ink .m-tag.gold { border-color: var(--gold); color: var(--gold); }
+
+/* 印章徽章 */
+.seal-badge { display: inline-flex; align-items: center; justify-content: center; }
+
+/* 目录 */
+.toc { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 120px; align-items: stretch; }
+.toc a, .toc div { display: flex; align-items: baseline; gap: 24px; padding: 22px 0; border-bottom: var(--hairline); border-color: rgba(36,30,27,.1); }
+.toc .n { font: 600 19px/1 var(--font-en); color: var(--gold-ink); letter-spacing: 0.1em; min-width: 40px; }
+.toc .t { font: 600 27px/1.3 var(--font-serif); color: var(--ink); }
+.toc .e { margin-left: auto; font: 500 14px/1 var(--font-en); letter-spacing: 0.14em; text-transform: uppercase; color: var(--wood); }
+
+/* 时间线 */
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 20px; }
+.tl-item { padding: 0 32px 0 0; position: relative; padding-top: 46px; }
+.tl-item::before { content: ''; position: absolute; top: 8px; left: 0; right: 0; height: 1.5px; background: var(--wood-light); }
+.tl-item::after { content: ''; position: absolute; top: 2px; left: 0; width: 13px; height: 13px; border-radius: 50%; background: var(--gold-ink); }
+.tl-item.mark::after { background: var(--seal); }
+.tl-year { font: 600 34px/1 var(--font-en); color: var(--ink); }
+.tl-item.mark .tl-year { color: var(--seal); }
+.tl-item p { font-size: 18.5px; line-height: 1.6; color: var(--ink-soft); margin-top: 16px; }
+
+/* 荣誉网格 */
+.honor { border: 1px solid rgba(201,153,63,.32); border-radius: var(--radius); padding: 30px 32px; }
+.honor .yr { font: 600 15px/1 var(--font-en); letter-spacing: 0.12em; color: var(--gold); }
+.honor h5 { font: 600 23px/1.45 var(--font-serif); color: #fff; margin-top: 14px; }
+
+/* 产品条目 */
+.prod { }
+.prod .pic { width: 100%; aspect-ratio: 3/2; border-radius: var(--radius); object-fit: cover; display: block; }
+.prod h5 { font: 700 23px/1.35 var(--font-serif); margin-top: 12px; }
+.prod .en { font: 500 14px/1.4 var(--font-en); letter-spacing: 0.1em; text-transform: uppercase; color: var(--wood); margin-top: 4px; display: block; }
+
+/* mvv 使命愿景 */
+.mvv { display: grid; grid-template-columns: repeat(3,1fr); gap: 56px; }
+.mvv .lbl { font: 600 18px/1 var(--font-en); letter-spacing: 0.2em; text-transform: uppercase; opacity: .8; }
+.mvv h4 { font-family: var(--font-serif); font-weight: 700; font-size: 40px; line-height: 1.4; margin-top: 22px; }
+.mvv ul { list-style: none; margin-top: 20px; }
+.mvv li { font-size: 23px; line-height: 1.9; }
+
+/* 打印：deck-stage 已处理分页；此处仅确保背景 */
+@media print { body { background: #fff; } }

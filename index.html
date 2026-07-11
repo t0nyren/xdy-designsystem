@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>熊大爷现包饺子 · 品牌设计体系 | United Tops</title>
+<meta name="description" content="熊大爷现包饺子品牌升级 — 设计体系与品牌手册。一饺包四季，现包吃不腻。">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.page{max-width:1160px;margin:0 auto;padding:0 48px}
+header{display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-bottom:var(--hairline)}
+header img{height:36px}
+header .crumb{font:500 12px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.hero{padding:110px 0 84px}
+.eyebrow{font:600 13px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:'';width:40px;height:1.5px;background:var(--gold-ink)}
+h1{font-family:var(--font-serif);font-weight:700;font-size:clamp(40px,5vw,64px);line-height:1.25;margin-top:26px}
+.lead{margin-top:26px;max-width:640px;font-size:17px;color:var(--ink-soft)}
+.pleat{height:12px;border:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='12'%3E%3Cpath d='M0 10.5 Q14 1.5 28 10.5 Q42 1.5 56 10.5' fill='none' stroke='%237D5F17' stroke-width='1.3' opacity='0.6'/%3E%3C/svg%3E") repeat-x center/56px 12px}
+section{padding:72px 0}
+.sec-no{font:600 13px/1 var(--font-en);letter-spacing:.2em;color:var(--gold-ink);display:block;margin-bottom:14px;text-transform:uppercase}
+h2{font-family:var(--font-serif);font-weight:700;font-size:32px;line-height:1.4}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;margin-top:44px}
+.card{background:#fff;border:var(--hairline);border-radius:var(--radius);padding:28px;transition:border-color .24s var(--ease),transform .24s var(--ease);display:block}
+.card:hover{border-color:var(--gold-ink);transform:translateY(-2px)}
+.card .no{font:600 12px/1 var(--font-en);letter-spacing:.16em;color:var(--gold-ink)}
+.card h3{font:700 21px/1.4 var(--font-serif);margin-top:12px}
+.card p{font-size:14px;color:var(--ink-soft);margin-top:8px}
+.feature{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;margin-top:44px;background:var(--ink);border-radius:var(--radius);padding:56px;color:var(--paper)}
+.feature .eyebrow{color:var(--gold)}
+.feature .eyebrow::before{background:var(--gold)}
+.feature h3{font:700 34px/1.4 var(--font-serif)}
+.feature p{color:rgba(255,255,255,.78);margin-top:14px;max-width:520px}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:14px 34px;border-radius:999px;background:var(--seal);color:#fff;font:600 15px/1 var(--font-sans);transition:opacity .24s var(--ease)}
+.btn:hover{opacity:.9}
+.feature img{width:100%;max-height:220px;object-fit:contain}
+footer{border-top:var(--hairline);padding:44px 0 64px;display:flex;justify-content:space-between;align-items:center;font:500 12px/1.6 var(--font-en);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+@media (max-width:760px){.page{padding:0 24px}.feature{grid-template-columns:1fr;padding:36px}}
+@media (max-width:640px){header.site .crumb,header .crumb{display:none}footer{flex-direction:column;gap:8px;align-items:flex-start}}
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(252,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,30,27,.08)}
+.site-nav .bar{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:32px;height:60px}
+.site-nav .brand{margin-right:auto;display:flex;align-items:center}
+.site-nav .brand img{height:28px;display:block}
+.site-nav .bar>a:not(.brand){font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em}
+.site-nav .bar>a.cur{color:var(--ink);font-weight:600;border-bottom:2px solid var(--gold-ink);padding:21px 0 19px}
+.site-nav .grp{position:relative;height:100%;display:flex;align-items:center}
+.site-nav .grp>span{font:500 13.5px/1 var(--font-sans);color:#6B6259;letter-spacing:.04em;cursor:default;display:flex;align-items:center;gap:6px}
+.site-nav .grp>span::after{content:'';width:7px;height:7px;border-right:1.5px solid #B9B0A6;border-bottom:1.5px solid #B9B0A6;transform:rotate(45deg) translateY(-2px)}
+.site-nav .grp.oncur>span{color:var(--ink);font-weight:600}
+.site-nav .menu{visibility:hidden;opacity:0;transform:translateY(6px);transition:all .18s var(--ease);position:absolute;top:100%;right:-8px;background:#fff;border:1px solid rgba(36,30,27,.1);border-radius:12px;box-shadow:0 14px 34px rgba(36,30,27,.12);padding:8px 0;min-width:176px;display:flex;flex-direction:column}
+.site-nav .grp:hover .menu,.site-nav .grp:focus-within .menu{visibility:visible;opacity:1;transform:translateY(0)}
+.site-nav .menu a{padding:9px 20px;font:500 13.5px/1.4 var(--font-sans);color:#4A423B;white-space:nowrap;border:none!important;text-decoration:none!important;background:none}
+.site-nav a,.site-nav a:hover{text-decoration:none;border-bottom:none}
+.site-nav .bar>a.cur{border-bottom:2px solid var(--gold-ink)}
+.site-nav .menu a:hover{background:var(--paper-2);color:var(--ink)}
+.site-nav .menu a.cur{color:var(--gold-ink);font-weight:600}
+.site-nav .burger,.site-nav .mpanel,#navtg{display:none}
+header.site,.page>header,header.ds-top{display:none}
+@media (max-width:900px){
+.site-nav .bar{padding:0 20px;height:54px}
+.site-nav .brand img{height:24px}
+.site-nav .bar .grp,.site-nav .bar>a:not(.brand){display:none}
+.site-nav .burger{display:flex;flex-direction:column;gap:4.5px;padding:10px 2px;cursor:pointer}
+.site-nav .burger i{width:20px;height:1.8px;background:var(--ink);border-radius:2px;transition:all .2s var(--ease)}
+#navtg:checked~.bar .burger i:nth-child(1){transform:translateY(6.3px) rotate(45deg)}
+#navtg:checked~.bar .burger i:nth-child(2){opacity:0}
+#navtg:checked~.bar .burger i:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}
+.site-nav .mpanel{position:absolute;top:54px;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(36,30,27,.1);box-shadow:0 20px 40px rgba(36,30,27,.10);max-height:calc(100vh - 54px);overflow:auto;padding:6px 24px 26px}
+#navtg:checked~.mpanel{display:block}
+.site-nav .mpanel .gh{font:600 11px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);margin:20px 0 4px}
+.site-nav .mpanel a{display:block;padding:11px 0;font:500 15px/1.3 var(--font-sans);color:var(--ink);border-bottom:1px solid rgba(36,30,27,.05)}
+.site-nav .mpanel a.cur{color:var(--gold-ink);font-weight:600}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+<nav class="site-nav"><input type="checkbox" id="navtg"><div class="bar"><a class="brand" href="/"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a><a href="/" class="cur">总览</a><div class="grp" tabindex="0"><span>设计体系</span><div class="menu"><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a></div></div><div class="grp" tabindex="0"><span>品牌</span><div class="menu"><a href="/web/">官网</a><a href="/manual/">品牌手册</a></div></div><div class="grp" tabindex="0"><span>应用</span><div class="menu"><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a></div></div><div class="grp" tabindex="0"><span>影像</span><div class="menu"><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></div><label class="burger" for="navtg"><i></i><i></i><i></i></label></div><div class="mpanel"><a href="/" class="cur" style="margin-top:14px">总览 Overview</a><p class="gh">设计体系</p><a href="/ds/01-overview.html">总纲</a><a href="/ds/02-colors.html">色彩</a><a href="/ds/03-type.html">字体</a><a href="/ds/04-logo.html">标识</a><a href="/ds/05-motif.html">母题</a><a href="/ds/06-components.html">组件</a><a href="/ds/09-photography.html">摄影与 IP</a><p class="gh">品牌</p><a href="/web/">官网</a><a href="/manual/">品牌手册</a><p class="gh">应用</p><a href="/cards/">名片办公</a><a href="/merch/">IP · 周边</a><a href="/store/">门店</a><a href="/miniapp/">小程序点餐</a><p class="gh">影像</p><a href="/motion/">动效 · 品牌片</a><a href="/anime/">动漫探索</a></div></nav>
+
+
+
+<div class="page">
+  <header>
+    <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子">
+    <span class="crumb">United Tops · Brand Platform</span>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Xiongdaye Brand Design System</p>
+    <h1>一饺包四季<br>现包吃不腻</h1>
+    <p class="lead">熊大爷现包饺子 · 品牌升级设计体系。面粉为纸、暖墨为字、雅金为笔、绛红为印——一套让 1000+ 门店每个触点都像同一个品牌的视觉语言。</p>
+  </div>
+
+  <hr class="pleat">
+
+  <section>
+    <span class="sec-no">01 · Design System</span>
+    <h2>设计体系</h2>
+    <div class="grid">
+      <a class="card" href="ds/01-overview.html"><span class="no">DS 01</span><h3>总纲 Overview</h3><p>一屏看懂：色彩总纲、母题、字体分工</p></a>
+      <a class="card" href="ds/02-colors.html"><span class="no">DS 02</span><h3>色彩 Colors</h3><p>Tokens、占比纪律、双红规则、Do / Don't</p></a>
+      <a class="card" href="ds/03-type.html"><span class="no">DS 03</span><h3>字体 Type</h3><p>宋体讲故事、黑体做服务、数字一等公民</p></a>
+      <a class="card" href="ds/04-logo.html"><span class="no">DS 04</span><h3>标识 Logo</h3><p>三版式 × 三用色、安全区、错误用法</p></a>
+      <a class="card" href="ds/05-motif.html"><span class="no">DS 05</span><h3>母题 Motif</h3><p>饺子褶纹弧、热气曲线、竹影肌理</p></a>
+      <a class="card" href="ds/06-components.html"><span class="no">DS 06</span><h3>组件 Components</h3><p>按钮、卡片、数据舞台、表单与状态</p></a>
+      <a class="card" href="ds/09-photography.html"><span class="no">DS 09</span><h3>摄影与 IP</h3><p>光语言、机位规范、PANDA YEAH 使用</p></a>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <span class="sec-no">02 · Official Website</span>
+    <h2>品牌官网</h2>
+    <div class="feature" style="background:#fff;border:var(--hairline);color:var(--ink)">
+      <div>
+        <p class="eyebrow">Website · 一饺包四季</p>
+        <h3 style="margin-top:20px;color:var(--ink)">熊大爷官网 v2</h3>
+        <p style="color:var(--ink-soft)">按 v3.1 体系全新构建：文字主导的 Hero、暖墨数据舞台、三好工艺、14 款产品图谱、门店空间与加盟印章屏。桌面与移动响应式。</p>
+        <a class="btn" href="web/">打开官网 →</a>
+      </div>
+      <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/web-hero.jpg" alt="现包师傅捏制月牙饺" style="max-height:240px;object-fit:cover;border-radius:10px;width:100%">
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <span class="sec-no">03 · Brand Book</span>
+    <h2>品牌手册</h2>
+    <div class="feature">
+      <div>
+        <p class="eyebrow">Brand Manual · Version 3.1</p>
+        <h3 style="margin-top:20px">品牌手册 3.1</h3>
+        <p>21 页 · 16:9 全新重排：集团介绍、大事记、使命愿景、PANDA YEAH、三好原则、产品图谱、智慧供应链、吉尼斯纪录与世界的饺子。</p>
+        <a class="btn" href="manual/">打开品牌手册 →</a>
+      </div>
+      <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/white-stacked.png" alt="">
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <span class="sec-no">04 · Applications</span>
+    <h2>应用物料</h2>
+    <div class="grid">
+      <a class="card" href="cards/"><span class="no">D · Cards</span><h3>名片与事务用品</h3><p>横竖两版 90×54mm、信纸、工牌，含出血与印制规格</p></a>
+      <a class="card" href="merch/"><span class="no">D+ · IP &amp; Merch</span><h3>IP 2.0 与周边</h3><p>PANDA YEAH 手绘重设计设定稿 + 周边六类</p></a>
+      <a class="card" href="motion/"><span class="no">E · Motion</span><h3>动效与品牌片</h3><p>热气曲线动效规格 + 30s 品牌片《现包》分镜与成片 v1</p></a>
+      <a class="card" href="store/"><span class="no">F · Store</span><h3>门店视觉规范</h3><p>门头/竖招/菜单牌/档口/外摆 五触点 + AI 生图对齐说明</p></a>
+      <a class="card" href="anime/"><span class="no">G · Animation</span><h3>IP 动漫化探索</h3><p>角色圣经 + 四风格定妆 + 《清晨的一屉》分镜与视频样片</p></a>
+      <a class="card" href="miniapp/"><span class="no">H · Mini-Program</span><h3>小程序点餐</h3><p>核心五屏高保真稿 + 现包进度组件 + 点单流程</p></a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Sichuan United Tops Food Group</span>
+    <span>www.xiongdaye.com · 400-058-9198</span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* 熊大爷现包饺子 · Design Tokens v3.1
+   总纲：米白为纸 · 暖墨为字 · 雅金为笔 · 绛红为印
+   v3.1 修色（Tony 审阅）：画布去奶油化；金分两阶，浅底禁亮金写字；绛红底禁金字 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap');
+:root {
+  /* 纸 · Paper */
+  --paper: #FCFBF8;        /* 面粉白 全局画布 ~60%（面粉的白，非奶油黄；层次靠分层不靠染色）*/
+  --paper-2: #F1E9DA;      /* 暖纸米 分区/卡片底（与画布形成明确一阶落差）*/
+  /* 木 · Wood */
+  --wood-light: #E7D8C2;   /* 原木浅 材质、发丝线边框 */
+  --wood: #B08A5E;         /* 原木中 材质深阶 少量 */
+  /* 墨 · Ink */
+  --ink: #241E1B;          /* 暖墨 只给标题/display 与深底舞台（修改单#1-A：墨分三层） */
+  --ink-body: #4A423B;     /* 正文墨 全站正文默认（9.5:1） */
+  --ink-soft: #6B6259;     /* 注释墨 说明/caption（5.8:1 AA） */
+  /* 金 · Gold（两阶制）*/
+  --gold: #C4993F;         /* 亮金 只在暖墨深底写字/图标（6.3:1）；浅底仅限大型装饰图形，禁写字（2.4:1）*/
+  --gold-ink: #7D5F17;     /* 古铜金 浅底上一切金色文字/标签/eyebrow/细线（5.8:1 AA+）*/
+  --gold-light: #D7CA9E;   /* 淡金 竹影纹样 仅肌理 永不做文字 */
+  /* 印 · Seal */
+  --seal: #9F3B3B;         /* 绛红 印章红：主 CTA/徽章 ≤5% 每屏1个红实体；绛红底文字一律纯白（金字 2.5:1 禁）*/
+  /* 青 · Bamboo */
+  --bamboo: #5E8B4C;       /* 竹青 食材新鲜点缀 极少量 */
+  /* LOGO 亮红：只活在 LOGO 内，禁作界面色 */
+  --logo-red: #D70D18;
+
+  /* 字体 */
+  --font-serif: 'Noto Serif SC', 'Songti SC', serif;      /* 中文标题 · 讲故事 */
+  --font-sans: 'Noto Sans SC', 'PingFang SC', sans-serif; /* 正文 / UI */
+  --font-en: 'Outfit', sans-serif;                        /* 英文与数字 · 一等公民 */
+
+  /* 动效 · 热气曲线 */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */ /* 全局唯一缓动 */
+  --dur-hover: 240ms; /* @kind other */
+  --dur-enter: 800ms; /* @kind other */
+  --dur-page: 600ms; /* @kind other */
+
+  /* 圆角与线 */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --hairline: 1px solid var(--wood-light);
+}
