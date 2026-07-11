@@ -153,6 +153,27 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
 .foot-col a:hover{color:var(--gold-ink)}
 .foot-legal{margin-top:56px;padding-top:24px;border-top:var(--hairline);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft)}
 
+/* ===== 大事纪 ===== */
+.mile-head{max-width:720px}
+.mile-head h2{margin-top:22px}
+.timeline{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px 28px}
+.mile{border-top:1.5px solid rgba(36,30,27,.16);padding-top:20px}
+.mile .yr{font:600 15px/1 var(--font-en);letter-spacing:.06em;color:var(--gold-ink)}
+.mile h4{margin-top:12px;font-size:17px}
+.mile p{margin-top:8px;font-size:13.5px;color:var(--ink-soft)}
+
+/* ===== 加盟流程 ===== */
+.join-flow{margin-top:72px;padding-top:48px;border-top:1px solid rgba(255,255,255,.22)}
+.join-flow h3{color:#fff}
+.join-flow .caption{color:rgba(255,255,255,.65);margin-top:10px}
+.flow-steps{margin-top:36px;display:grid;grid-template-columns:repeat(5,1fr);gap:26px 22px}
+.flow-step .fno{font:600 12px/1 var(--font-en);letter-spacing:.14em;color:rgba(255,255,255,.6)}
+.flow-step b{display:block;margin-top:8px;font-size:15px;font-weight:700;color:#fff}
+.flow-step p{margin-top:4px;font-size:12.5px;color:rgba(255,255,255,.66)}
+
+/* ===== 产品一句话 ===== */
+.pcard .desc{margin-top:8px;font-size:12.5px;line-height:1.6;color:var(--ink-soft)}
+
 /* ===== 响应式 ===== */
 @media (max-width:1080px){
   .pgrid{grid-template-columns:repeat(2,1fr)}
@@ -185,6 +206,8 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
   .prod-head .caption{text-align:left}
   .hero-media img,.space-banner img{aspect-ratio:16/10}
   .join-grid{gap:48px}
+  .timeline{grid-template-columns:1fr 1fr;gap:32px 22px}
+  .flow-steps{grid-template-columns:1fr 1fr;gap:22px 18px}
 }
 </style>
 <link rel="manifest" href="/manifest.webmanifest">
@@ -201,6 +224,7 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
       <a href="#brand">品牌</a>
       <a href="#products">产品</a>
       <a href="#stores">门店</a>
+      <a href="#milestones">大事纪</a>
       <a href="#join">加盟</a>
     </div>
     <a class="btn-ghost" href="tel:4000589198">加盟咨询</a>
@@ -236,12 +260,12 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
 <section class="stage">
   <div class="wrap">
     <p class="eyebrow">China's Leading Fresh-Made Dumplings</p>
-    <h2>中国现包饺子头部品牌</h2>
+    <h2>不在家吃饭，就吃熊大爷</h2>
     <div class="stats">
-      <div class="stat"><div class="num">1000<small>+</small></div><h4>全国在营门店</h4><p>覆盖社区、街巷与机场</p></div>
-      <div class="stat"><div class="num">31<small> 省</small></div><h4>覆盖省级行政区</h4><p>从西北到南洋，步履不停</p></div>
-      <div class="stat"><div class="num">341<small> 种</small></div><h4>吉尼斯世界纪录</h4><p>2025 成都宽窄巷子「最多种类的饺子宴」</p></div>
-      <div class="stat"><div class="num">2800<small>h</small></div><h4>天山麦粉年均日照</h4><p>饺子皮选用中国绿色认证新疆面粉</p></div>
+      <div class="stat"><div class="num">1000<small>+</small></div><h4>全国运营门店</h4><p>北京、上海、广州、深圳、成都、杭州、武汉……</p></div>
+      <div class="stat"><div class="num">1800<small>+</small></div><h4>全国签约门店</h4><p>直营、联营、加盟三种模式铺设</p></div>
+      <div class="stat"><div class="num">32000<small>+</small></div><h4>十平米小店最高日营收</h4><p>小店型，大生意</p></div>
+      <div class="stat"><div class="num">3<small> 家</small></div><h4>战略投资机构</h4><p>源来资本 · 美团龙珠 · 番茄资本，赛道唯一</p></div>
     </div>
   </div>
 </section>
@@ -253,8 +277,9 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
       <div>
         <p class="eyebrow">Our Craft · 包好中国饺子</p>
         <h2>包好中国饺子<br>传承千年文化</h2>
-        <p class="lead">熊大爷来自熊猫故乡四川。我们相信一只好饺子不靠秘方，靠的是不偷懒：好面、好肉，和一双双当着街坊面现包的手。</p>
-        <p class="lead">2019 年创立至今，这份「不偷懒」从社区厨房一路走上吉尼斯纪录与「一带一路」驻华大使联谊会的餐桌。</p>
+        <p class="lead">熊大爷是四川联拓食品集团旗下品牌——一家集品牌、渠道、科技、供应链、资金结算中心、培训学校为一体的现代化食品连锁企业。以手工现包的饺子、云吞为特色单品，产品线涵盖早餐、小菜卤味、粉面盖饭、汤饮，把「新鲜」带给每一位进店的顾客。</p>
+        <p class="lead">2019 年首店开在北京潘家园；2021 年应成都市政府之邀把总部迁到熊猫故乡，郫都区 203 亩生产基地与 5000㎡ 总部大楼相继落地。六年间门店开进北上广深蓉杭汉，成为唯一被源来资本、美团龙珠、番茄资本战略投资的现包饺子连锁品牌。</p>
+        <p class="lead" style="font-family:var(--font-serif);color:var(--ink)">使命：让消费者吃得更幸福，让伙伴加速成长，让门店可持续赚钱。价值观：真诚 · 务实 · 敬畏 · 共赢。</p>
       </div>
       <figure>
         <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/web-craft.jpg" alt="刚出锅的现包饺子，热气从饺子本身升起">
@@ -295,13 +320,13 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
         <p class="eyebrow">The Dumplings · 八款常青</p>
         <h2>现包饺子</h2>
       </div>
-      <p class="caption">八款常青款每日现包；时令款「一饺包四季」，以门店当季菜单为准。</p>
+      <p class="caption">六大产品系列：现包饺子 · 手工云吞 · 早餐 · 小菜卤味 · 粉面盖饭 · 汤饮。八款常青每日现包，时令款以门店当季菜单为准。</p>
     </div>
     <div class="pgrid">
-      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-chive.jpg" alt="韭菜鲜肉饺"><div class="tx"><h4>韭菜鲜肉饺</h4><p class="en">Garlic Chives &amp; Pork</p></div></div>
-      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-corn.jpg" alt="玉米鲜肉饺"><div class="tx"><h4>玉米鲜肉饺</h4><p class="en">Corn &amp; Pork</p></div></div>
+      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/jiucai.png" alt="韭菜鲜肉饺"><div class="tx"><h4>韭菜鲜肉饺</h4><p class="en">Garlic Chives &amp; Pork</p><p class="desc">新鲜小杆韭菜与山羊猪前腿肉的 CP，百吃不腻。</p></div></div>
+      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/yumi.png" alt="玉米鲜肉饺"><div class="tx"><h4>玉米鲜肉饺</h4><p class="en">Corn &amp; Pork</p><p class="desc">爆浆嫩玉米，一口鲜甜一口汁。</p></div></div>
       <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-cabbage.jpg" alt="白菜鲜肉饺"><div class="tx"><h4>白菜鲜肉饺</h4><p class="en">Chinese Cabbage &amp; Pork</p></div></div>
-      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-celery.jpg" alt="芹菜鲜肉饺"><div class="tx"><h4>芹菜鲜肉饺</h4><p class="en">Celery &amp; Pork</p></div></div>
+      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/qincai.png" alt="芹菜鲜肉饺"><div class="tx"><h4>芹菜鲜肉饺</h4><p class="en">Celery &amp; Pork</p><p class="desc">Q 弹多汁，脆嫩芹香解腻爽口。</p></div></div>
       <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-shepherd.jpg" alt="荠菜鲜肉饺"><div class="tx"><h4>荠菜鲜肉饺</h4><p class="en">Shepherd's Purse &amp; Pork</p></div></div>
       <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-shrimp.jpg" alt="虾皇饺"><div class="tx"><h4>虾皇饺</h4><p class="en">Imperial Shrimp</p></div></div>
       <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-triple.jpg" alt="三鲜虾仁鲜肉饺"><div class="tx"><h4>三鲜虾仁鲜肉饺</h4><p class="en">Triple Delight Shrimp &amp; Pork</p></div></div>
@@ -313,9 +338,9 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
       <p class="caption">同一张案板上的另外六碗。</p>
     </div>
     <div class="pgrid-6">
-      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/w-crabroe.jpg" alt="鲜虾蟹籽云吞"><div class="tx"><h4>鲜虾蟹籽云吞</h4><p class="en">Shrimp &amp; Crab Roe</p></div></div>
-      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/w-corn.jpg" alt="玉米鲜肉云吞"><div class="tx"><h4>玉米鲜肉云吞</h4><p class="en">Corn &amp; Pork</p></div></div>
-      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/w-handmade.jpg" alt="手工鲜肉云吞"><div class="tx"><h4>手工鲜肉云吞</h4><p class="en">Handmade Pork</p></div></div>
+      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/yuntun-xiaxie.png" alt="鲜虾蟹籽云吞"><div class="tx"><h4>鲜虾蟹籽云吞</h4><p class="en">Shrimp &amp; Crab Roe</p><p class="desc">虾仁大个、蟹籽爆珠，镇店爆款。</p></div></div>
+      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/yuntun-jicai.png" alt="荠菜鲜肉云吞"><div class="tx"><h4>荠菜鲜肉云吞</h4><p class="en">Shepherd's Purse &amp; Pork</p><p class="desc">高纤维时蔬，清鲜爽口不油腻。</p></div></div>
+      <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/yuntun-xianrou.png" alt="手工鲜肉云吞"><div class="tx"><h4>手工鲜肉云吞</h4><p class="en">Handmade Pork</p><p class="desc">三肥七瘦黄金配比，皮薄馅弹。</p></div></div>
       <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/n-wonton.jpg" alt="鲜虾蟹籽云吞面"><div class="tx"><h4>鲜虾蟹籽云吞面</h4><p class="en">Wonton Noodles</p></div></div>
       <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/n-beef.jpg" alt="红烧牛肉面"><div class="tx"><h4>红烧牛肉面</h4><p class="en">Braised Beef</p></div></div>
       <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/n-scallion.jpg" alt="葱油拌面"><div class="tx"><h4>葱油拌面</h4><p class="en">Scallion Oil</p></div></div>
@@ -354,6 +379,28 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
   </div>
 </section>
 
+<hr class="pleat">
+
+<!-- 大事纪：真实里程碑（来源：官网） -->
+<section id="milestones">
+  <div class="wrap">
+    <div class="mile-head">
+      <p class="eyebrow">Milestones · 品牌大事纪</p>
+      <h2>从潘家园的一家小店<br>到一千多家门店</h2>
+    </div>
+    <div class="timeline">
+      <div class="mile"><div class="yr">2019.05</div><h4>潘家园首店</h4><p>「熊大爷」品牌创立，北京潘家园西门第一家店开业。</p></div>
+      <div class="mile"><div class="yr">2020.01</div><h4>源来资本天使轮</h4><p>获源来资本天使轮投资，现包模式获得资本验证。</p></div>
+      <div class="mile"><div class="yr">2021.08</div><h4>美团龙珠 A 轮</h4><p>获美团龙珠 A 轮投资，同年登上 CCTV-10 报道。</p></div>
+      <div class="mile"><div class="yr">2021.12</div><h4>总部落地成都</h4><p>四川联拓成立，签约郫都区 203 亩生产基地，扎根熊猫故乡。</p></div>
+      <div class="mile"><div class="yr">2022</div><h4>在营门店 500+</h4><p>与农业银行达成战略合作，全年新签约门店 1380 家。</p></div>
+      <div class="mile"><div class="yr">2024.01</div><h4>品牌全面升级</h4><p>5000㎡ 总部大楼入驻，品牌升级后门店营收平均提升 30%。</p></div>
+      <div class="mile"><div class="yr">2024.05</div><h4>五周年 · PANDA YEAR</h4><p>品牌五周年，发布自有 IP「PANDA YEAR」。</p></div>
+      <div class="mile"><div class="yr">2024.08</div><h4>三家机构联合投资</h4><p>源来资本、美团龙珠、番茄资本联合投资；单月新增签约 112 家。</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- 加盟：绛红印章屏（本屏唯一红实体） -->
 <section id="join" class="join">
   <div class="wrap">
@@ -369,10 +416,26 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
         <img class="join-logo" src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/white-horizontal.png" alt="熊大爷 现包饺子">
       </div>
       <div class="join-points">
-        <div class="join-point"><b>元拓生产基地 · 标准化供应</b><p>自动化生产线覆盖和面、制馅、包制到速冻全流程，一千多家门店同一标准。</p></div>
+        <div class="join-point"><b>联拓生产基地 · 标准化供应</b><p>自动化生产线覆盖和面、制馅、包制到速冻全流程，一千多家门店同一标准。</p></div>
         <div class="join-point"><b>18 个中心仓 · T+1 配送</b><p>核心城市次日达，冷链异常 4 小时内响应，供应链管控闭环。</p></div>
         <div class="join-point"><b>联拓数字化系统</b><p>收银、外卖、团购、会员一体化，集团自研资金结算与分账体系。</p></div>
         <div class="join-point"><b>全流程扶持</b><p>选址评估、人才培养中心带训、开业督导与持续运营陪跑。</p></div>
+      </div>
+    </div>
+    <div class="join-flow">
+      <h3>加盟流程</h3>
+      <p class="caption">从咨询到开业，全流程有人陪跑。</p>
+      <div class="flow-steps">
+        <div class="flow-step"><div class="fno">01</div><b>加盟咨询</b><p>电话或到店咨询，了解品牌与模式</p></div>
+        <div class="flow-step"><div class="fno">02</div><b>实地考察</b><p>参观总部、生产基地与样板门店</p></div>
+        <div class="flow-step"><div class="fno">03</div><b>资质评估</b><p>双向评估，确认合作意向</p></div>
+        <div class="flow-step"><div class="fno">04</div><b>签约合作</b><p>签署合同，明确权责与扶持</p></div>
+        <div class="flow-step"><div class="fno">05</div><b>选址评估</b><p>商圈分析与点位评估，选对位置</p></div>
+        <div class="flow-step"><div class="fno">06</div><b>门店装修</b><p>统一 SI 规范，标准化施工交付</p></div>
+        <div class="flow-step"><div class="fno">07</div><b>系统培训</b><p>人才培养中心带训，考核上岗</p></div>
+        <div class="flow-step"><div class="fno">08</div><b>物料配送</b><p>中心仓 T+1 冷链配送到店</p></div>
+        <div class="flow-step"><div class="fno">09</div><b>开业筹备</b><p>开业督导驻店，营销物料就位</p></div>
+        <div class="flow-step"><div class="fno">10</div><b>持续陪跑</b><p>运营督导定期巡店，持续优化</p></div>
       </div>
     </div>
   </div>
@@ -399,13 +462,13 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
         <ul>
           <li><a href="tel:4000589198">400-058-9198</a></li>
           <li><a href="http://www.xiongdaye.com" rel="noopener">www.xiongdaye.com</a></li>
-          <li>成都 · 四川联拓食品集团</li>
+          <li>四川省成都市郫都区犀浦街道筒车堰路93号3栋<br>四川联拓总部大楼</li>
         </ul>
       </div>
     </div>
     <div class="foot-legal">
-      <span>© 2026 四川联拓食品集团有限公司 Sichuan United Tops Food Group Co., Ltd.</span>
-      <span>ICP 备案号（待甲方提供）</span>
+      <span>© 2026 成都熊大爷餐饮管理有限公司 · 四川联拓食品集团</span>
+      <span><a href="https://beian.miit.gov.cn" rel="noopener">蜀ICP备2022027334号</a> · 川公网安备51012402001197号</span>
     </div>
   </div>
 </footer>
