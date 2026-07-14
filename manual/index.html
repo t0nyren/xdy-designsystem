@@ -499,5 +499,35 @@
 </deck-stage>
 <script src="image-slot.js"></script>
 <script src="deck-stage.js"></script>
+<style>
+/* 手册为 16:9 定版式：竖屏手机上衬底改暖墨（默认纯黑显得像加载失败），并给横屏提示 */
+deck-stage{background:#26221E}
+#rotate-hint{
+  position:fixed; left:50%; bottom:max(20px, env(safe-area-inset-bottom)); transform:translateX(-50%);
+  display:flex; align-items:center; gap:10px; max-width:calc(100vw - 32px);
+  background:#FAF7F1; color:#2A2622; border:1px solid rgba(122,94,42,.35); border-radius:999px;
+  padding:10px 14px 10px 18px; font:500 13px/1.5 "Noto Sans SC",-apple-system,sans-serif;
+  box-shadow:0 6px 24px rgba(0,0,0,.35); z-index:9; white-space:nowrap;
+}
+#rotate-hint button{
+  border:0; background:rgba(42,38,34,.08); color:inherit; border-radius:999px;
+  width:24px; height:24px; font-size:13px; line-height:1; cursor:pointer; flex:none;
+}
+@media (orientation:landscape), (min-width:821px){ #rotate-hint{display:none} }
+</style>
+<div id="rotate-hint" hidden>
+  <span>手册为 16:9 版式，建议横屏观看</span>
+  <button type="button" aria-label="关闭提示">✕</button>
+</div>
+<script>
+(function(){
+  var el=document.getElementById('rotate-hint');
+  if(matchMedia('(max-width: 820px) and (orientation: portrait)').matches
+     && !sessionStorage.getItem('xdy-rotate-hint-dismissed')) el.hidden=false;
+  el.querySelector('button').addEventListener('click',function(){
+    el.hidden=true; sessionStorage.setItem('xdy-rotate-hint-dismissed','1');
+  });
+})();
+</script>
 </body>
 </html>
