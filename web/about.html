@@ -51,7 +51,12 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);
 
 /* ===== 页头 ===== */
 .page-hero{padding:190px 0 0}
+.page-hero .wrap{position:relative}
 .page-hero h1{margin-top:30px}
+.hero-ip{position:absolute;right:48px;top:-8px;width:min(240px,20vw);pointer-events:none}
+.hero-ip img{width:100%;mix-blend-mode:multiply}
+.hero-ip figcaption{margin-top:6px;text-align:center;font:600 10.5px/1.6 var(--font-en);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+@media (max-width:820px){.hero-ip{position:static;width:132px;margin-top:28px}}
 .page-hero .tagline{margin-top:26px;font-family:var(--font-serif);font-size:clamp(19px,2vw,24px);color:var(--ink);font-weight:600;letter-spacing:.02em}
 .page-hero .lead{margin-top:18px;max-width:620px;font-size:17px;color:var(--ink-body)}
 .hero-anchors{margin-top:52px;display:flex;flex-wrap:wrap;gap:12px 28px;padding-top:24px;border-top:1.5px solid rgba(36,30,27,.16);font-size:14.5px;font-weight:500}
@@ -198,6 +203,7 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
   <div class="wrap">
     <p class="eyebrow">About Company</p>
     <h1>关于企业</h1>
+    <figure class="hero-ip"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/ip-yeah.jpg" alt="熊大爷品牌 IP：比耶的熊猫"><figcaption>Panda Yeah</figcaption></figure>
     <p class="tagline">来自熊猫故乡的饺子品牌</p>
     <p class="lead">熊大爷，来自熊猫故乡成都。「爷」，是父亲，也是匠心；「熊」，是熊猫故乡的图腾，也是走向世界的雄心。包好中国饺子，传承千年文化——我们用这份父爱温度，把中国味道包进世界的日常。</p>
     <div class="hero-anchors">
