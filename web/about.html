@@ -50,16 +50,17 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);
 .btn-ghost:hover{background:var(--ink);color:var(--paper)}
 
 /* ===== 页头 ===== */
-.page-hero{padding:190px 0 0}
-.page-hero .wrap{position:relative}
-.page-hero h1{margin-top:30px}
-.hero-ip{position:absolute;right:48px;top:-8px;width:min(240px,20vw);pointer-events:none}
-.hero-ip img{width:100%;mix-blend-mode:multiply}
-.hero-ip figcaption{margin-top:6px;text-align:center;font:600 10.5px/1.6 var(--font-en);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
-@media (max-width:820px){.hero-ip{position:static;width:132px;margin-top:28px}}
-.page-hero .tagline{margin-top:26px;font-family:var(--font-serif);font-size:clamp(19px,2vw,24px);color:var(--ink);font-weight:600;letter-spacing:.02em}
-.page-hero .lead{margin-top:18px;max-width:620px;font-size:17px;color:var(--ink-body)}
-.hero-anchors{margin-top:52px;display:flex;flex-wrap:wrap;gap:12px 28px;padding-top:24px;border-top:1.5px solid rgba(36,30,27,.16);font-size:14.5px;font-weight:500}
+.page-hero{padding:170px 0 0}
+.page-hero .wrap{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);column-gap:88px;align-items:start}
+.page-hero .eyebrow{grid-column:1;grid-row:1}
+.page-hero h1{grid-column:1;grid-row:2;margin-top:30px}
+.page-hero .tagline{grid-column:1;grid-row:3;margin-top:26px;font-family:var(--font-serif);font-size:clamp(19px,2vw,24px);color:var(--ink);font-weight:600;letter-spacing:.02em}
+.page-hero .lead{grid-column:1;grid-row:4;margin-top:18px;max-width:680px;font-size:17px;color:var(--ink-body)}
+.hero-ip{grid-column:2;grid-row:1/5;position:relative;width:100%;max-width:460px;justify-self:end;align-self:center;padding:24px;pointer-events:none}
+.hero-ip::before{content:'';position:absolute;inset:11% 0 2% 8%;z-index:-1;border-radius:48% 48% 18px 18px / 38% 38% 18px 18px;background:linear-gradient(145deg,rgba(125,95,23,.11),rgba(165,31,36,.055))}
+.hero-ip img{display:block;width:100%;border-radius:48% 48% 16px 16px / 38% 38% 16px 16px;mix-blend-mode:multiply}
+.hero-ip figcaption{margin-top:14px;text-align:center;font:600 10.5px/1.6 var(--font-en);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink)}
+.hero-anchors{grid-column:1/-1;grid-row:5;margin-top:52px;display:flex;flex-wrap:wrap;gap:12px 28px;padding-top:24px;border-top:1.5px solid rgba(36,30,27,.16);font-size:14.5px;font-weight:500}
 .hero-anchors a{display:inline-flex;align-items:baseline;gap:8px;color:var(--ink-body);transition:color var(--dur-hover) var(--ease)}
 .hero-anchors a:hover{color:var(--gold-ink)}
 .hero-anchors .no{font:600 11px/1 var(--font-en);letter-spacing:.14em;color:var(--gold-ink)}
@@ -157,6 +158,8 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
 
 /* ===== 响应式 ===== */
 @media (max-width:1080px){
+  .page-hero .wrap{grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);column-gap:52px}
+  .hero-ip{max-width:390px;padding:18px}
   .culture-row{grid-template-columns:160px 1fr;gap:28px}
   .hist-year{grid-template-columns:160px 1fr;gap:32px}
 }
@@ -165,6 +168,8 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
   .wrap,.nav-in{padding-left:24px;padding-right:24px}
   .nav-links{display:none}
   .page-hero{padding-top:140px}
+  .page-hero .wrap{display:block}
+  .hero-ip{width:min(82vw,380px);margin:42px auto 0;padding:18px}
   .intro-grid,.story-grid,.visual-grid{grid-template-columns:1fr;gap:40px}
   .intro-grid figure{order:-1}
   .intro-grid figure img{aspect-ratio:4/3}
@@ -203,9 +208,9 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
   <div class="wrap">
     <p class="eyebrow">About Company</p>
     <h1>关于企业</h1>
-    <figure class="hero-ip"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/ip-yeah.jpg" alt="熊大爷品牌 IP：比耶的熊猫"><figcaption>Panda Yeah</figcaption></figure>
     <p class="tagline">来自熊猫故乡的饺子品牌</p>
     <p class="lead">熊大爷，来自熊猫故乡成都。「爷」，是父亲，也是匠心；「熊」，是熊猫故乡的图腾，也是走向世界的雄心。包好中国饺子，传承千年文化——我们用这份父爱温度，把中国味道包进世界的日常。</p>
+    <figure class="hero-ip"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/ip-yeah.jpg" alt="熊大爷品牌 IP：比耶的熊猫"><figcaption>Panda Yeah · 熊猫故乡的热情招呼</figcaption></figure>
     <div class="hero-anchors">
       <a href="#intro"><span class="no">01</span>公司介绍</a>
       <a href="#culture"><span class="no">02</span>企业文化</a>

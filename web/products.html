@@ -86,7 +86,10 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);
 .pcard h4{font-size:18px}
 .pcard .en{margin-top:4px;font:500 11.5px/1.5 var(--font-en);letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink)}
 .pcard .desc{margin-top:8px;font-size:12.5px;line-height:1.6;color:var(--ink-soft)}
-/* 无图系列：纯排版行 */
+.series-feature{margin-top:32px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);gap:42px;align-items:center}
+.series-feature img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius)}
+.series-feature p{font-size:15.5px}
+.series-feature .caption{margin-top:12px}
 .series-plain{margin-top:32px;max-width:760px}
 .series-plain p{font-size:15.5px}
 .series-plain .caption{margin-top:12px}
@@ -94,10 +97,15 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);
 
 /* ===== 研发团队（深底舞台） ===== */
 .rd{background:var(--ink);color:var(--paper)}
+.rd-head{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:72px;align-items:center}
 .rd .eyebrow{color:var(--gold)}
 .rd .eyebrow::before{background:var(--gold)}
 .rd h2{color:var(--paper);margin-top:22px;max-width:640px}
 .rd .lead{margin-top:26px;max-width:680px;font-size:17px;color:rgba(252,251,248,.82)}
+.rd-prof{justify-self:end;width:100%;max-width:280px}
+.rd-prof img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:var(--radius);border:1px solid rgba(215,202,158,.38);filter:saturate(.9)}
+.rd-prof figcaption{margin-top:14px;color:rgba(252,251,248,.68);font-size:12.5px;line-height:1.6}
+.rd-prof figcaption b{display:block;color:var(--paper);font-size:16px;font-weight:700}
 .rd-matrix{display:grid;grid-template-columns:repeat(6,1fr);gap:32px 28px;margin-top:64px;padding-top:48px;border-top:1px solid rgba(215,202,158,.25)}
 .rd-role .num{font:600 clamp(34px,3.4vw,52px)/1.1 var(--font-en);color:var(--gold)}
 .rd-role .num small{font-size:.42em;font-weight:500;margin-left:2px}
@@ -176,6 +184,7 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
 @media (max-width:1080px){
   .pgrid{grid-template-columns:repeat(2,1fr)}
   .pgrid-3{grid-template-columns:repeat(3,1fr)}
+  .rd-head{grid-template-columns:minmax(0,1fr) 250px;gap:48px}
   .rd-matrix{grid-template-columns:repeat(3,1fr)}
   .series-index a{min-width:33%}
 }
@@ -194,6 +203,9 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
   .pcard .tx{padding:14px 16px 16px}
   .pcard h4{font-size:15.5px}
   .pcard .en{font-size:11px}
+  .series-feature{grid-template-columns:1fr;gap:20px}
+  .rd-head{grid-template-columns:1fr;gap:40px}
+  .rd-prof{justify-self:start;max-width:240px}
   .rd-matrix{grid-template-columns:repeat(2,1fr);gap:28px 20px}
   .rd-idea{grid-template-columns:1fr;gap:40px}
   .story,.story-duo,.base-grid{grid-template-columns:1fr;gap:36px}
@@ -314,9 +326,12 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
         <span class="sno">Series 04</span>
         <h3>配饺小菜系列</h3>
       </div>
-      <div class="series-plain">
-        <p>一碟爽口小菜、几样卤味，是饺子桌上的老规矩。凉拌时蔬解腻、卤味添香，跟着时令与门店当季菜单更换。</p>
-        <p class="caption">具体品项以门店当日菜单为准。</p>
+      <div class="series-feature">
+        <figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/side-dishes-v1.jpg" alt="熊大爷门店实拍：凉拌时蔬、卤味与配饺小菜"></figure>
+        <div>
+          <p>一碟爽口小菜、几样卤味，是饺子桌上的老规矩。凉拌时蔬解腻、卤味添香，跟着时令与门店当季菜单更换。</p>
+          <p class="caption">真实门店菜品组合 · 具体品项以门店当日菜单为准。</p>
+        </div>
       </div>
     </div>
 
@@ -338,9 +353,17 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
 <!-- 研发团队：暖墨深底 · 金字 -->
 <section id="rd" class="rd">
   <div class="wrap">
-    <p class="eyebrow">R&amp;D Team · 研发团队</p>
-    <h2>把实验室<br>搬到案板旁边</h2>
-    <p class="lead">熊大爷现包饺子团队积极与高校科研院所合作，与上海交通大学食品科学与工程领域技术成果转化项目团队「三慢生物」达成战略合作，让每一只饺子背后都有食品科学的支撑。</p>
+    <div class="rd-head">
+      <div>
+        <p class="eyebrow">R&amp;D Team · 研发团队</p>
+        <h2>把实验室<br>搬到案板旁边</h2>
+        <p class="lead">熊大爷现包饺子团队积极与高校科研院所合作，与上海交通大学食品科学与工程领域技术成果转化项目团队「三慢生物」达成战略合作，让每一只饺子背后都有食品科学的支撑。</p>
+      </div>
+      <figure class="rd-prof">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/prof-fang-yapeng-v1.jpg" alt="方亚鹏教授肖像">
+        <figcaption><b>方亚鹏 教授</b>上海交通大学食品科学与工程领域科研团队</figcaption>
+      </figure>
+    </div>
 
     <div class="rd-matrix">
       <div class="rd-role"><div class="num">1<small>名</small></div><p>特聘教授</p></div>

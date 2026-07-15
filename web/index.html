@@ -83,6 +83,11 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);
 .brand-intro .lead + .lead{margin-top:16px}
 .brand-intro figure img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius)}
 .brand-intro figcaption{margin-top:12px}
+.brand-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.brand-note{padding-top:16px;border-top:1.5px solid rgba(36,30,27,.16)}
+.brand-note .no{font:600 10.5px/1 var(--font-en);letter-spacing:.14em;color:var(--gold-ink)}
+.brand-note h4{margin-top:10px;font-size:16px}
+.brand-note p{margin-top:7px;font-size:12.5px;line-height:1.65;color:var(--ink-soft)}
 .craft{margin-top:104px;display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:28px;align-items:start}
 .craft-item{border-top:1.5px solid rgba(36,30,27,.16);padding-top:24px}
 .craft-item img{width:100%;height:340px;object-fit:cover;border-radius:var(--radius-sm)}
@@ -120,8 +125,8 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);
 .space-kw div span{font:500 11px/1 var(--font-en);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);display:block;margin-top:8px}
 .space-banner{margin-top:72px;position:relative}
 .space-banner img{width:100%;aspect-ratio:21/9;object-fit:cover}
-.space-duo{max-width:1200px;margin:28px auto 0;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
-.space-duo figure img{width:100%;height:auto;border-radius:var(--radius)}
+.space-duo{max-width:1200px;margin:28px auto 0;padding:0 48px;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:28px;align-items:start}
+.space-duo figure img{display:block;width:100%;height:auto;border-radius:var(--radius)}
 .space-duo figcaption{margin-top:12px}
 
 /* ===== 加盟（绛红印章屏：本屏唯一红实体） ===== */
@@ -198,6 +203,7 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
   .stats{grid-template-columns:repeat(2,1fr);gap:32px}
   .brand-intro,.join-grid,.space-duo{grid-template-columns:1fr}
   .brand-intro{gap:40px}
+  .brand-notes{grid-template-columns:1fr;gap:14px}
   .craft{grid-template-columns:1fr}
   .craft-item img{height:260px}
   .pgrid{grid-template-columns:1fr 1fr;gap:14px}
@@ -209,6 +215,24 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
   .timeline{grid-template-columns:1fr 1fr;gap:32px 22px}
   .flow-steps{grid-template-columns:1fr 1fr;gap:22px 18px}
   .pcard .en,.pgrid-6 .pcard .en{font-size:11px}
+}
+
+/* ===== 交互动效（全站同一份；html.anim 由 JS 挂载，无 JS 不隐藏内容） ===== */
+.anim [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease-out,transform .6s ease-out}
+.anim [data-reveal].is-in{opacity:1;transform:translateY(0)}
+.zoom{overflow:hidden;border-radius:var(--radius)}
+.zoom--flush{border-radius:0}
+.zoom img{transition:transform .4s ease}
+.zoom:hover img{transform:scale(1.03)}
+.pcard img{transition:transform .4s ease}
+.pcard:hover img{transform:scale(1.03)}
+.ncard .thumb{transition:transform .4s ease}
+.ncard:hover .thumb{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){
+  .anim [data-reveal]{opacity:1;transform:none;transition:none}
+  .zoom img,.pcard img,.ncard .thumb{transition:none}
+  .zoom:hover img,.pcard:hover img{transform:none}
+  .ncard:hover .thumb{transform:none}
 }
 </style>
 <link rel="manifest" href="/manifest.webmanifest">
@@ -277,9 +301,12 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
       <div>
         <p class="eyebrow">Our Craft · 包好中国饺子</p>
         <h2>包好中国饺子<br>传承千年文化</h2>
-        <p class="lead">熊大爷是四川联拓食品集团旗下品牌——一家集品牌、渠道、科技、供应链、资金结算中心、培训学校为一体的现代化食品连锁企业。以手工现包的饺子、云吞为特色单品，产品线涵盖早餐、小菜卤味、粉面盖饭、汤饮，把「新鲜」带给每一位进店的顾客。</p>
-        <p class="lead">2019 年首店开在北京潘家园；2021 年应成都市政府之邀把总部迁到熊猫故乡，郫都区 203 亩生产基地与 5000㎡ 总部大楼相继落地。六年间门店开进北上广深蓉杭汉，成为唯一被源来资本、美团龙珠、番茄资本战略投资的现包饺子连锁品牌。</p>
-        <p class="lead" style="font-family:var(--font-serif);color:var(--ink)">使命：让消费者吃得更幸福，让伙伴加速成长，让门店可持续赚钱。价值观：真诚 · 务实 · 敬畏 · 共赢。</p>
+        <p class="lead">从 2019 年潘家园的一块案板，到今天开进全国的社区街角，熊大爷一直把「现包」留在门店：当天鲜蔬、当天做馅、当天现包、当天售卖，隔着明档也看得见。</p>
+        <div class="brand-notes">
+          <div class="brand-note"><p class="no">01 · Community</p><h4>社区食堂</h4><p>不只一顿饺子。早餐、午餐、晚餐、宵夜，都能吃上一口热乎的。</p></div>
+          <div class="brand-note"><p class="no">02 · Panda Home</p><h4>熊猫故乡</h4><p>从成都出发，用更年轻的熊猫表达，把中国饺子讲给世界听。</p></div>
+          <div class="brand-note"><p class="no">03 · Fresh Daily</p><h4>千店同频</h4><p>1000+ 家门店共用一套新鲜标准，手艺留在每一家门店。</p></div>
+        </div>
       </div>
       <figure>
         <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/web-craft-v2.jpg" alt="刚出锅的现包饺子，热气从饺子本身升起">
@@ -389,14 +416,14 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
       <h2>从潘家园的一家小店<br>到一千多家门店</h2>
     </div>
     <div class="timeline">
-      <div class="mile"><div class="yr">2019.05</div><h4>潘家园首店</h4><p>「熊大爷」品牌创立，北京潘家园西门第一家店开业。</p></div>
-      <div class="mile"><div class="yr">2020.01</div><h4>源来资本天使轮</h4><p>获源来资本天使轮投资，现包模式获得资本验证。</p></div>
-      <div class="mile"><div class="yr">2021.08</div><h4>美团龙珠 A 轮</h4><p>获美团龙珠 A 轮投资，同年登上 CCTV-10 报道。</p></div>
-      <div class="mile"><div class="yr">2021.12</div><h4>总部落地成都</h4><p>四川联拓成立，签约郫都区 203 亩生产基地，扎根熊猫故乡。</p></div>
-      <div class="mile"><div class="yr">2022</div><h4>在营门店 500+</h4><p>与农业银行达成战略合作，全年新签约门店 1380 家。</p></div>
-      <div class="mile"><div class="yr">2024.01</div><h4>品牌全面升级</h4><p>5000㎡ 总部大楼入驻，品牌升级后门店营收平均提升 30%。</p></div>
-      <div class="mile"><div class="yr">2024.05</div><h4>五周年 · PANDA YEAR</h4><p>品牌五周年，发布自有 IP「PANDA YEAR」。</p></div>
-      <div class="mile"><div class="yr">2024.08</div><h4>三家机构联合投资</h4><p>源来资本、美团龙珠、番茄资本联合投资；单月新增签约 112 家。</p></div>
+      <div class="mile"><div class="yr">2019</div><h4>品牌启程</h4><p>与窄门集团合作成立天津联拓；5 月，北京潘家园首家门店开业。</p></div>
+      <div class="mile"><div class="yr">2020</div><h4>获得天使轮投资</h4><p>获源来资本天使轮投资，并获评「最具发展潜力餐饮品牌」。</p></div>
+      <div class="mile"><div class="yr">2021</div><h4>A 轮融资 · 落户成都</h4><p>获美团龙珠、番茄资本 A 轮投资；全国管理总部正式落户成都。</p></div>
+      <div class="mile"><div class="yr">2022</div><h4>重大招商引资项目</h4><p>获「五强五好·郫都榜样」先进集体；在营门店突破 500 家。</p></div>
+      <div class="mile"><div class="yr">2023</div><h4>全国门店突破 1000+</h4><p>与上海交通大学开展未来食品技术成果转化战略合作。</p></div>
+      <div class="mile"><div class="yr">2024</div><h4>总部大楼正式投用</h4><p>四川联拓总部大楼投入使用，门店运营与供应链数字化系统全面上线。</p></div>
+      <div class="mile"><div class="yr">2025</div><h4>出海战略正式启动</h4><p>成为「一带一路」驻华大使新春联谊会指定用品，并刷新饺子宴吉尼斯世界纪录。</p></div>
+      <div class="mile"><div class="yr">2026</div><h4>生产基地投产 · 海外首店</h4><p>成都元拓生产基地建成投产，海外首店于吉隆坡启幕。</p></div>
     </div>
   </div>
 </section>
