@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>产品 · 熊大爷现包饺子</title>
+<meta name="description" content="熊大爷现包饺子产品全览：现包饺子、手工云吞、鲜味面食、配饺小菜、配饺汤饮五大系列；与上海交通大学食品科学团队战略合作，践行「三减三健」；天山雪麦、两条黄金带、非遗春笋、进口花胶四个食材故事。">
+<link rel="canonical" href="https://xdy.secondlife.today/web/products.html">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+/* ===== 产品页 · 沿用官网 v2 设计语言 =====
+   墨三层：--ink 标题 / --ink-body 正文 / --ink-soft 注释；一屏一红；浅底金字一律 --gold-ink */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink-body:#4A423B;
+  --ink-soft:#6B6259;
+  --sec-pad:116px;
+  --shadow-low:0 16px 40px -24px rgba(36,30,27,.35);
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink-body);font-family:var(--font-sans);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+
+h1,h2,h3,h4{color:var(--ink);font-family:var(--font-serif)}
+h1{font-weight:600;font-size:clamp(44px,5.6vw,76px);line-height:1.22}
+h2{font-weight:600;font-size:clamp(34px,4vw,52px);line-height:1.3}
+h3{font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.4}
+h4{font-weight:600;font-size:20px;line-height:1.5}
+.eyebrow{font:600 13px/1 var(--font-en);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:'';width:40px;height:1.5px;background:var(--gold-ink)}
+.caption{font-size:13px;color:var(--ink-soft)}
+section{padding:var(--sec-pad) 0}
+
+.pleat{height:12px;border:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='12'%3E%3Cpath d='M0 10.5 Q14 1.5 28 10.5 Q42 1.5 56 10.5' fill='none' stroke='%237D5F17' stroke-width='1.3' opacity='0.55'/%3E%3C/svg%3E") repeat-x center/56px 12px}
+
+/* ===== 导航 ===== */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:var(--hairline)}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 48px;height:68px;display:flex;align-items:center;gap:40px}
+.nav-in img{height:34px}
+.nav-links{display:flex;gap:32px;margin-left:auto;font-size:15px;font-weight:500;color:var(--ink-body)}
+.nav-links a{transition:color var(--dur-hover) var(--ease)}
+.nav-links a:hover{color:var(--gold-ink)}
+.nav-links a[aria-current="page"]{color:var(--gold-ink);font-weight:700}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:1.5px solid var(--ink);border-radius:999px;font:600 14px/1 var(--font-sans);color:var(--ink);white-space:nowrap;transition:background var(--dur-hover) var(--ease),color var(--dur-hover) var(--ease)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* ===== 页头 ===== */
+.page-hero{padding:190px 0 96px}
+.page-hero h1{margin-top:30px}
+.page-hero .slogan{margin-top:26px;font-family:var(--font-serif);font-size:clamp(18px,2vw,24px);color:var(--ink);letter-spacing:.06em}
+.page-hero .lead{margin-top:18px;max-width:600px;font-size:17px;color:var(--ink-body)}
+.hero-flex{display:flex;align-items:flex-end;justify-content:space-between;gap:48px}
+.hero-anchor{display:grid;gap:12px;padding-bottom:8px;text-align:right}
+.hero-anchor a{font-size:14px;color:var(--ink-soft);transition:color var(--dur-hover) var(--ease)}
+.hero-anchor a:hover{color:var(--gold-ink)}
+.hero-anchor a span{font:600 11px/1 var(--font-en);letter-spacing:.14em;color:var(--gold-ink);margin-right:10px}
+
+/* ===== 产品系列 ===== */
+.sec-paper2{background:var(--paper-2)}
+.series-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+.series-head h2{margin-top:22px}
+.series-head .caption{max-width:320px;text-align:right}
+.series-index{margin-top:56px;display:flex;flex-wrap:wrap;gap:0;border-top:1.5px solid rgba(36,30,27,.16);border-bottom:1.5px solid rgba(36,30,27,.16)}
+.series-index a{flex:1 1 0;min-width:150px;padding:22px 8px;text-align:center;border-left:var(--hairline);transition:background var(--dur-hover) var(--ease)}
+.series-index a:first-child{border-left:none}
+.series-index a:hover{background:rgba(255,255,255,.6)}
+.series-index b{display:block;font-family:var(--font-serif);font-size:18px;font-weight:600;color:var(--ink)}
+.series-index span{display:block;margin-top:6px;font:500 10.5px/1 var(--font-en);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+
+.series-block{margin-top:96px}
+.series-block:first-of-type{margin-top:88px}
+.series-title{display:flex;align-items:baseline;gap:20px}
+.series-title .sno{font:600 13px/1 var(--font-en);letter-spacing:.16em;color:var(--gold-ink)}
+.series-title h3{flex:none}
+.series-title .caption{padding-bottom:2px}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:36px}
+.pgrid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+.pcard{background:#fff;border:var(--hairline);border-radius:var(--radius);overflow:hidden;transition:transform var(--dur-hover) var(--ease),border-color var(--dur-hover) var(--ease)}
+.pcard:hover{transform:translateY(-2px);border-color:var(--gold-ink)}
+.pcard img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.pcard .tx{padding:18px 20px 20px}
+.pcard h4{font-size:18px}
+.pcard .en{margin-top:4px;font:500 11.5px/1.5 var(--font-en);letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink)}
+.pcard .desc{margin-top:8px;font-size:12.5px;line-height:1.6;color:var(--ink-soft)}
+/* 无图系列：纯排版行 */
+.series-plain{margin-top:32px;max-width:760px}
+.series-plain p{font-size:15.5px}
+.series-plain .caption{margin-top:12px}
+.prod-note{margin-top:64px;text-align:center}
+
+/* ===== 研发团队（深底舞台） ===== */
+.rd{background:var(--ink);color:var(--paper)}
+.rd .eyebrow{color:var(--gold)}
+.rd .eyebrow::before{background:var(--gold)}
+.rd h2{color:var(--paper);margin-top:22px;max-width:640px}
+.rd .lead{margin-top:26px;max-width:680px;font-size:17px;color:rgba(252,251,248,.82)}
+.rd-matrix{display:grid;grid-template-columns:repeat(6,1fr);gap:32px 28px;margin-top:64px;padding-top:48px;border-top:1px solid rgba(215,202,158,.25)}
+.rd-role .num{font:600 clamp(34px,3.4vw,52px)/1.1 var(--font-en);color:var(--gold)}
+.rd-role .num small{font-size:.42em;font-weight:500;margin-left:2px}
+.rd-role p{margin-top:8px;font-size:13.5px;color:rgba(252,251,248,.75)}
+.rd-idea{margin-top:88px;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.rd-idea-head{grid-column:1/-1}
+.rd-idea-head h3{color:var(--paper)}
+.rd-idea-head .caption{color:rgba(252,251,248,.6);margin-top:10px}
+.idea-col{border-top:1px solid rgba(215,202,158,.25);padding-top:28px}
+.idea-col .tag{font:600 12px/1 var(--font-en);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.idea-col b.zh{display:block;margin-top:12px;font-family:var(--font-serif);font-size:26px;font-weight:600;color:var(--paper)}
+.idea-col ol{list-style:none;margin-top:22px;display:grid;gap:12px}
+.idea-col ol li{display:flex;align-items:baseline;gap:16px;font-size:16px;color:rgba(252,251,248,.85)}
+.idea-col ol li i{font:600 12px/1 var(--font-en);letter-spacing:.1em;color:rgba(215,202,158,.7);font-style:normal}
+
+/* ===== 食材工艺（编辑式长排版） ===== */
+.craft-head{max-width:720px}
+.craft-head h2{margin-top:22px}
+.craft-head .lead{margin-top:22px;font-size:17px}
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center;margin-top:104px}
+.story:first-of-type{margin-top:88px}
+.story.flip>.story-tx{order:2}
+.story.flip>figure{order:1}
+.story .sno{font:600 12px/1 var(--font-en);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.story h3{margin-top:16px}
+.story .origin{margin-top:8px;font:500 12px/1.6 var(--font-en);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.story p.body{margin-top:20px;font-size:16px}
+.story p.body + p.body{margin-top:14px}
+.story figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+.story figcaption{margin-top:12px}
+/* 无图的两个故事：并排文字栏 */
+.story-duo{margin-top:104px;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.story-plain{border-top:1.5px solid rgba(36,30,27,.16);padding-top:28px}
+.story-plain .sno{font:600 12px/1 var(--font-en);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.story-plain h3{margin-top:14px}
+.story-plain .origin{margin-top:6px;font:500 12px/1.6 var(--font-en);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.story-plain p.body{margin-top:16px;font-size:15.5px}
+.story-plain .big{margin-top:22px;font-family:var(--font-serif);font-size:clamp(20px,2vw,26px);line-height:1.6;color:var(--ink)}
+
+/* ===== 生产基地 ===== */
+.base-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+.base-grid h2{margin-top:22px}
+.base-num{margin-top:44px}
+.base-num .num{font:600 clamp(52px,6vw,84px)/1.05 var(--font-en);color:var(--gold-ink)}
+.base-num .num small{font-size:.36em;font-weight:500;margin-left:4px}
+.base-num p{margin-top:10px;font-size:14px;color:var(--ink-soft)}
+.base-tx .lead{font-size:17px}
+.base-tx .lead + .lead{margin-top:16px}
+.base-facts{margin-top:40px;display:grid;gap:0}
+.base-fact{display:flex;justify-content:space-between;gap:24px;padding:18px 0;border-top:var(--hairline);font-size:15px}
+.base-fact b{font-weight:700;color:var(--ink);flex:none}
+.base-fact span{color:var(--ink-soft);text-align:right}
+
+/* ===== 加盟转化条（本屏唯一红实体） ===== */
+.cta-bar{background:var(--seal);color:#fff;padding:64px 0}
+.cta-in{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.cta-in h3{color:#fff}
+.cta-in .caption{color:rgba(255,255,255,.75);margin-top:8px}
+.cta-act{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.btn-white{display:inline-flex;align-items:center;gap:10px;padding:16px 38px;border-radius:999px;background:#fff;color:var(--seal);font:700 16px/1 var(--font-sans);transition:transform var(--dur-hover) var(--ease)}
+.btn-white:hover{transform:translateY(-2px)}
+.cta-tel{font:600 22px/1.3 var(--font-en);letter-spacing:.03em;color:#fff}
+.cta-tel span{display:block;font:500 11px/1 var(--font-en);letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px}
+
+/* ===== 页脚 ===== */
+footer{padding:72px 0 56px;border-top:var(--hairline)}
+.foot-grid{display:flex;justify-content:space-between;gap:48px;align-items:flex-start;flex-wrap:wrap}
+.foot-brand img{height:40px}
+.foot-brand p{margin-top:18px;font-size:13px;color:var(--ink-soft);max-width:340px}
+.foot-col h5{font:600 12px/1 var(--font-en);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink)}
+.foot-col ul{list-style:none;margin-top:16px;display:grid;gap:10px;font-size:14px;color:var(--ink-body)}
+.foot-col a:hover{color:var(--gold-ink)}
+.foot-legal{margin-top:56px;padding-top:24px;border-top:var(--hairline);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft)}
+
+/* ===== 响应式 ===== */
+@media (max-width:1080px){
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .pgrid-3{grid-template-columns:repeat(3,1fr)}
+  .rd-matrix{grid-template-columns:repeat(3,1fr)}
+  .series-index a{min-width:33%}
+}
+@media (max-width:820px){
+  :root{--sec-pad:76px}
+  .wrap,.nav-in{padding-left:24px;padding-right:24px}
+  .nav-links{display:none}
+  .page-hero{padding-top:140px}
+  .hero-flex{flex-direction:column;align-items:flex-start}
+  .hero-anchor{text-align:left}
+  .series-head{flex-direction:column;align-items:flex-start}
+  .series-head .caption{text-align:left}
+  .series-index a{min-width:50%}
+  .series-index b{font-size:16px}
+  .pgrid,.pgrid-3{grid-template-columns:1fr 1fr;gap:14px}
+  .pcard .tx{padding:14px 16px 16px}
+  .pcard h4{font-size:15.5px}
+  .pcard .en{font-size:11px}
+  .rd-matrix{grid-template-columns:repeat(2,1fr);gap:28px 20px}
+  .rd-idea{grid-template-columns:1fr;gap:40px}
+  .story,.story-duo,.base-grid{grid-template-columns:1fr;gap:36px}
+  .story{margin-top:72px}
+  .story.flip>.story-tx{order:1}
+  .story.flip>figure{order:2}
+  .cta-in{flex-direction:column;align-items:flex-start}
+}
+</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FCFBF8">
+<link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子"></a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="about.html">关于企业</a>
+      <a href="products.html" aria-current="page">产品</a>
+      <a href="news.html">品牌资讯</a>
+      <a href="operations.html">运营管理</a>
+      <a href="join.html">合作加盟</a>
+    </div>
+    <a class="btn-ghost" href="join.html#apply">加盟咨询</a>
+  </div>
+</nav>
+
+<!-- 页头：文字主导，本页不设红实体（红名额留给页尾转化条） -->
+<header class="page-hero" id="top">
+  <div class="wrap">
+    <div class="hero-flex">
+      <div>
+        <p class="eyebrow">Brand Products</p>
+        <h1>产品</h1>
+        <p class="slogan">一饺包四季 · 现包吃不腻</p>
+        <p class="lead">从案板上的一只月牙饺出发，五大系列把「新鲜」铺满一日四餐——每一款都从当日鲜蔬与当日鲜肉开始。</p>
+      </div>
+      <div class="hero-anchor" aria-label="页内导航">
+        <a href="#series"><span>01</span>产品系列</a>
+        <a href="#rd"><span>02</span>研发团队</a>
+        <a href="#craft"><span>03</span>食材工艺</a>
+        <a href="#base"><span>04</span>生产基地</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr class="pleat">
+
+<!-- 产品系列：五大系列导览 + 产品卡 -->
+<section id="series" class="sec-paper2">
+  <div class="wrap">
+    <div class="series-head">
+      <div>
+        <p class="eyebrow">Product Series · 五大系列</p>
+        <h2>今天，包什么</h2>
+      </div>
+      <p class="caption">现包饺子 · 手工云吞 · 鲜味面食 · 配饺小菜 · 配饺汤饮，五大系列同一张案板出品；口味与价格以门店当日菜单为准。</p>
+    </div>
+
+    <div class="series-index" aria-label="系列导览">
+      <a href="#s-dumpling"><b>现包饺子</b><span>Fresh Dumplings</span></a>
+      <a href="#s-wonton"><b>手工云吞</b><span>Handmade Wontons</span></a>
+      <a href="#s-noodle"><b>鲜味面食</b><span>Noodles</span></a>
+      <a href="#s-side"><b>配饺小菜</b><span>Side Dishes</span></a>
+      <a href="#s-drink"><b>配饺汤饮</b><span>Soups &amp; Drinks</span></a>
+    </div>
+
+    <div class="series-block" id="s-dumpling">
+      <div class="series-title">
+        <span class="sno">Series 01</span>
+        <h3>现包饺子系列</h3>
+        <p class="caption">当日鲜蔬、当日做馅、当日现包、当日售卖。</p>
+      </div>
+      <div class="pgrid">
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/jiucai.png" alt="韭菜鲜肉饺"><div class="tx"><h4>韭菜鲜肉饺</h4><p class="en">Garlic Chives &amp; Pork</p><p class="desc">新鲜小杆韭菜与山羊猪前腿肉的 CP，百吃不腻。</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/yumi.png" alt="玉米鲜肉饺"><div class="tx"><h4>玉米鲜肉饺</h4><p class="en">Corn &amp; Pork</p><p class="desc">爆浆嫩玉米，一口鲜甜一口汁。</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-cabbage.jpg" alt="白菜鲜肉饺"><div class="tx"><h4>白菜鲜肉饺</h4><p class="en">Chinese Cabbage &amp; Pork</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/qincai.png" alt="芹菜鲜肉饺"><div class="tx"><h4>芹菜鲜肉饺</h4><p class="en">Celery &amp; Pork</p><p class="desc">Q 弹多汁，脆嫩芹香解腻爽口。</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-shepherd.jpg" alt="荠菜鲜肉饺"><div class="tx"><h4>荠菜鲜肉饺</h4><p class="en">Shepherd's Purse &amp; Pork</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-shrimp.jpg" alt="虾皇饺"><div class="tx"><h4>虾皇饺</h4><p class="en">Imperial Shrimp</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-triple.jpg" alt="三鲜虾仁鲜肉饺"><div class="tx"><h4>三鲜虾仁鲜肉饺</h4><p class="en">Triple Delight Shrimp &amp; Pork</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/d-chiveegg.jpg" alt="韭菜鸡蛋虾仁饺"><div class="tx"><h4>韭菜鸡蛋虾仁饺</h4><p class="en">Chive, Egg &amp; Shrimp</p></div></div>
+      </div>
+    </div>
+
+    <div class="series-block" id="s-wonton">
+      <div class="series-title">
+        <span class="sno">Series 02</span>
+        <h3>手工云吞系列</h3>
+        <p class="caption">薄皮包大馅，一只一只手工捏拢。</p>
+      </div>
+      <div class="pgrid-3">
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/yuntun-xiaxie.png" alt="鲜虾蟹籽云吞"><div class="tx"><h4>鲜虾蟹籽云吞</h4><p class="en">Shrimp &amp; Crab Roe</p><p class="desc">虾仁大个、蟹籽爆珠，镇店爆款。</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/yuntun-jicai.png" alt="荠菜鲜肉云吞"><div class="tx"><h4>荠菜鲜肉云吞</h4><p class="en">Shepherd's Purse &amp; Pork</p><p class="desc">高纤维时蔬，清鲜爽口不油腻。</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/menu/yuntun-xianrou.png" alt="手工鲜肉云吞"><div class="tx"><h4>手工鲜肉云吞</h4><p class="en">Handmade Pork</p><p class="desc">三肥七瘦黄金配比，皮薄馅弹。</p></div></div>
+      </div>
+    </div>
+
+    <div class="series-block" id="s-noodle">
+      <div class="series-title">
+        <span class="sno">Series 03</span>
+        <h3>鲜味面食系列</h3>
+        <p class="caption">同一张案板上的另外几碗。</p>
+      </div>
+      <div class="pgrid-3">
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/n-wonton.jpg" alt="鲜虾蟹籽云吞面"><div class="tx"><h4>鲜虾蟹籽云吞面</h4><p class="en">Wonton Noodles</p><p class="desc">镇店云吞落进一碗清汤面。</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/n-beef.jpg" alt="红烧牛肉面"><div class="tx"><h4>红烧牛肉面</h4><p class="en">Braised Beef</p><p class="desc">大块牛肉慢炖，汤浓面弹。</p></div></div>
+        <div class="pcard"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/n-scallion.jpg" alt="葱油拌面"><div class="tx"><h4>葱油拌面</h4><p class="en">Scallion Oil</p><p class="desc">熬香的葱油裹住每一根面。</p></div></div>
+      </div>
+    </div>
+
+    <div class="series-block" id="s-side">
+      <div class="series-title">
+        <span class="sno">Series 04</span>
+        <h3>配饺小菜系列</h3>
+      </div>
+      <div class="series-plain">
+        <p>一碟爽口小菜、几样卤味，是饺子桌上的老规矩。凉拌时蔬解腻、卤味添香，跟着时令与门店当季菜单更换。</p>
+        <p class="caption">具体品项以门店当日菜单为准。</p>
+      </div>
+    </div>
+
+    <div class="series-block" id="s-drink">
+      <div class="series-title">
+        <span class="sno">Series 05</span>
+        <h3>配饺汤饮系列</h3>
+      </div>
+      <div class="series-plain">
+        <p>原汤化原食。一碗热汤、一杯饮品，把一餐饺子收得妥帖——冬有热汤暖胃，夏有饮品清爽。</p>
+        <p class="caption">具体品项以门店当日菜单为准。</p>
+      </div>
+    </div>
+
+    <p class="prod-note caption">口味与价格以门店当日菜单为准 · 堂食 / 生包外带 / 外卖</p>
+  </div>
+</section>
+
+<!-- 研发团队：暖墨深底 · 金字 -->
+<section id="rd" class="rd">
+  <div class="wrap">
+    <p class="eyebrow">R&amp;D Team · 研发团队</p>
+    <h2>把实验室<br>搬到案板旁边</h2>
+    <p class="lead">熊大爷现包饺子团队积极与高校科研院所合作，与上海交通大学食品科学与工程领域技术成果转化项目团队「三慢生物」达成战略合作，让每一只饺子背后都有食品科学的支撑。</p>
+
+    <div class="rd-matrix">
+      <div class="rd-role"><div class="num">1<small>名</small></div><p>特聘教授</p></div>
+      <div class="rd-role"><div class="num">1<small>名</small></div><p>长聘教轨副教授</p></div>
+      <div class="rd-role"><div class="num">3<small>名</small></div><p>副研究员</p></div>
+      <div class="rd-role"><div class="num">1<small>名</small></div><p>助理研究员</p></div>
+      <div class="rd-role"><div class="num">3<small>名</small></div><p>博士后</p></div>
+      <div class="rd-role"><div class="num">14<small>名</small></div><p>硕士研究生</p></div>
+    </div>
+
+    <div class="rd-idea">
+      <div class="rd-idea-head">
+        <h3>研发理念 · 三减三健</h3>
+        <p class="caption">少放一点，是为了多留一点——把健康写进配方。</p>
+      </div>
+      <div class="idea-col">
+        <span class="tag">Less</span>
+        <b class="zh">三减</b>
+        <ol>
+          <li><i>01</i>减盐</li>
+          <li><i>02</i>减油</li>
+          <li><i>03</i>减糖</li>
+        </ol>
+      </div>
+      <div class="idea-col">
+        <span class="tag">More</span>
+        <b class="zh">三健</b>
+        <ol>
+          <li><i>01</i>健安全</li>
+          <li><i>02</i>健新鲜</li>
+          <li><i>03</i>健营养</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 食材工艺：四个食材故事，编辑式长排版 -->
+<section id="craft">
+  <div class="wrap">
+    <div class="craft-head">
+      <p class="eyebrow">Ingredients · 食材工艺</p>
+      <h2>四种食材<br>四段旅程</h2>
+      <p class="lead">一只饺子的味道，在它被包起来之前就已经决定了。从天山脚下的麦田到峨眉山的竹林，我们沿着食材的来路，一站一站挑剔过去。</p>
+    </div>
+
+    <div class="story">
+      <div class="story-tx">
+        <p class="sno">01 · Flour</p>
+        <h3>天山雪麦</h3>
+        <p class="origin">Xinjiang · N 43°</p>
+        <p class="body">北纬 43°，天山北麓。雪水顺着山脊融下来，灌进麦田，冬小麦在漫长低温里慢慢攒着筋骨。</p>
+        <p class="body">我们选用新疆天山麦粉——粒粒锁鲜、麦香浓郁。擀成饺子皮，薄而不破，久煮仍弹。</p>
+      </div>
+      <figure>
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/good-flour.jpg" alt="新疆天山麦粉揉成的面团">
+        <figcaption class="caption">天山雪水灌溉的冬小麦，磨成案板上的这一团面。</figcaption>
+      </figure>
+    </div>
+
+    <div class="story flip">
+      <div class="story-tx">
+        <p class="sno">02 · Pork</p>
+        <h3>两条「黄金带」</h3>
+        <p class="origin">Leg &amp; Back Fat</p>
+        <p class="body">一头猪身上，我们只认两条「黄金带」。</p>
+        <p class="body">猪腿肉——纤维细腻、油脂均匀，每一克都在运动里长出弹劲；脊膘肉——薄薄一层，温度一升，就化成天然的「肉汁炸弹」。两者按配比拌进馅里，咬开的那一口汁，不靠添加，靠部位。</p>
+      </div>
+      <figure>
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/good-meat.jpg" alt="猪腿肉与脊膘肉拌成的新鲜肉馅">
+        <figcaption class="caption">腿肉出弹劲，脊膘出肉汁——馅料的两位主角。</figcaption>
+      </figure>
+    </div>
+
+    <div class="story-duo">
+      <div class="story-plain">
+        <p class="sno">03 · Bamboo Shoot</p>
+        <h3>非遗春笋</h3>
+        <p class="origin">Mount Emei</p>
+        <p class="big">峨眉山原始竹林深处，龙须笋破土而出。</p>
+        <p class="body">我们精选峨眉山原始竹林区的非遗龙须笋——山雾养出的脆嫩，切进馅里，是春天落在舌尖上的一声脆响。</p>
+      </div>
+      <div class="story-plain">
+        <p class="sno">04 · Fish Maw</p>
+        <h3>进口花胶</h3>
+        <p class="origin">Imported &amp; Selected</p>
+        <p class="big">对着光挑，一片一片，只留通透的那些。</p>
+        <p class="body">花胶均选用品质上乘、色泽通透的优质品种，经过反复筛选与测试，确保口感与营养都达到最佳状态，才配得上一只饺子的门票。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="pleat">
+
+<!-- 生产基地：纯排版短叙事 -->
+<section id="base" class="sec-paper2">
+  <div class="wrap">
+    <div class="base-grid">
+      <div>
+        <p class="eyebrow">Production Base · 生产基地</p>
+        <h2>四万平米<br>正在生长</h2>
+        <div class="base-num">
+          <div class="num">40000<small>㎡</small></div>
+          <p>全国生产基地（一期）建筑规模</p>
+        </div>
+      </div>
+      <div class="base-tx">
+        <p class="lead">2025 年 3 月，40000 平米的全国生产基地（一期）开始筹建。这不是一座普通的厂房，而是把「好面、好肉、好现包」从门店案板向上游延伸的答案——面粉、肉馅、笋与花胶在这里完成标准化处理，再以冷链送往全国门店的案板。</p>
+        <p class="lead">基地建成后，馅料的每一个批次都将有据可查：门店只做一件事——当着你的面，把新鲜包起来。</p>
+        <div class="base-facts">
+          <div class="base-fact"><b>建设阶段</b><span>一期 · 2025 年 3 月开始筹建</span></div>
+          <div class="base-fact"><b>建筑规模</b><span>40000㎡</span></div>
+          <div class="base-fact"><b>服务范围</b><span>全国门店供应链</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 加盟转化条：本屏唯一红实体 -->
+<div class="cta-bar">
+  <div class="wrap">
+    <div class="cta-in">
+      <div>
+        <h3>把现包的热气，带到你的城市</h3>
+        <p class="caption">一千多家门店验证过的生意，从一通电话开始。</p>
+      </div>
+      <div class="cta-act">
+        <a class="btn-white" href="join.html#apply">立即申请加盟</a>
+        <div class="cta-tel"><span>Franchise Hotline</span>400-058-9198</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png" alt="熊大爷 现包饺子">
+        <p>四川联拓食品集团旗下品牌。让消费者吃得更幸福，让伙伴加速成长，让门店可持续赚钱。</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于企业</a></li>
+          <li><a href="products.html">产品</a></li>
+          <li><a href="news.html">品牌资讯</a></li>
+          <li><a href="operations.html">运营管理</a></li>
+          <li><a href="join.html">合作加盟</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:4000589198">400-058-9198</a></li>
+          <li><a href="http://www.xiongdaye.com" rel="noopener">www.xiongdaye.com</a></li>
+          <li>四川省成都市郫都区犀浦街道筒车堰路93号3栋<br>四川联拓总部大楼</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 成都熊大爷餐饮管理有限公司 · 四川联拓食品集团</span>
+      <span><a href="https://beian.miit.gov.cn" rel="noopener">蜀ICP备2022027334号</a> · 川公网安备51012402001197号</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
