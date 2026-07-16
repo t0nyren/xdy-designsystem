@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "name": "Xiongdaye Mini Program Brand Premium V4",
+    "version": "4.0.0",
+    "source": "xdy.secondlife.today/ds/02-colors.html",
+    "baseWidth": 375,
+    "caseStudyVersion": "6.1.0"
+  },
+  "official": {
+    "paper": "#FAF7F1",
+    "paper2": "#F3ECE2",
+    "woodLight": "#E7D8C2",
+    "wood": "#B08A5E",
+    "ink": "#241E1B",
+    "inkSoft": "#6B6259",
+    "gold": "#C4993F",
+    "goldInk": "#8A6A1E",
+    "goldLight": "#D7CA9E",
+    "seal": "#9F3B3B",
+    "bamboo": "#5E8B4C",
+    "logoRed": "#D70D18",
+    "surface": "#FFFFFF"
+  },
+  "uiAreaRatio": {
+    "surfaceAndPaper": 78,
+    "ink": 16,
+    "gold": 4,
+    "seal": 2,
+    "bamboo": "0–0.5, photography only"
+  },
+  "rules": [
+    "Logo red #D70D18 is not an interface color",
+    "Bamboo green is never a primary interaction color",
+    "Gold is for lines, icons, large numbers and membership signatures, never large surfaces",
+    "One solid seal-red entity per viewport",
+    "Default card is white with hairline border and no shadow",
+    "Price is warm ink, not red",
+    "Add buttons are outlined; gold only appears on pressed state",
+    "Current order step is the only seal-red accent in the stepper"
+  ],
+  "interaction": {
+    "primaryAction": "#9F3B3B",
+    "standardAction": "#241E1B",
+    "selectedDetail": "#8A6A1E",
+    "memberSignature": "#C4993F",
+    "disabled": "#B9B0A6",
+    "addDefault": "white + #241E1B outline",
+    "addPressed": "#C4993F for 140ms",
+    "price": "#241E1B",
+    "currentOrderStep": "#9F3B3B"
+  },
+  "uiCanvas": {
+    "canvas": "#FCFBF8",
+    "surface": "#FFFDF9",
+    "officialPaper": "#FAF7F1",
+    "sectionPaper": "#F3ECE2 (small areas only)"
+  }
+}
