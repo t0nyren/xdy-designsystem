@@ -82,6 +82,21 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);
 .intro-capital .names{font-family:var(--font-serif);font-weight:600;font-size:clamp(18px,2vw,24px);color:var(--ink)}
 .intro-capital .note{font-size:13px;color:var(--ink-soft);flex-basis:100%}
 
+
+/* ===== #honors 品牌荣誉：证书原貌 + 统一阅读秩序 ===== */
+.honors-head{max-width:720px}
+.honors-head h2{margin-top:22px}
+.honors-head .lead{margin-top:22px;font-size:17px}
+.honors-grid{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.honor-card{background:#fff;border:var(--hairline);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow-low)}
+.honor-card figure{background:#f5f0ea;border-radius:calc(var(--radius) - 4px);overflow:hidden;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
+.honor-card img{width:100%;height:100%;object-fit:contain}
+.honor-card .no{margin:16px 4px 6px}
+.honor-card h4{font-size:17px;line-height:1.45;margin:0 4px}
+.honor-card p{font-size:13px;line-height:1.6;color:var(--ink-soft);margin:7px 4px 4px}
+@media(max-width:900px){.honors-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){.honors-grid{grid-template-columns:repeat(2,1fr);gap:12px}.honor-card{padding:8px}.honor-card h4{font-size:15px}.honor-card p{font-size:12px}}
+
 /* ===== #culture 企业文化：编辑式行排版 ===== */
 .sec-paper2{background:var(--paper-2)}
 .culture-head{max-width:720px}
@@ -248,6 +263,30 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
 </section>
 
 <hr class="pleat">
+
+
+<hr class="pleat">
+
+<!-- 品牌荣誉：来自用户提供的证书与奖牌资料 -->
+<section id="honors" class="sec-paper2">
+  <div class="wrap">
+    <div class="honors-head">
+      <p class="eyebrow">Brand Honors · 品牌荣誉</p>
+      <h2>每一份认可，<br>都落在现包的日常里</h2>
+      <p class="lead">以下荣誉资料由品牌提供。我们保留证书、奖牌与奖杯的真实面貌，只用统一的留白、比例和说明层级，让荣誉回到品牌故事中，而不是变成一面喧闹的奖状墙。</p>
+    </div>
+    <div class="honors-grid">
+      <article class="honor-card"><figure><img src="assets/honors/2024-brand-top100.jpg" alt="2024年度餐饮品牌招商百强榜"></figure><p class="no">2024 · Brand Ranking</p><h4>餐饮品牌招商百强榜</h4><p>熊大爷现包饺子 · 红资产业研究院 / 红资品招</p></article>
+      <article class="honor-card"><figure><img src="assets/honors/2024-2025-store-growth-top5.jpg" alt="2024-2025年度餐饮品牌门店净增长TOP5荣誉证书"></figure><p class="no">2024–2025 · Brand Growth</p><h4>餐饮品牌门店净增长 TOP5</h4><p>窄门餐眼 · 年度品牌榜单</p></article>
+      <article class="honor-card"><figure><img src="assets/honors/2025-franchise-top100.jpg" alt="2025年度加盟联营品牌评选TOP100"></figure><p class="no">2025 · Franchise</p><h4>加盟·联营品牌 TOP100</h4><p>品牌加盟与联营综合表现认可</p></article>
+      <article class="honor-card"><figure><img src="assets/honors/2025-top-brands.jpg" alt="2025年度饺子馄饨十大品牌"></figure><p class="no">2025 · Top Brand</p><h4>饺子馄饨十大品牌</h4><p>中国餐饮加盟品牌年度榜单资料</p></article>
+      <article class="honor-card"><figure><img src="assets/honors/2025-red-star-award.jpg" alt="2025年度餐饮加盟品牌红星奖"></figure><p class="no">2025 · Red Star</p><h4>餐饮加盟品牌红星奖</h4><p>中国餐饮加盟品牌年度荣誉资料</p></article>
+      <article class="honor-card"><figure><img src="assets/honors/2024-brand-award-plaque.jpg" alt="熊大爷品牌荣誉奖牌"></figure><p class="no">2024 · Brand Honor</p><h4>品牌荣誉奖牌</h4><p>熊大爷现包饺子品牌荣誉实物</p></article>
+      <article class="honor-card"><figure><img src="assets/honors/2024-brand-trophy.jpg" alt="熊大爷品牌荣誉奖杯"></figure><p class="no">2024 · Brand Honor</p><h4>品牌荣誉奖杯</h4><p>熊大爷现包饺子品牌荣誉实物</p></article>
+      <article class="honor-card"><figure><img src="assets/honors/yupan-award.jpg" alt="玉盘奖荣誉奖牌"></figure><p class="no">Brand Honor · 玉盘奖</p><h4>玉盘奖</h4><p>品牌提供的年度荣誉奖牌资料</p></article>
+    </div>
+  </div>
+</section>
 
 <!-- 02 企业文化 -->
 <section id="culture" class="sec-paper2">
