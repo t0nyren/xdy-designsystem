@@ -23,6 +23,10 @@ Live: https://xdy.secondlife.today
 面粉为纸 `#FCFBF8` · 暖墨为字 `#241E1B` · 雅金为笔 `#7D5F17/#C4993F` · 绛红为印 `#9F3B3B`（一屏一印 ≤5%）。
 共享 tokens 在 `styles.css`。
 
+## 系统与部署
+
+- Docker 化系统架构、组件清单、资源建议、部署/备份/迁移流程：[`docs/deployment/xdy-website-system-deployment.md`](docs/deployment/xdy-website-system-deployment.md)
+
 ## 媒体资源
 
 图片/视频统一走腾讯云 COS（前缀 `xdy/`，路径与仓库一一镜像），HTML 内为绝对地址；
