@@ -83,19 +83,69 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);
 .intro-capital .note{font-size:13px;color:var(--ink-soft);flex-basis:100%}
 
 
-/* ===== #honors 品牌荣誉：证书原貌 + 统一阅读秩序 ===== */
+/* ===== #honors 品牌荣誉：主舞台 + 年份索引 ===== */
 .honors-head{max-width:720px}
 .honors-head h2{margin-top:22px}
 .honors-head .lead{margin-top:22px;font-size:17px}
-.honors-grid{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.honor-card{background:#fff;border:var(--hairline);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow-low)}
-.honor-card figure{background:#f5f0ea;border-radius:calc(var(--radius) - 4px);overflow:hidden;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
-.honor-card img{width:100%;height:100%;object-fit:contain}
-.honor-card .no{margin:16px 4px 6px}
-.honor-card h4{font-size:17px;line-height:1.45;margin:0 4px}
-.honor-card p{font-size:13px;line-height:1.6;color:var(--ink-soft);margin:7px 4px 4px}
-@media(max-width:900px){.honors-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:650px){.honors-grid{grid-template-columns:repeat(2,1fr);gap:12px}.honor-card{padding:8px}.honor-card h4{font-size:15px}.honor-card p{font-size:12px}}
+.honors-explorer{margin-top:60px;display:grid;grid-template-columns:minmax(360px,.92fr) minmax(440px,1.08fr);gap:64px;align-items:start}
+.honors-stage{position:sticky;top:100px;min-width:0}
+.honors-visual{position:relative;overflow:hidden;min-height:590px;border:var(--hairline);border-radius:28px;background:#f6f0e7;display:flex;align-items:center;justify-content:center;padding:52px}
+.honors-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 28% 18%,rgba(255,255,255,.92),transparent 42%),linear-gradient(145deg,rgba(196,153,63,.08),transparent 52%);pointer-events:none}
+.honors-visual img{position:relative;z-index:1;width:100%;height:486px;object-fit:contain;filter:drop-shadow(0 24px 24px rgba(36,30,27,.11));transition:opacity .22s var(--ease),transform .35s var(--ease)}
+.honors-visual.is-changing img{opacity:.2;transform:scale(.98)}
+.honors-stage-copy{padding:28px 2px 0;display:grid;grid-template-columns:1fr auto;gap:10px 24px;align-items:end}
+.honors-stage-copy .no{grid-column:1;font:600 11px/1.4 var(--font-en);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.honors-stage-copy h3{grid-column:1;font-size:clamp(25px,2.5vw,34px)}
+.honors-stage-copy .desc{grid-column:1;color:var(--ink-soft);font-size:14px}
+.honors-count{grid-column:2;grid-row:1/4;align-self:center;font:500 13px/1 var(--font-en);letter-spacing:.12em;color:var(--ink-soft)}
+.honors-nav{min-width:0}
+.honors-nav-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:22px;border-bottom:1px solid rgba(36,30,27,.16)}
+.honors-nav-head h3{font-family:var(--font-sans);font-size:17px;font-weight:700}
+.honors-years{display:flex;gap:8px}
+.honors-year{appearance:none;border:1px solid rgba(36,30,27,.18);border-radius:999px;background:transparent;color:var(--ink-soft);padding:8px 14px;font:600 12px/1 var(--font-en);cursor:pointer;transition:background var(--dur-hover) var(--ease),color var(--dur-hover) var(--ease),border-color var(--dur-hover) var(--ease)}
+.honors-year:hover,.honors-year:focus-visible{border-color:var(--gold-ink);color:var(--gold-ink);outline:none}
+.honors-year[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.honors-list{display:grid}
+.honor-item{appearance:none;width:100%;display:grid;grid-template-columns:68px 1fr auto;gap:20px;align-items:center;padding:22px 2px;border:0;border-bottom:1px solid rgba(36,30,27,.13);background:transparent;text-align:left;color:inherit;cursor:pointer;transition:padding var(--dur-hover) var(--ease),background var(--dur-hover) var(--ease)}
+.honor-item[hidden]{display:none}
+.honor-item:hover{padding-left:10px}
+.honor-item:focus-visible{outline:2px solid var(--gold-ink);outline-offset:4px;border-radius:10px}
+.honor-item[aria-selected="true"]{padding-left:10px;background:linear-gradient(90deg,rgba(196,153,63,.1),transparent 74%)}
+.honor-thumb{width:68px;height:82px;padding:6px;border-radius:8px;background:#f5f0ea;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.honor-thumb img{width:100%;height:100%;object-fit:contain}
+.honor-item-copy{min-width:0}
+.honor-item-copy .no{font:600 10px/1.3 var(--font-en);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink)}
+.honor-item-copy strong{display:block;margin-top:7px;font-family:var(--font-serif);font-size:17px;line-height:1.45;color:var(--ink)}
+.honor-arrow{font:400 22px/1 var(--font-en);color:rgba(36,30,27,.28);transition:color var(--dur-hover) var(--ease),transform var(--dur-hover) var(--ease)}
+.honor-item:hover .honor-arrow,.honor-item[aria-selected="true"] .honor-arrow{color:var(--seal);transform:translateX(3px)}
+@media(max-width:900px){
+  .honors-explorer{grid-template-columns:1fr;gap:36px}
+  .honors-stage{position:static;display:grid;grid-template-columns:minmax(280px,.8fr) 1fr;gap:28px;align-items:center}
+  .honors-visual{min-height:440px;padding:38px}
+  .honors-visual img{height:360px}
+  .honors-stage-copy{padding:0}
+}
+@media(max-width:650px){
+  .honors-explorer{margin-top:40px;gap:30px}
+  .honors-stage{display:block}
+  .honors-visual{min-height:auto;aspect-ratio:4/5;padding:28px;border-radius:20px}
+  .honors-visual img{height:100%}
+  .honors-stage-copy{padding:20px 2px 0}
+  .honors-stage-copy h3{font-size:24px}
+  .honors-stage-copy .desc{font-size:13px}
+  .honors-nav-head{align-items:flex-end}
+  .honors-nav-head h3{font-size:15px}
+  .honors-year{padding:7px 11px}
+  .honors-list{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:18px 2px 10px;scrollbar-width:none}
+  .honors-list::-webkit-scrollbar{display:none}
+  .honor-item{flex:0 0 158px;display:block;padding:10px;border:1px solid rgba(36,30,27,.13);border-radius:14px;background:rgba(255,255,255,.58);scroll-snap-align:start}
+  .honor-item:hover,.honor-item[aria-selected="true"]{padding:10px;background:#fff;border-color:rgba(125,95,23,.38)}
+  .honor-thumb{width:100%;height:auto;aspect-ratio:4/5;padding:8px}
+  .honor-item-copy{padding:12px 3px 2px}
+  .honor-item-copy strong{font-size:14px}
+  .honor-arrow{display:none}
+}
+@media(prefers-reduced-motion:reduce){.honors-visual img,.honor-item,.honor-arrow{transition:none}}
 
 /* ===== #culture 企业文化：编辑式行排版 ===== */
 .sec-paper2{background:var(--paper-2)}
@@ -407,17 +457,38 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
       <h2>每一份认可，<br>都落在现包的日常里</h2>
       <p class="lead">我们保留证书、奖牌与奖杯的真实面貌，只用统一的留白、比例和说明层级，让荣誉回到品牌故事中，而不是变成一面喧闹的奖状墙。</p>
     </div>
-    <div class="honors-grid">
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-franchise-top100.jpg" alt="2025年度加盟联营品牌评选TOP100"></figure><p class="no">2025 · Franchise</p><h4>加盟·联营品牌 TOP100</h4><p>品牌加盟与联营综合表现认可</p></article>
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-top-brands.jpg" alt="2025年度饺子馄饨十大品牌"></figure><p class="no">2025 · Top Brand</p><h4>饺子馄饨十大品牌</h4><p>中国餐饮加盟品牌年度榜单资料</p></article>
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-red-star-award.jpg" alt="2025年度餐饮加盟品牌红星奖"></figure><p class="no">2025 · Red Star</p><h4>餐饮加盟品牌红星奖</h4><p>中国餐饮加盟品牌年度荣誉资料</p></article>
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-quality-golden-shield.jpg" alt="2025年度质量金盾服务样本"></figure><p class="no">2025 · Quality Honor</p><h4>质量金盾·服务样本</h4><p>中国食品药品企业质量安全促进会</p></article>
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-four-star-enterprise-brand.jpg" alt="2025年中国企业四星品牌荣誉证书"></figure><p class="no">2025 · Enterprise Brand</p><h4>中国企业四星品牌</h4><p>中国商业联合会 · 全国企业品牌评价活动</p></article>
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/yupan-award-portrait.jpg" alt="2025年度玉盘奖荣誉奖牌"></figure><p class="no">2025 · Brand Honor · 玉盘奖</p><h4>玉盘奖</h4><p>品牌提供的年度荣誉奖牌资料</p></article>
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-2025-store-growth-top5.jpg" alt="2024-2025年度餐饮品牌门店净增长TOP5荣誉证书"></figure><p class="no">2024–2025 · Brand Growth</p><h4>餐饮品牌门店净增长 TOP5</h4><p>窄门餐眼 · 年度品牌榜单</p></article>
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-brand-top100.jpg" alt="2024年度餐饮品牌招商百强榜"></figure><p class="no">2024 · Brand Ranking</p><h4>餐饮品牌招商百强榜</h4><p>熊大爷现包饺子 · 红资产业研究院 / 红资品招</p></article>
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-brand-award-plaque.jpg" alt="熊大爷品牌荣誉奖牌"></figure><p class="no">2024 · Brand Honor</p><h4>品牌荣誉奖牌</h4><p>熊大爷现包饺子品牌荣誉实物</p></article>
-      <article class="honor-card"><figure><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-brand-trophy.jpg" alt="熊大爷品牌荣誉奖杯"></figure><p class="no">2024 · Brand Honor</p><h4>品牌荣誉奖杯</h4><p>熊大爷现包饺子品牌荣誉实物</p></article>
+    <div class="honors-explorer">
+      <div class="honors-stage" aria-live="polite">
+        <figure class="honors-visual"><img id="honor-featured-image" src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-franchise-top100.jpg" alt="2025年度加盟联营品牌评选TOP100"></figure>
+        <div class="honors-stage-copy">
+          <p class="no" id="honor-featured-meta">2025 · Franchise</p>
+          <h3 id="honor-featured-title">加盟·联营品牌 TOP100</h3>
+          <p class="desc" id="honor-featured-desc">品牌加盟与联营综合表现认可</p>
+          <p class="honors-count"><span id="honor-current">01</span> / <span id="honor-total">10</span></p>
+        </div>
+      </div>
+      <div class="honors-nav">
+        <div class="honors-nav-head">
+          <h3>荣誉档案</h3>
+          <div class="honors-years" aria-label="按年份筛选品牌荣誉">
+            <button class="honors-year" type="button" data-year="all" aria-pressed="true">全部</button>
+            <button class="honors-year" type="button" data-year="2025" aria-pressed="false">2025</button>
+            <button class="honors-year" type="button" data-year="2024" aria-pressed="false">2024</button>
+          </div>
+        </div>
+        <div class="honors-list" role="listbox" aria-label="品牌荣誉列表">
+          <button class="honor-item" type="button" role="option" aria-selected="true" data-year="2025" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-franchise-top100.jpg" data-alt="2025年度加盟联营品牌评选TOP100" data-meta="2025 · Franchise" data-title="加盟·联营品牌 TOP100" data-desc="品牌加盟与联营综合表现认可"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-franchise-top100.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2025 · Franchise</span><strong>加盟·联营品牌 TOP100</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+          <button class="honor-item" type="button" role="option" aria-selected="false" data-year="2025" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-top-brands.jpg" data-alt="2025年度饺子馄饨十大品牌" data-meta="2025 · Top Brand" data-title="饺子馄饨十大品牌" data-desc="中国餐饮加盟品牌年度榜单资料"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-top-brands.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2025 · Top Brand</span><strong>饺子馄饨十大品牌</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+          <button class="honor-item" type="button" role="option" aria-selected="false" data-year="2025" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-red-star-award.jpg" data-alt="2025年度餐饮加盟品牌红星奖" data-meta="2025 · Red Star" data-title="餐饮加盟品牌红星奖" data-desc="中国餐饮加盟品牌年度荣誉资料"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-red-star-award.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2025 · Red Star</span><strong>餐饮加盟品牌红星奖</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+          <button class="honor-item" type="button" role="option" aria-selected="false" data-year="2025" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-quality-golden-shield.jpg" data-alt="2025年度质量金盾服务样本" data-meta="2025 · Quality Honor" data-title="质量金盾·服务样本" data-desc="中国食品药品企业质量安全促进会"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-quality-golden-shield.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2025 · Quality Honor</span><strong>质量金盾·服务样本</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+          <button class="honor-item" type="button" role="option" aria-selected="false" data-year="2025" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-four-star-enterprise-brand.jpg" data-alt="2025年中国企业四星品牌荣誉证书" data-meta="2025 · Enterprise Brand" data-title="中国企业四星品牌" data-desc="中国商业联合会 · 全国企业品牌评价活动"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2025-four-star-enterprise-brand.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2025 · Enterprise Brand</span><strong>中国企业四星品牌</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+          <button class="honor-item" type="button" role="option" aria-selected="false" data-year="2025" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/yupan-award-portrait.jpg" data-alt="2025年度玉盘奖荣誉奖牌" data-meta="2025 · Brand Honor" data-title="玉盘奖" data-desc="年度品牌荣誉奖牌"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/yupan-award-portrait.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2025 · Brand Honor</span><strong>玉盘奖</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+          <button class="honor-item" type="button" role="option" aria-selected="false" data-year="2025 2024" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-2025-store-growth-top5.jpg" data-alt="2024-2025年度餐饮品牌门店净增长TOP5荣誉证书" data-meta="2024–2025 · Brand Growth" data-title="餐饮品牌门店净增长 TOP5" data-desc="窄门餐眼 · 年度品牌榜单"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-2025-store-growth-top5.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2024–2025 · Brand Growth</span><strong>餐饮品牌门店净增长 TOP5</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+          <button class="honor-item" type="button" role="option" aria-selected="false" data-year="2024" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-brand-top100.jpg" data-alt="2024年度餐饮品牌招商百强榜" data-meta="2024 · Brand Ranking" data-title="餐饮品牌招商百强榜" data-desc="熊大爷现包饺子 · 红资产业研究院 / 红资品招"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-brand-top100.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2024 · Brand Ranking</span><strong>餐饮品牌招商百强榜</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+          <button class="honor-item" type="button" role="option" aria-selected="false" data-year="2024" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-brand-award-plaque.jpg" data-alt="熊大爷品牌荣誉奖牌" data-meta="2024 · Brand Honor" data-title="品牌荣誉奖牌" data-desc="熊大爷现包饺子品牌荣誉实物"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-brand-award-plaque.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2024 · Brand Honor</span><strong>品牌荣誉奖牌</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+          <button class="honor-item" type="button" role="option" aria-selected="false" data-year="2024" data-image="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-brand-trophy.jpg" data-alt="熊大爷品牌荣誉奖杯" data-meta="2024 · Brand Honor" data-title="品牌荣誉奖杯" data-desc="熊大爷现包饺子品牌荣誉实物"><span class="honor-thumb"><img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/web/assets/honors/2024-brand-trophy.jpg" alt="" loading="lazy"></span><span class="honor-item-copy"><span class="no">2024 · Brand Honor</span><strong>品牌荣誉奖杯</strong></span><span class="honor-arrow" aria-hidden="true">→</span></button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -486,6 +557,53 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
     </div>
   </div>
 </footer>
+
+<script>
+(() => {
+  const explorer = document.querySelector('.honors-explorer');
+  if (!explorer) return;
+  const stage = explorer.querySelector('.honors-visual');
+  const featuredImage = document.getElementById('honor-featured-image');
+  const featuredMeta = document.getElementById('honor-featured-meta');
+  const featuredTitle = document.getElementById('honor-featured-title');
+  const featuredDesc = document.getElementById('honor-featured-desc');
+  const current = document.getElementById('honor-current');
+  const total = document.getElementById('honor-total');
+  const items = [...explorer.querySelectorAll('.honor-item')];
+  const filters = [...explorer.querySelectorAll('.honors-year')];
+  let selectionVersion = 0;
+
+  const selectHonor = item => {
+    const version = ++selectionVersion;
+    items.forEach(entry => entry.setAttribute('aria-selected', String(entry === item)));
+    const visibleItems = items.filter(entry => !entry.hidden);
+    featuredMeta.textContent = item.dataset.meta;
+    featuredTitle.textContent = item.dataset.title;
+    featuredDesc.textContent = item.dataset.desc;
+    current.textContent = String(visibleItems.indexOf(item) + 1).padStart(2, '0');
+    total.textContent = String(visibleItems.length).padStart(2, '0');
+    stage.classList.add('is-changing');
+    const nextImage = new Image();
+    nextImage.onload = () => {
+      if (version !== selectionVersion) return;
+      featuredImage.src = item.dataset.image;
+      featuredImage.alt = item.dataset.alt;
+      stage.classList.remove('is-changing');
+    };
+    nextImage.onerror = () => { if (version === selectionVersion) stage.classList.remove('is-changing'); };
+    nextImage.src = item.dataset.image;
+  };
+
+  items.forEach(item => item.addEventListener('click', () => selectHonor(item)));
+  filters.forEach(filter => filter.addEventListener('click', () => {
+    const year = filter.dataset.year;
+    filters.forEach(entry => entry.setAttribute('aria-pressed', String(entry === filter)));
+    items.forEach(item => { item.hidden = year !== 'all' && !item.dataset.year.split(' ').includes(year); });
+    const visibleItems = items.filter(item => !item.hidden);
+    if (visibleItems.length) selectHonor(visibleItems[0]);
+  }));
+})();
+</script>
 
 </body>
 </html>
