@@ -1,4 +1,7 @@
 /* Shared cross-screen and browser compatibility layer for the public website. */
+.compliance-risk{font-weight:700;color:#9F3B3B}
+.compliance-risk--block{display:block;margin-top:7px;font-size:12px;line-height:1.5;letter-spacing:.02em}
+.join .compliance-risk,.cta .compliance-risk,.process .compliance-risk{color:#FFF4EE}
 html{
   -webkit-text-size-adjust:100%;
   text-size-adjust:100%;
