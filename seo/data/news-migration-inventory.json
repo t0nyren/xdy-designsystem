@@ -1,0 +1,704 @@
+{
+  "generated_at": "2026-07-23T08:45:00Z",
+  "scope": "repo/web/news/*.html",
+  "article_count": 18,
+  "media_reference_count": 73,
+  "image_reference_count": 63,
+  "video_reference_count": 10,
+  "missing_alt_count": 0,
+  "notes": [
+    "This is the current repository baseline, not yet proof of completeness against the legacy production site.",
+    "Canonical URLs still use the preview domain and require a formal-domain mapping before launch."
+  ],
+  "articles": [
+    {
+      "id": "5418",
+      "source_path": "web/news/5418.html",
+      "title": "七年·千店·万人就业：熊大爷，包饺子也包梦想",
+      "date_published": "2026-05-29",
+      "canonical": "https://xdy.secondlife.today/web/news/5418.html",
+      "description": "亲爱的“熊家人”：",
+      "article_text_sha256": "b0787796f76af46bc8b6f07060d733c1bc46b6de1ca892043b698c765e301d5d",
+      "html_sha256": "0c592ae6c9f211fd1f51fc35a5e8d4ea8f030ec650abbb201c6539e999456cff",
+      "article_characters": 2430,
+      "image_count": 14,
+      "video_count": 0,
+      "media_reference_count": 14,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img01.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img02.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img03.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img04.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img05.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img06.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img07.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img08.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img09.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img10.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img11.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img12.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5418/img13.jpg",
+          "alt": "七年·千店·万人就业：熊大爷，包饺子也包梦想"
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5419",
+      "source_path": "web/news/5419.html",
+      "title": "8848米之上：一只饺子的志向与征途",
+      "date_published": "2026-05-29",
+      "canonical": "https://xdy.secondlife.today/web/news/5419.html",
+      "description": "▲熊大爷 PANDA YEAH IP在珠穆拉玛峰",
+      "article_text_sha256": "8cf7c2d4e87e5bc63c96e17ce284c459bbde480d73e1882354fd0b73a8ed4830",
+      "html_sha256": "408efff8f7589746a98eed9659a92e74828bd59d580f5aa901fd8d9829f65599",
+      "article_characters": 2521,
+      "image_count": 11,
+      "video_count": 0,
+      "media_reference_count": 11,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img01.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img02.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img03.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img04.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img05.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img06.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img07.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img08.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img09.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5419/img10.jpg",
+          "alt": "8848米之上：一只饺子的志向与征途"
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5420",
+      "source_path": "web/news/5420.html",
+      "title": "她们不过母亲节，但每天都在当妈妈",
+      "date_published": "2026-06-01",
+      "canonical": "https://xdy.secondlife.today/web/news/5420.html",
+      "description": "熊大爷镜头下，菜市场里最朴素的情书",
+      "article_text_sha256": "aa6c8b7804ad2015848d16382f943a0166d6442ee79fc149dac68bf2c3745f95",
+      "html_sha256": "073ce4e0ded103b3df363afb96d0be5eaba7efedac907b2265a3a951fd3c7f24",
+      "article_characters": 1329,
+      "image_count": 4,
+      "video_count": 0,
+      "media_reference_count": 4,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5420/img01.jpg",
+          "alt": "她们不过母亲节，但每天都在当妈妈"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5420/img02.jpg",
+          "alt": "她们不过母亲节，但每天都在当妈妈"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5420/img03.jpg",
+          "alt": "她们不过母亲节，但每天都在当妈妈"
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5421",
+      "source_path": "web/news/5421.html",
+      "title": "7周年，疯了！一毛钱吃饺子？！",
+      "date_published": "2026-06-16",
+      "canonical": "https://xdy.secondlife.today/web/news/5421.html",
+      "description": "7周年，疯了！一毛钱吃饺子？！",
+      "article_text_sha256": "a47bda5f420a0d7c9b465227aa521554fe20ad482abfd8890421bd92cc2b1e81",
+      "html_sha256": "c07c35a2c7d8bb19cecaa8fa8377a6878247a9832fe3485d637445f01f5417a4",
+      "article_characters": 112,
+      "image_count": 4,
+      "video_count": 0,
+      "media_reference_count": 4,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5421/img01.png",
+          "alt": "7周年，疯了！一毛钱吃饺子？！"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5421/img02.png",
+          "alt": "7周年，疯了！一毛钱吃饺子？！"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5421/img03.png",
+          "alt": "7周年，疯了！一毛钱吃饺子？！"
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5422",
+      "source_path": "web/news/5422.html",
+      "title": "7周年宠粉 | 50份周边礼随机掉落中",
+      "date_published": "2026-06-16",
+      "canonical": "https://xdy.secondlife.today/web/news/5422.html",
+      "description": "熊大爷 × 七周年",
+      "article_text_sha256": "cbd5d8016137d97f6fe0ee29db171e387a9db051cef687776097288fc0d75927",
+      "html_sha256": "184876e834e00c1067b4faa7091dc03c46e43422b003cdc10e58c1c2aa2d6f93",
+      "article_characters": 122,
+      "image_count": 4,
+      "video_count": 0,
+      "media_reference_count": 4,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5422/img01.gif",
+          "alt": "7周年宠粉 | 50份周边礼随机掉落中"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5422/img02.jpg",
+          "alt": "7周年宠粉 | 50份周边礼随机掉落中"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5422/img03.jpg",
+          "alt": "7周年宠粉 | 50份周边礼随机掉落中"
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5425",
+      "source_path": "web/news/5425.html",
+      "title": "超值亲邻卡，快来薅羊毛",
+      "date_published": "2026-06-15",
+      "canonical": "https://xdy.secondlife.today/web/news/5425.html",
+      "description": "#薅羊毛的快乐 #吃货福利 #省钱攻略",
+      "article_text_sha256": "565f446743bf1f9a480b3433aa777e47c33851ae2f0d2b56e518999bea09b50a",
+      "html_sha256": "1028697fa022c7982746232da7d72f549b15edf9ab206bbcffa257516099fa8d",
+      "article_characters": 28,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5425/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5428",
+      "source_path": "web/news/5428.html",
+      "title": "哥哥说的，都是我的词",
+      "date_published": "2026-06-19",
+      "canonical": "https://xdy.secondlife.today/web/news/5428.html",
+      "description": "哥哥说的，都是我的词",
+      "article_text_sha256": "e31d9f2ec77644aed6a28d2e523babef27ffabc31b77453e44e3050671ab98c5",
+      "html_sha256": "d185ecd048ebc7419328638ba97df88246c1777b53c237f827c9112950b7898f",
+      "article_characters": 8,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5428/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5429",
+      "source_path": "web/news/5429.html",
+      "title": "吃货的王道在哪里",
+      "date_published": "2026-06-20",
+      "canonical": "https://xdy.secondlife.today/web/news/5429.html",
+      "description": "吃货的王道在哪里",
+      "article_text_sha256": "e31d9f2ec77644aed6a28d2e523babef27ffabc31b77453e44e3050671ab98c5",
+      "html_sha256": "2c4d7cd24a2ff4dc9b2af52b49ef21406b000dae031e76769d374366ab5a771a",
+      "article_characters": 8,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5429/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5430",
+      "source_path": "web/news/5430.html",
+      "title": "就这波了，上啊！",
+      "date_published": "2026-06-21",
+      "canonical": "https://xdy.secondlife.today/web/news/5430.html",
+      "description": "就这波了，上啊！",
+      "article_text_sha256": "e31d9f2ec77644aed6a28d2e523babef27ffabc31b77453e44e3050671ab98c5",
+      "html_sha256": "686a83225f611e5a796903959aeeaa24327cf0a61e5750d40a192c87da270b46",
+      "article_characters": 8,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5430/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5431",
+      "source_path": "web/news/5431.html",
+      "title": "美食召唤术",
+      "date_published": "2026-06-25",
+      "canonical": "https://xdy.secondlife.today/web/news/5431.html",
+      "description": "#熊大爷现包饺子 #熊大爷七周年",
+      "article_text_sha256": "726e39f6e137410bcd4a590235b9eb2479d1b1363a95222146decfb9bd297859",
+      "html_sha256": "b5ab9b9b747149f479b530ec5f840e95d06a54f63e1efa690f3380a05aa9f1e1",
+      "article_characters": 44,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5431/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5432",
+      "source_path": "web/news/5432.html",
+      "title": "饺子里的牵挂",
+      "date_published": "2026-06-27",
+      "canonical": "https://xdy.secondlife.today/web/news/5432.html",
+      "description": "高考结束奔赴远方，带上熟悉的家乡味，愿前路一路顺遂。",
+      "article_text_sha256": "5fd86780717017cc4646f5d1709f85771258d842cd11016b9f2f231312fd4d14",
+      "html_sha256": "2d41001e8d8de8a3271f40d311d17b25d3abe012b916af561585b2761700e3cd",
+      "article_characters": 82,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5432/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5433",
+      "source_path": "web/news/5433.html",
+      "title": "门店大片之熊大爷七周年限定周边",
+      "date_published": "2026-06-29",
+      "canonical": "https://xdy.secondlife.today/web/news/5433.html",
+      "description": "门店大片之熊大爷七周年限定周边",
+      "article_text_sha256": "e31d9f2ec77644aed6a28d2e523babef27ffabc31b77453e44e3050671ab98c5",
+      "html_sha256": "c0830c29de5b2026659923ec3746c1954b419298814008762e94a3bef3bbe5af",
+      "article_characters": 8,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5433/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5434",
+      "source_path": "web/news/5434.html",
+      "title": "服务员！过来尝饺子！",
+      "date_published": "2026-07-01",
+      "canonical": "https://xdy.secondlife.today/web/news/5434.html",
+      "description": "服务员！过来尝饺子！",
+      "article_text_sha256": "e31d9f2ec77644aed6a28d2e523babef27ffabc31b77453e44e3050671ab98c5",
+      "html_sha256": "f0d9ffc671a62179d84aeb2f50503e964e9343f66ac2e81f1d135be9f5c0076f",
+      "article_characters": 8,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5434/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5435",
+      "source_path": "web/news/5435.html",
+      "title": "我们都犯过这个错",
+      "date_published": "2026-07-03",
+      "canonical": "https://xdy.secondlife.today/web/news/5435.html",
+      "description": "我们都犯过这个错",
+      "article_text_sha256": "e31d9f2ec77644aed6a28d2e523babef27ffabc31b77453e44e3050671ab98c5",
+      "html_sha256": "8b6b2f312c6ebe278a8ab2c8e9a21f77a8727ef12c6c203b548517ce692051f4",
+      "article_characters": 8,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5435/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5436",
+      "source_path": "web/news/5436.html",
+      "title": "珠峰主题视频",
+      "date_published": "2026-07-06",
+      "canonical": "https://xdy.secondlife.today/web/news/5436.html",
+      "description": "珠峰主题视频",
+      "article_text_sha256": "e31d9f2ec77644aed6a28d2e523babef27ffabc31b77453e44e3050671ab98c5",
+      "html_sha256": "dae04eaf3b33901aa46a669a4100aa0a7111aa0a40f1d419e65ea19350e0ebf0",
+      "article_characters": 8,
+      "image_count": 1,
+      "video_count": 1,
+      "media_reference_count": 2,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "video",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5436/video01.mp4",
+          "alt": ""
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5437",
+      "source_path": "web/news/5437.html",
+      "title": "7周年嫩滑鸡肉饺「8元起」尝新",
+      "date_published": "2026-06-10",
+      "canonical": "https://xdy.secondlife.today/web/news/5437.html",
+      "description": "7周年嫩滑鸡肉饺「8元起」尝新",
+      "article_text_sha256": "a47bda5f420a0d7c9b465227aa521554fe20ad482abfd8890421bd92cc2b1e81",
+      "html_sha256": "cd2f862092fe019b59e70cfc98e7af2797e509e8ea62848d9cf631dfd7983082",
+      "article_characters": 112,
+      "image_count": 5,
+      "video_count": 0,
+      "media_reference_count": 5,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5437/img01.jpg",
+          "alt": "7周年嫩滑鸡肉饺「8元起」尝新"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5437/img02.jpg",
+          "alt": "7周年嫩滑鸡肉饺「8元起」尝新"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5437/img03.jpg",
+          "alt": "7周年嫩滑鸡肉饺「8元起」尝新"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5437/img04.jpg",
+          "alt": "7周年嫩滑鸡肉饺「8元起」尝新"
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5438",
+      "source_path": "web/news/5438.html",
+      "title": "倒计时3天 | 7周年我们决定“疯”一次！",
+      "date_published": "2026-06-09",
+      "canonical": "https://xdy.secondlife.today/web/news/5438.html",
+      "description": "倒计时3天 | 7周年我们决定“疯”一次！",
+      "article_text_sha256": "a47bda5f420a0d7c9b465227aa521554fe20ad482abfd8890421bd92cc2b1e81",
+      "html_sha256": "5a27c22969b2a7d15c3fcfa25b72f6a9e9fdc5875098ef0bfced48e926178719",
+      "article_characters": 112,
+      "image_count": 5,
+      "video_count": 0,
+      "media_reference_count": 5,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5438/img01.jpg",
+          "alt": "倒计时3天 | 7周年我们决定“疯”一次！"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5438/img02.jpg",
+          "alt": "倒计时3天 | 7周年我们决定“疯”一次！"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5438/img03.jpg",
+          "alt": "倒计时3天 | 7周年我们决定“疯”一次！"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5438/img04.jpg",
+          "alt": "倒计时3天 | 7周年我们决定“疯”一次！"
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    },
+    {
+      "id": "5439",
+      "source_path": "web/news/5439.html",
+      "title": "一枚饺子的山河万里：熊大爷的“风味地图”",
+      "date_published": "2026-06-02",
+      "canonical": "https://xdy.secondlife.today/web/news/5439.html",
+      "description": "每一只饺子，都是一个坐标",
+      "article_text_sha256": "f613d2abafe574ce721d5b07d46ee63fd11962893b53e892ba0ea269078d90b3",
+      "html_sha256": "e83e0e46cbe9f3a5c2c9464875d8ec02663beff79ca8eaca6ff11dd70a6043d3",
+      "article_characters": 826,
+      "image_count": 6,
+      "video_count": 0,
+      "media_reference_count": 6,
+      "images_missing_alt": 0,
+      "media": [
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/brand/logo/color-horizontal.png",
+          "alt": "熊大爷现包饺子"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5439/img01.jpg",
+          "alt": "一枚饺子的山河万里：熊大爷的“风味地图”"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5439/img02.png",
+          "alt": "一枚饺子的山河万里：熊大爷的“风味地图”"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5439/img03.jpg",
+          "alt": "一枚饺子的山河万里：熊大爷的“风味地图”"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5439/img04.jpg",
+          "alt": "一枚饺子的山河万里：熊大爷的“风味地图”"
+        },
+        {
+          "type": "img",
+          "src": "https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/news/5439/img05.png",
+          "alt": "一枚饺子的山河万里：熊大爷的“风味地图”"
+        }
+      ],
+      "migration_status": "baseline_inventory_complete"
+    }
+  ]
+}
