@@ -127,7 +127,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(252,251,248,.86);
 .space-banner img{width:100%;aspect-ratio:21/9;object-fit:cover}
 .space-duo{max-width:1200px;margin:28px auto 0;padding:0 48px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
 .space-duo figure img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius)}
-.space-duo figcaption{margin-top:12px}
+.space-duo figure:first-child img{object-position:center top}
 
 /* ===== 加盟（绛红印章屏：本屏唯一红实体） ===== */
 .join{background:var(--seal);color:#fff}
@@ -398,11 +398,9 @@ footer{padding:72px 0 56px;border-top:var(--hairline)}
   <div class="space-duo">
     <figure>
       <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/store-front.jpg" alt="熊大爷门店门头：原木格栅与发光招牌">
-      <figcaption class="caption">原木格栅门头，三米之外一眼认出。</figcaption>
     </figure>
     <figure>
       <img src="https://chicago-comic-cn-1258246081.cos.ap-nanjing.myqcloud.com/xdy/manual/assets/leader-street.jpg" alt="夜晚社区街角，暖光中的熊大爷门店">
-      <figcaption class="caption">一千多家店，开在街坊的下楼路上。</figcaption>
     </figure>
   </div>
 </section>
